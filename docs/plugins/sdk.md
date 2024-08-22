@@ -520,7 +520,7 @@ app.onConnectedToStack = (stackSession: Object) => {};
 app.onSwitchTenant = (uuid: string, name: string) => {};
 ```
 
-## E-UC Mobile {#mobile}
+## E-UC Mobile \{#mobile}
 
 ### Methods
 

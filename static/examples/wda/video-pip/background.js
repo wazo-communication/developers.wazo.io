@@ -59,4 +59,4 @@ app.onCallHangedUp = () => {
   }
 }
 
-await app.initialize();
+app.initialize();

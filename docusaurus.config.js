@@ -2,8 +2,9 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const path = require('path');
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -13,7 +14,7 @@ const config = {
   tagline: 'Extend every functionality in Wazo Products or integrate Wazo softphone into any existing tool.',
 
   url: 'https://wazo.io',
-  baseUrl: isDev ? '/' : 'euc-plugins-js-sdk/',
+  baseUrl: isDev ? '/' : 'developers.wazo.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -21,7 +22,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'wazo-communication', // Usually your GitHub org/user name.
-  projectName: 'euc-plugins-js-sdk', // Usually your repo name.
+  projectName: 'developers.wazo.io', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -147,6 +148,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash', 'diff', 'json', 'javascript', 'typescript', 'python'],
       },
     }),
   clientModules: [
