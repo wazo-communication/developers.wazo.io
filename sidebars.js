@@ -13,6 +13,13 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
+  pluginsOverviewSidebar: [
+    { type: 'ref', id: 'plugins/overview/index', label: 'Overview' },
+    { type: 'ref', id: 'plugins/overview/what-is-modular-plugin' },
+    { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
+    { type: 'ref', id: 'plugins/overview/why-should-use' },
+  ],
+
   installSidebar: [
   //   'installation',
   //   {

@@ -14,7 +14,6 @@ Before starting, we suggest being familiar with the following subjects to ease y
 - JSON
 - Javascript language
   - [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-- Our [Developers Center](https://developers.wazo.io/)
 
 :::info
 **New to web technologies?** We suggest this guide: [Getting started with the web](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web).
