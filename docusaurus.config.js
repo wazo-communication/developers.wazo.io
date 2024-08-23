@@ -39,10 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/wazo-communication/developers.wazo.io/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -80,12 +77,13 @@ const config = {
             type: 'dropdown',
             label: 'Plugins Doc',
             position: 'left',
+            activeBaseRegex: 'docs/plugins/(.*)',
             items: [
               { to: '/docs/plugins/overview', label: 'Overview' },
               { to: '/docs/plugins/ui/apps', label: 'Apps Plugin' },
               { to: '/docs/plugins/ui/portal', label: 'Portal Plugin' },
               { to: '/docs/plugins/ui/mobile', label: 'Mobile Plugin' },
-              { href: 'https://wazo-platform.org/uc-doc/contributors/plugins', label: 'PBX plugin' },
+              { to: '/docs/plugins/pbx', label: 'PBX plugin' },
               { href: 'https://wazo-platform.org/uc-doc/contributors/provisioning/add_phone_to_plugin', label: 'Provisioning plugin' },
             ]
           },
