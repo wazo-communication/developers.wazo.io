@@ -1,9 +1,9 @@
 ---
 displayed_sidebar: pluginsSidebar
-pagination_next: plugins/deploy
+# pagination_next: plugins/deploy
 ---
 
-# Translation Support
+# Internationalization
 
 Using the `localizationInfo` you can add other `manifest.json` files containing translations for a specific language.
 

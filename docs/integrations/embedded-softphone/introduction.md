@@ -2,12 +2,12 @@
 displayed_sidebar: softphoneSidebar
 ---
 
-# Softphone Introduction
+# Embedded Softphone Introduction
 
 This SDK allows you to easily embed and customize a Wazo Softphone in your application.
-If you have a CRM that requires a click-to-call feature, redirecting the user to the customer information when answering a call, ... this softphone will fit your needs.
+If you have a CRM that requires a click-to-call feature, redirecting the user to the customer information when answering a call, ... this embedded softphone will fit your needs.
 
-To be able to integrate Wazo softphone in any web page, you can add :
+To be able to integrate the embedded softphone in any web page, you can add :
 
 ```ts
 import { softphone } from '@wazo/euc-plugins-sdk';
@@ -43,16 +43,16 @@ softphone.loginWithToken(token: string, refreshToken?: string);
 ```js
 softphone.makeCall(number);
 ```
-- `number`: Number to call through the softphone
+- `number`: Number to call through the embedded softphone
 
-### Showing / hidding the softphone
+### Showing / hidding the embedded softphone
 ```js
 softphone.toggleDisplay();
 softphone.show();
 softphone.hide();
 ```
 
-### Removing the softphone from the page
+### Removing the embedded softphone from the page
 ```js
 softphone.remove();
 ```
@@ -68,7 +68,7 @@ softphone.parseLinks();
 softphone.removeParsedLinksEvent();
 ```
 
-Each link with a `href="tel:"` or  `href="callto:"` will make a call through the softphone.
+Each link with a `href="tel:"` or  `href="callto:"` will make a call through the embedded softphone.
 
 ### Customizing page style
 
@@ -174,7 +174,7 @@ softphone.customizeAppearance({
 ### Customizing card form
 
 You can use [JSON schema](http://json-schema.org/) to customize the card form with `softphone.setFormSchema(schema, uiSchema)`,
-the Softphone uses [React Json schema form](https://rjsf-team.github.io/react-jsonschema-form/docs/) internally to display card form :
+the Embedded Softphone uses [React Json schema form](https://rjsf-team.github.io/react-jsonschema-form/docs/) internally to display card form :
 
 ```js
 softphone.setFormSchema({
@@ -224,7 +224,7 @@ clientId: {
 }
 ```
 
-### Sending search results to the softphone:
+### Sending search results to the embedded softphone:
 ```js
 // `results` should have a `label` field, like: const result = [{ label: 'Alice', id: 1 }];
 softphone.onOptionsResults(fieldId, results);
@@ -239,7 +239,7 @@ softphone.setCardValue(field, value);
 
 ## Callbacks / Events
 
-You can listen to softphone callback, with :
+You can listen to embedded softphone callback, with :
 
 ```js
 softphone.onLinkEnabled = (link: HTMLLinkElement) => {

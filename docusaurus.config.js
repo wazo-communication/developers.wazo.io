@@ -52,7 +52,7 @@ const config = {
   ],
 
   plugins: [
-    path.resolve(__dirname, 'plugins', 'softphone-plugin')
+    path.resolve(__dirname, 'doc-assets', 'softphone-plugin')
   ],
 
   themeConfig:
@@ -66,37 +66,37 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'installation',
-            position: 'left',
-            label: 'Javascript SDK',
-          },
-          {
-            type: 'doc',
-            docId: 'plugins/introduction',
-            position: 'left',
-            label: 'Plugins',
-            activeBaseRegex: '/plugins/'
-          },
-          {
-            type: 'doc',
-            docId: 'softphone/introduction',
-            position: 'left',
-            label: 'Softphone',
-            activeBaseRegex: '/softphone/'
-          },
-          {
-            type: 'doc',
-            docId: 'deeplink/deeplink',
-            position: 'left',
-            label: 'Deep Linking',
-            activeBaseRegex: '/deeplink/'
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'installation',
+          //   position: 'left',
+          //   label: 'Javascript SDK',
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'plugins/introduction',
+          //   position: 'left',
+          //   label: 'Plugins',
+          //   activeBaseRegex: '/plugins/'
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'softphone/introduction',
+          //   position: 'left',
+          //   label: 'Softphone',
+          //   activeBaseRegex: '/softphone/'
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'deeplink/deeplink',
+          //   position: 'left',
+          //   label: 'Deep Linking',
+          //   activeBaseRegex: '/deeplink/'
+          // },
 
           // Right
           {
-            href: 'https://github.com/wazo-communication/euc-plugins-js-sdk',
+            href: 'https://github.com/wazo-communication/developers.wazo.io',
             className: 'header-github-link',
             position: 'right',
             title: 'GitHub Repository',
@@ -110,40 +110,40 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Installation',
-                to: '/docs/installation',
-              },
+              // {
+              //   label: 'Installation',
+              //   to: '/docs/installation',
+              // },
             ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Wazo Developers Center',
-                href: 'https://developers.wazo.io/',
-              },
-              {
-                label: 'Discourse',
-                href: 'https://wazo-platform.discourse.group/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/wazo',
-              },
+              // {
+              //   label: 'Wazo Developers Center',
+              //   href: 'https://developers.wazo.io/',
+              // },
+              // {
+              //   label: 'Discourse',
+              //   href: 'https://wazo-platform.discourse.group/',
+              // },
+              // {
+              //   label: 'Twitter',
+              //   href: 'https://twitter.com/wazo',
+              // },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/wazo-communication/euc-plugins-js-sdk',
-              },
+              // {
+              //   label: 'GitHub',
+              //   href: 'https://github.com/wazo-communication/euc-plugins-js-sdk',
+              // },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Wazo. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Wazo Communication Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

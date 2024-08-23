@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
-pagination_next: plugins/translation
+# pagination_next: plugins/translation
 ---
 
 # Plugins Configuration

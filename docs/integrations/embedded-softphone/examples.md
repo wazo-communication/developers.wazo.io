@@ -2,24 +2,24 @@
 displayed_sidebar: softphoneSidebar
 ---
 
-# Softphone Examples
+# Embedded Softphone Examples
 
-import '../../src/softphone-example.js';
+import '../../../src/softphone-example.js';
 
-## Displaying the softphone
+## Displaying the Embedded softphone
 
-Please refer to the [Installation page](../installation) for information on how to import the Softphone SDK.
+Please refer to the [Installation page](../../sdk-librairies/installation) for information on how to import the Embedded Softphone SDK.
 
 ```js
 softphone.show();
 ```
 
 <a className="try-it button button--secondary button--lg" id="display-softphone">
-    🚀 Display the Softphone
+    🚀 Display the Embedded Softphone
 </a>
 
 
-## Hiding the softphone
+## Hiding the Embedded softphone
 
 ```js
 softphone.hide();
@@ -29,9 +29,9 @@ softphone.hide();
     🙈 Hide it
 </a>
 
-## Minimize / restore the softphone
+## Minimize / restore the embedded softphone
 
-You can minimize and restore the softphone the way you would any regular window by adding your buttons to the wrapper element, which will allow you to position your buttons relative to the iframe.
+You can minimize and restore the embedded softphone the way you would any regular window by adding your buttons to the wrapper element, which will allow you to position your buttons relative to the iframe.
 
 ```js
 const minimizeButton = document.createElement('button');
@@ -114,7 +114,7 @@ softphone.parseLinks();
     🔗 Parse call links on this page
 </a>
 
-## Injecting CSS in the Softphone
+## Injecting CSS in the Embedded Softphone
 
 ```js
 softphone.injectCss(`
@@ -128,7 +128,7 @@ a button {
     ✨ Make the dialer button green
 </a>
 
-## Changing the appearance of the Softphone
+## Changing the appearance of the Embedded Softphone
 
 ```js
 softphone.customizeAppearance({
@@ -155,7 +155,7 @@ softphone.customizeAppearance({
 ```
 
 <a className="try-it button button--secondary button--lg" id="customize-appearance">
-    🌈 Customize the Softphone
+    🌈 Customize the Embedded Softphone
 </a>
 
 ## Adding a card form
@@ -248,7 +248,7 @@ softphone.onSearchOptions = (fieldId, query) => {
 
 ```js
 softphone.onIFrameLoaded = () => {
-  document.getElementById('iframe-loaded-event').innerText = 'Softphone iframe is loaded';
+  document.getElementById('iframe-loaded-event').innerText = 'Embedded Softphone iframe is loaded';
 }
 ```
 

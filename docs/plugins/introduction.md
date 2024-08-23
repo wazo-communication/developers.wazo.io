@@ -1,6 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
-pagination_next: plugins/configuration
+# pagination_next: plugins/configuration
 ---
 
 # Plugins Introduction

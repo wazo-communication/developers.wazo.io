@@ -14,23 +14,23 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
+          {/* <Link
             className={`button button--lg ${styles.primaryButton}`}
             to="/docs/installation">
             Installation 🚀️
-          </Link>
+          </Link> */}
 
-          <Link
+          {/* <Link
             className={`button button--lg ${styles.secondaryButton}`}
             to="/docs/plugins/introduction">
             Build a Plugin
-          </Link>
+          </Link> */}
 
-          <Link
+          {/* <Link
             className={`button button--lg ${styles.secondaryButton}`}
             to="/docs/softphone/introduction">
             Build a Softphone
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>
