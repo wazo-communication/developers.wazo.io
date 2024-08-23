@@ -1,0 +1,27 @@
+.openSourceButton {
+  max-width: max-content;
+}
+
+.openSourceButton a {
+  background-color: #72933d;
+  border-color: #72933d;
+}
+
+.openSourceButton a:hover, .openSourceButton a:active {
+  background-color: #546a2c;
+  border-color: #546a2c;
+}
+
+.openSourceButton em {
+  display: block;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.openSourceButton svg {
+  height: 25px;
+  width: auto;
+  vertical-align: top;
+  margin-top: 2px;
+  margin-right: 5px;
+}
