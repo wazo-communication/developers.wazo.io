@@ -20,42 +20,59 @@ const sidebars = {
     { type: 'ref', id: 'plugins/overview/why-should-use' },
   ],
 
-  installSidebar: [
-  //   'installation',
-  //   {
-  //     type: 'category',
-  //     collapsible: false,
-  //     label: 'SDK APIs',
-  //     items: [
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/sdk',
-  //         label: 'Plugins',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'softphone/introduction',
-  //         label: 'Softphone',
-  //       },
-  //     ]
-  //   },
-  //   {
-  //     type: 'category',
-  //     label: 'Guides',
-  //     collapsible: false,
-  //     items: [
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/introduction',
-  //         label: 'Plugins Introduction'
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'softphone/introduction',
-  //         label: 'Softphone Introduction'
-  //       },
-  //     ]
-  //   }
+  jsPluginSdkSidebar: [
+    {
+      type: 'ref',
+      id: 'sdk-librairies/plugins-js-sdk/index',
+      label: 'Installation',
+    },
+    {
+      type: 'category',
+      collapsible: false,
+      label: 'SDK APIs',
+      items: [
+        {
+          type: 'ref',
+          id: 'sdk-librairies/plugins-js-sdk/plugins-apis',
+          label: 'Plugins',
+        },
+        {
+          type: 'ref',
+          id: 'sdk-librairies/plugins-js-sdk/embedded-softphone-apis',
+          label: 'Embedded Softphone',
+        },
+      ]
+    },
+    {
+      type: 'category',
+      label: '📚 Guides',
+      collapsible: false,
+      items: [
+        {
+          type: 'ref',
+          id: 'plugins/ui/get-started/index',
+          label: 'Get Started (Modular Plugins)'
+        },
+        {
+          type: 'ref',
+          id: 'integrations/embedded-softphone/index',
+          label: 'Get Started (Embedded Softphone)'
+        },
+      ]
+    }
+  ],
+
+  softphoneSidebar: [
+    {
+      type: 'ref',
+      id: 'integrations/embedded-softphone/index',
+      label: 'Introduction'
+    },
+    {
+      type: 'ref',
+      id: 'sdk-librairies/plugins-js-sdk/embedded-softphone-apis',
+      label: 'SDK APIs',
+    },
   ],
 
   pluginsSidebar: [
@@ -127,27 +144,6 @@ const sidebars = {
   //         label: 'E-UC Portal',
   //       },
   //     ],
-  //   },
-  ],
-
-  softphoneSidebar: [
-  //   {
-  //     type: 'ref',
-  //     id: 'softphone/introduction',
-  //     label: 'Introduction'
-  //   },
-  //   {
-  //     type: 'ref',
-  //     id: 'softphone/examples',
-  //     label: 'Examples',
-  //   },
-  ],
-
-  deeplinkSidebar: [
-  //   {
-  //     type: 'ref',
-  //     id: 'deeplink/deeplink',
-  //     label: 'Deep Linking'
   //   },
   ],
 };

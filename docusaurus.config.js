@@ -75,14 +75,14 @@ const config = {
           { to: '/', label: 'Use cases', position: 'left' },
           {
             type: 'dropdown',
-            label: 'Plugins Doc',
+            label: 'Modular Plugins',
             position: 'left',
             activeBaseRegex: 'docs/plugins/(.*)',
             items: [
               { to: '/docs/plugins/overview', label: 'Overview' },
-              { to: '/docs/plugins/ui/apps', label: 'Apps Plugin' },
-              { to: '/docs/plugins/ui/portal', label: 'Portal Plugin' },
+              { to: '/docs/plugins/ui/apps', label: 'Applications Plugin' },
               { to: '/docs/plugins/ui/mobile', label: 'Mobile Plugin' },
+              { to: '/docs/plugins/ui/portal', label: 'Portal Plugin' },
               { to: '/docs/plugins/pbx', label: 'PBX plugin' },
               { href: 'https://wazo-platform.org/uc-doc/contributors/provisioning/add_phone_to_plugin', label: 'Provisioning plugin' },
             ]
@@ -92,7 +92,7 @@ const config = {
             label: 'Integrations',
             position: 'left',
             items: [
-              { to: '/docs/integrations/embedded-softphone', label: 'Embeded Softphone' },
+              { to: '/docs/integrations/embedded-softphone', label: 'Embedded Softphone' },
               { to: '/docs/integrations/deeplink', label: 'Deep Linking' },
             ]
           },
