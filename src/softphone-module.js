@@ -5,7 +5,7 @@ export function onRouteDidUpdate({ location, previousLocation }) {
   }
 
   // We have to call `initButtons` each time a user goes to the `softphone-example` page.
-  if (location.pathname.indexOf('softphone/examples') !== -1) {
+  if (location.pathname.indexOf('docs/integrations/embedded-softphone') !== -1) {
     initButtons();
   } else if (typeof removeSoftphone != 'undefined') {
     removeSoftphone();

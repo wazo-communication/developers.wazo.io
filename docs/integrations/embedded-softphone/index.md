@@ -2,187 +2,158 @@
 displayed_sidebar: softphoneSidebar
 ---
 
-# Embedded Softphone Introduction
+# Embedded Softphone Examples
 
-This SDK allows you to easily embed and customize a Wazo Softphone in your application.
-If you have a CRM that requires a click-to-call feature, redirecting the user to the customer information when answering a call, ... this embedded softphone will fit your needs.
+import '../../../src/softphone-example.js';
 
-To be able to integrate the embedded softphone in any web page, you can add :
+## Displaying the Embedded softphone
 
-```ts
-import { softphone } from '@wazo/euc-plugins-sdk';
-
-softphone.init({
-  url?: string, //  Url of the softphone to be loaded in the iframe (optional, default to https://softphone.wazo.io).
-  width?: number, // Width (in px) of the softphone (optional, default to 500).
-  height?: number, // Height (in px) of the softphone (optional, default to 600).
-  server: string, // Stack host where the softphone should connect user.
-  port?: number, // Stack port where the softphone should connect user  (optional, default to 443).
-  language?: string, // Softphone language (optional).
-  wrapUpDuration?: number, // How long (in seconds) should the softphone display the card after the call (optional, default to 0).
-  // When the user changes anything on the card, this timeout is canceled
-  enableAgent?: boolean, // display the agent tab in the tab bar (defaults to true).
-  tenantId?: string, // Tenant id used for LDAP connection (optional)
-  debug?: boolean, // Set to `true` to display wording customization labels (default to false)
-  disableAutoLogin?: boolean, // Disable the autologin mechanism inside the softphone (useful when used with `loginWithToken`)
-  iframeCss?: IframeCss, // Customize the CSS of the iframe itself, default to `{ left: 0, bottom : 0 }`
-});
-```
-
-## SDK Methods
-
-### Login the user directly
-
-Useful when you already have the user token (and refreshToken) and you don't want your user to login again.
+Please refer to the [Installation page](../../sdk-librairies/installation) for information on how to import the Embedded Softphone SDK.
 
 ```js
-softphone.loginWithToken(token: string, refreshToken?: string);
-```
-
-### Making a call
-```js
-softphone.makeCall(number);
-```
-- `number`: Number to call through the embedded softphone
-
-### Showing / hidding the embedded softphone
-```js
-softphone.toggleDisplay();
 softphone.show();
+```
+
+<a className="try-it button button--secondary button--lg" id="display-softphone">🚀 Display the Embedded Softphone</a>
+
+## Hiding the Embedded softphone
+
+```js
 softphone.hide();
 ```
 
-### Removing the embedded softphone from the page
+<a className="try-it button button--secondary button--lg" id="hide-softphone">🙈 Hide it</a>
+
+## Minimize / restore the embedded softphone
+
+You can minimize and restore the embedded softphone the way you would any regular window by adding your buttons to the wrapper element, which will allow you to position your buttons relative to the iframe.
+
 ```js
-softphone.remove();
+const minimizeButton = document.createElement('button');
+minimizeButton.addEventListener('click', softphone.hide.bind(softphone));
+softphone.wrapper.appendChild(minimizeButton);
+
+const maximizeButton = document.createElement('button');
+minimizeButton.addEventListener('click', softphone.show.bind(softphone));
+softphone.wrapper.appendChild(minimizeButton);
 ```
 
-### Parsing links on the page
+## Move it right
+
 ```js
+softphone.init({
+  server: 'my-server',
+  width: 400,
+  iframeCss: {
+    position: 'fixed',
+    right: 0,
+    top: '80px',
+  },
+});
+softphone.show();
+```
+
+<a className="try-it button button--secondary button--lg" id="move-right">👉 This way</a>
+
+## Login directly from a token
+
+```js
+const login = document.querySelector('#login').value;
+const password = document.querySelector('#password').value;
+const server = document.querySelector('#server').value;
+
+Wazo.Auth.init('softphone-example');
+Wazo.Auth.setHost(server);
+const session = await Wazo.Auth.logIn(login, password);
+
+softphone.loginWithToken(session.token, session.refreshToken);
+```
+
+<form id="login-form">
+    <input type="text" id="login" placeholder="Login" />
+    <input type="password" id="password" placeholder="Password"  />
+    <input type="text" id="server" placeholder="Server"  />
+    <button className="button button--secondary button--md" type="submit">🔑 Login</button>
+</form>
+
+## Making a call
+
+```js
+softphone.makeCall('*10');
+```
+
+<a className="try-it button button--secondary button--lg" id="call-start-ten">☎️ Call *10</a>
+
+## Parsing link on the page
+
+We can parse links contains `tel://` and `callto://` on the current page.
+
+<a className="call-link" href="tel://*10">This is a like to call *10</a>
+
+Link are already parsed when we authenticate, so we have to call `removeParsedLinksEvent` to be able to parse them again.
+```js
+softphone.onLinkEnabled = (link => {
+  link.style.color = 'red';
+});
+
+// We have to remove the previous parsing of the links
+softphone.removeParsedLinksEvent();
 softphone.parseLinks();
 ```
 
-### Remove the event of parsed links
+<a className="try-it button button--secondary button--lg" id="parse-links">🔗 Parse call links on this page</a>
 
-```js
-softphone.removeParsedLinksEvent();
-```
-
-Each link with a `href="tel:"` or  `href="callto:"` will make a call through the embedded softphone.
-
-### Customizing page style
-
-You can inspect the iframe with your dev tool console to figure out how to override styles.
+## Injecting CSS in the Embedded Softphone
 
 ```js
 softphone.injectCss(`
-  # Reduce dialer number font size
-  .keypad-number, .keypad-number::placeholder {
-    font-size: 20px;
-  }
+a button {
+  background-color: green !important;
+}
 `);
 ```
 
-### Override appearance
+<a className="try-it button button--secondary button--lg" id="inject-css">✨ Make the dialer button green</a>
+
+## Changing the appearance of the Embedded Softphone
+
 ```js
 softphone.customizeAppearance({
   colors: {
-    // Theme, default values :
-    primary: '#203890',
-    button: '#292C87',
-    black: '#000',
-    white: '#fff',
-    greenButton: '#7ed865',
-    greenButtonHover: '#6ebf5a',
-    redButton: '#FA5846',
-    redButtonHover: '#FF604F',
-    buttonText: '#fff',
-    error: '#E80539',
-    secondary: '#203890',
-    grey: '#8A95A0',
-    secondGrey: '#eee',
-    headerColor: '#888',
-    avatar: '#bdbdbd',
-    divider: 'rgba(0, 0, 0, 0.12)',
-    placeholder: 'rgba(22, 44, 66, 0.5)',
-    hovered: '#6181F4',
-  },
-  metrics: {
-    spacing: {
-      tiny: 5,
-      small: 10,
-      medium: 15,
-      large: 20,
-      larger: 25,
-      big: 30,
-      huge: 40,
-      gigantic: 50,
-    },
-    icons: {
-      xsmall: 12,
-      smaller: 15,
-      small: 19,
-      mediumSmall: 25,
-      medium: 30,
-      large: 40,
-      huge: 42,
-    },
-    breakpoint: {
-      xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-    },
-    borderRadius: 5,
-    card: {
-      activity: {
-        height: 57,
-      },
-      phonebookContact: {
-        height: 58,
-      },
-      search: {
-        height: 35,
-      },
-    },
-    navigation: 60,
-    sidebar: 315,
-    search: 359,
-    lineStatus: 16,
-    dialer: {
-      key: 30,
-      description: 15,
-    },
-    infoBanner: 43,
-    infoBannerSmall: 26,
+    primary: '#d06c2b',
+    button: '#4b2bd7',
+    secondary: '#29877c',
   },
 }, {
   // Translation
   // Set `debug: true` to know where to change translations, like below:
   en: {
+    call: {
+      searchInWazo: 'Type a number here !',
+    },
     user: {
       login: 'My login button', // will be displayed as `user:login` in the button when settings `debug: true` in the init() method
     },
   },
 }, {
   // Assets
-  // logo: [url to your logo],
+  logo: 'my-logo.png',
 });
 ```
 
-### Customizing card form
+<a className="try-it button button--secondary button--lg" id="customize-appearance">🌈 Customize the Embedded Softphone</a>
 
-You can use [JSON schema](http://json-schema.org/) to customize the card form with `softphone.setFormSchema(schema, uiSchema)`,
-the Embedded Softphone uses [React Json schema form](https://rjsf-team.github.io/react-jsonschema-form/docs/) internally to display card form :
+## Adding a card form
+
+We can add form so the user can fill some information during a call, it uses the [React Json schema form](https://rjsf-team.github.io/react-jsonschema-form/docs/) :
 
 ```js
 softphone.setFormSchema({
   type: 'object',
   required: ['title', 'phone'],
   properties: {
+    subject: ["Support", "Greetings", "Whant to talk to Bob"],
     title: { type: 'string', title: 'Title' },
-    phone: { type: 'string', title: 'Phone' },
     note: { type: 'string', title: 'Note' },
   },
 }, {
@@ -190,260 +161,449 @@ softphone.setFormSchema({
 });
 ```
 
-### Auto complete
-We can use an `autocomplete` widget to search on fields in the `uiSchema`:
+<a className="try-it button button--secondary button--lg" id="add-form">📝 Add a form during the call</a>
+
+## Changing the value in the form
 
 ```js
-{
-  note :{ 'ui:widget': 'textarea'},
-  clientId :{ 'ui:field': 'autocomplete'},
-};
+softphone.setCardValue('title', 'My new title !');
 ```
 
-In the `schema` field, we can customize if we want to display a `+` button :
+<a className="try-it button button--secondary button--lg" id="update-form-value">☀️ Update the call form value</a>
+
+## Advanced card form
+
+We can add a new field to select the client and allow creating new one.
+
 ```js
-clientId: {
+softphone.setFormSchema({
   type: 'object',
-  title: 'Client id',
-  // triggers the `onDisplayLinkedOption` event when changing the value
-  triggerDisplay: true,
-  // createForm is another JSON schema the description the add option form.
-  createForm: {
-    optionLabel: '%firstname% %lastname%',
-    schema: {
+  required: ['title', 'clientId'],
+  properties: {
+    clientId: {
       type: 'object',
-      required: ['phone'],
-      properties: {
-        firstname: { type: 'string', title: 'Firstname' },
-        lastname: { type: 'string', title: 'Lastname' },
-        phone: { type: 'string', title: 'Phone' },
-      }
+      title: 'Client id',
+      // triggers the `onDisplayLinkedOption` event when changing the value
+      triggerDisplay: true,
+      // createForm is another JSON schema the description the add option form.
+      createForm: {
+        optionLabel: '%firstname% %lastname%',
+        schema: {
+          type: 'object',
+          required: ['phone'],
+          properties: {
+            firstname: { type: 'string', title: 'Firstname' },
+            lastname: { type: 'string', title: 'Lastname' },
+            phone: { type: 'string', title: 'Phone' },
+          }
+        },
+        uiSchema: {}
+      },
     },
-    uiSchema: {}
+    title: { type: 'string', title: 'Title' },
+    note: { type: 'string', title: 'Note' },
   },
-}
+}, {
+  note: { 'ui:widget': 'textarea' },
+  clientId :{ 'ui:field': 'autocomplete'},
+});
+
+// Add select values
+softphone.onOptionsResults('clientId',  [{ label: 'Alice', id: 1 }, { label: 'Bob', id: 2 }, { label: 'Charlies', id: 3 }]);
+
+softphone.onSearchOptions = (fieldId, query) => {
+  // Call you API here with `query`
+  // const results = await fetchClient();
+  const results = [{ label: 'Charles', id: 4}, { label: 'David', id: 5 }, { label: 'Henry', id: 6 }];
+  softphone.onOptionsResults(fieldId, results);
+};
 ```
 
-### Sending search results to the embedded softphone:
-```js
-// `results` should have a `label` field, like: const result = [{ label: 'Alice', id: 1 }];
-softphone.onOptionsResults(fieldId, results);
-```
+<a className="try-it button button--secondary button--lg" id="advanced-form">👌 Raise up the form game !</a>
 
-`onOptionsResults` is used to populate Autocomplete fields
+## Events
 
-### Updating card value:
-```js
-softphone.setCardValue(field, value);
-```
-
-## Callbacks / Events
-
-You can listen to embedded softphone callback, with :
+### Iframe loaded
 
 ```js
-softphone.onLinkEnabled = (link: HTMLLinkElement) => {
-  // link is `<a>` html tag in the page with a href="tel:xx" (or callto:xxx) being processed
-  // You can make change here, like adding className, etc ...
-};
-
-softphone.onCallIncoming = (call: Call) => {
-  // Invoked when a call is incoming in the softphone
-  // You can make action here like redirecting to the contact page (by using `call.number).
-};
-
-softphone.onCallLocallyAnswered = (call: Call) => {
-  // Invoked when the user accepts the call locally
-};
-
-softphone.onCallEstablished = (call: Call) => {
-  // Invoked when the call is up
-};
-
-softphone.onOutgoingCallMade = (call: Call) => {
-  // Invoked when the user makes a call
-};
-
-softphone.onCallRejected = (call: Call) => {
-  // Invoked when the user rejects an incoming call
-};
-
-softphone.onCallEnded = (call: Call, card: Card, direction: string) => {
-  // Invoked when the call is ended
-};
-
-softphone.onCardSaved = (card: Card) => {
-  // Invoked when the user save the card at the end of the call
-};
-
-softphone.onCardCanceled = () => {
-  // Invoked when the user discards the card
-};
-
-softphone.onSearchOptions = (fieldId: string, query: string) => {
-  // Invoked when the user is searching from an Autocomplete field in the card form
-  // We need to call `onOptionsResults` here to send results to the softphone
-};
-
-softphone.onDisplayLinkedOption = (optionId: string) => {
-  // Invoked when the user is selecting a value in a Autocomplete widget
-  // useful to display this entity in your application
-};
-
-softphone.onWazoContactSearch = (query: string) => {
-  // Invoked when the user is searching from contact page
-};
-
-softphone.onAgentLoggedIn = () => {
-  // Invoked when the agent logs in
-};
-
-softphone.onAgentLoggedOut = () => {
-  // Invoked when the agent logs out
-};
-
-softphone.onAgentPaused = () => {
-  // Invoked when the agent is paused
-};
-
-softphone.onAgentResumed = () => {
-  // Invoked when the agent is resumed
-};
-
-softphone.onLanguageChanged = (language: string) => {
-  // Invoked when the user changed the softphone language
-};
-
-softphone.onCallHeld = () => {
-  // Invoked when the current call is held
-};
-
-softphone.onCallResumed = () => {
-  // Invoked when the current call is resumed
-};
-
-softphone.onCallMuted = () => {
-  // Invoked when the current call is muted
-};
-
-softphone.onCallUnMuted = () => {
-  // Invoked when the current call is un muted
-};
-
-softphone.onDtmfSent = (tone: string) => {
-  // Invoked when the user is sending a DTMF in the current call
-};
-
-softphone.onDirectTransfer = (number: string) => {
-  // Invoked when the user is transfers the current call directly
-};
-
-softphone.onCreateIndirectTransfer = (number: string) => {
-  // Invoked when the user initiates an indirect transfer for the current call
-};
-
-softphone.onCancelIndirectTransfer = () => {
-  // Invoked when the user cancels the current indirect transfer
-};
-
-softphone.onConfirmIndirectTransfer = () => {
-  // Invoked when the user confirms the current indirect transfer
-};
-
-softphone.onIndirectCallMade = (call: Call) => {
-  // Invoked when the current indirect transfer is made
-};
-
-softphone.onIndirectTransferDone = (call: Call) => {
-  // Invoked when the current indirect transfer is over
-};
-
-softphone.onStartRecording = () => {
-  // Invoked when the user records the current call
-};
-
-softphone.onStopRecording = () => {
-  // Invoked when the user stops recording the current call
-};
-
-softphone.onCallLogCreated = (callLog: CallLog) => {
-  // Invoked when the user receive a new call log.
-};
-
-softphone.onWebsocketMessage = (message: Object) => {
-  // Invoked when the a Wazo websocket message is received in the softphone
-};
-
-softphone.onAuthenticated = (session: WDASession) => {
-  // Invoked when the user is authenticated in the softphone
-};
-
-softphone.onLoggedOut = () => {
-  // Invoked when the user is is logged out in the softphone
-};
-
 softphone.onIFrameLoaded = () => {
-  // Invoked when the iframe is loaded
-};
-
-// Prefill form select
-Softphone.optionsFetched('myField', [
-  { label: 'Foo', id: 'test' },
-  { label: 'Bar', id: '123' },
-]);
-```
-
-## Examples
-
-### Displaying a browser notification for incoming calls
-
-```js
-import { softphone } from '@wazo/euc-plugins-sdk';
-
-// Ask for notification permission if not yet granted
-if (Notification.permission !== 'granted') {
-  Notification.requestPermission();
+  document.getElementById('iframe-loaded-event').innerText = 'Embedded Softphone iframe is loaded';
 }
-
-softphone.init({
-  url: 'http://localhost:3000',
-  server: 'my-stack.io',
-});
-
-softphone.onCallIncoming = call => {
-  new Notification(`Call incoming from ${call.displayName}`);
-};
 ```
 
-### Make an API call from the WAZO SDK
+<div className="event-container" id="iframe-loaded-event">
+    ⏰ Will react when the iframe is loaded
+</div>
 
-Listing user call logs on login.
+### User authenticated
 
 ```js
-import { softphone } from '@wazo/euc-plugins-sdk';
-import Wazo from '@wazo/sdk/lib/simple';
+softphone.onAuthenticated = session => {
+  document.getElementById('authenticated-event').innerText = `User authenticated, token: ${session.token}`;
+}
+```
 
-const server = 'my-stack.com';
+<div className="event-container" id="authenticated-event">
+    ⏰ Will react when the user logs in
+</div>
 
-softphone.init({
-  url: 'http://localhost:3000',
-  server,
-});
+### User logged out
 
+```js
+softphone.onLoggedOut = () => {
+  document.getElementById('logout-event').innerText = 'Current user logged out';
+}
+```
+
+<div className="event-container" id="logout-event">
+    ⏰ Will react when the user logs out
+</div>
+
+### Call Incoming
+
+```js
 softphone.onCallIncoming = call => {
-  new Notification(`Call incoming from ${call.displayName}`);
-};
-
-softphone.onAuthenticated = async session => {
-  Wazo.Auth.setHost(server);
-  Wazo.Auth.setApiToken(session.token);
-
-  const callLogs = await Wazo.api.callLogd.listCallLogs();
+  document.getElementById('call-incoming-event').innerText = `Incoming call from ${call.displayName}, number: ${call.number}`
 };
 ```
 
-## A note about autoplay
+<div className="event-container" id="call-incoming-event">
+    ⏰ Will react on incoming calls
+</div>
 
-When the softphone is loaded and the user hasn't made any interaction with the page, we can fall into the [Autoplay restriction](https://developer.chrome.com/blog/autoplay) of chrome.
+### Call answered locally
 
-Even if the softphone uses [iframe delegation](https://developer.chrome.com/blog/autoplay/#iframe-delegation), we need to have a user interaction before being able to play the ringtone sound for incoming call.
+```js
+softphone.onCallLocallyAnswered = call => {
+  document.getElementById('call-locally-answered-event').innerText = `Call answered here, number: ${call.number}`
+};
+```
+
+<div className="event-container" id="call-locally-answered-event">
+    ⏰ Will react on call answered by the user
+</div>
+
+### Call established
+
+```js
+softphone.onCallEstablished = call => {
+  document.getElementById('call-established-event').innerText = `Call answered, number: ${call.number}`
+};
+```
+
+<div className="event-container" id="call-established-event">
+    ⏰ Will react on call answered
+</div>
+
+### Call created locally
+
+```js
+softphone.onOutgoingCallMade = call => {
+  document.getElementById('call-outgoing-event').innerText = `Call created here, number: ${call.number}`
+};
+```
+
+<div className="event-container" id="call-outgoing-event">
+    ⏰ Will react on call created locally
+</div>
+
+### Call rejected locally
+
+```js
+softphone.onCallRejected = call => {
+  document.getElementById('call-rejected-event').innerText = `Call rejected here, number: ${call.number}`
+};
+```
+
+<div className="event-container" id="call-rejected-event">
+    ⏰ Will react on call rejected locally
+</div>
+
+### Call ended
+
+```js
+softphone.onCallEnded = call => {
+  document.getElementById('call-ended-event').innerText = `Call ended, duration: ${(call.endTime - call.answerTime) / 1000}s`;
+};
+```
+
+<div className="event-container" id="call-ended-event">
+    ⏰ Will react on call ended
+</div>
+
+### User saved the call form
+
+```js
+softphone.onCardSaved = card => {
+  document.getElementById('card-saved-event').innerHTML = `Client: ${card.clientId.label}<br /> title: ${card.title}<br /> note: ${card.note}`;
+};
+```
+
+<div className="event-container" id="card-saved-event">
+    ⏰ Will react when the form is saved by the user
+</div>
+
+### User cancels the call form
+
+```js
+softphone.onCardCanceled = () => {
+  document.getElementById('card-canceled-event').innerHTML = 'Card canceled 🙁';
+};
+```
+
+<div className="event-container" id="card-canceled-event">
+    ⏰ Will react when the form is canceled by the user
+</div>
+
+### User select a value in the select field of the call form
+
+```js
+softphone.onDisplayLinkedOption = optionId => {
+  document.getElementById('display-linked-option-event').innerHTML = `Selected identified: ${optionId}`;
+};
+```
+
+<div className="event-container" id="display-linked-option-event">
+    ⏰ Will react when the user choose a value in a select field of the call form
+</div>
+
+### User select search for a contact
+
+```js
+softphone.onWazoContactSearch = query => {
+  document.getElementById('wazo-search-contact-event').innerHTML = `Searching for: ${query}`;
+};
+```
+
+<div className="event-container" id="wazo-search-contact-event">
+    ⏰ Will react when the user searches for a contact
+</div>
+
+### User logs in as an agent
+
+```js
+softphone.onAgentLoggedIn = () => {
+  document.getElementById('agent-logged-in-event').innerHTML = 'Agent logged in !';
+};
+```
+
+<div className="event-container" id="agent-logged-in-event">
+    ⏰ Will react when the user logs as an agent
+</div>
+
+### User logs out as an agent
+
+```js
+softphone.onAgentLoggedOut = () => {
+  document.getElementById('agent-logged-out-event').innerHTML = 'Agent logged out !';
+};
+```
+
+<div className="event-container" id="agent-logged-out-event">
+    ⏰ Will react when the user logs out as an agent
+</div>
+
+### User pauses the agent
+
+```js
+softphone.onAgentPaused = () => {
+  document.getElementById('agent-paused-event').innerHTML = 'Agent paused !';
+};
+```
+
+<div className="event-container" id="agent-paused-event">
+    ⏰ Will react when the user pauses the agent
+</div>
+
+### User resumes the agent
+
+```js
+softphone.onAgentResumed = () => {
+  document.getElementById('agent-resumed-event').innerHTML = 'Agent resumed !';
+};
+```
+
+<div className="event-container" id="agent-resumed-event">
+    ⏰ Will react when the user pauses the agent
+</div>
+
+### User changes the language
+
+```js
+softphone.onLanguageChanged = language => {
+  document.getElementById('language-changed-event').innerHTML = `Language changed: ${language}!`;
+};
+```
+
+<div className="event-container" id="language-changed-event">
+    ⏰ Will react when the user changes the language
+</div>
+
+### Current call is held
+
+```js
+softphone.onCallHeld = () => {
+  document.getElementById('call-held-event').innerHTML = 'Current call is held ⏸️';
+};
+```
+
+<div className="event-container" id="call-held-event">
+    ⏰ Will react when the current call is held
+</div>
+
+### Current call is resumed
+
+```js
+softphone.onCallResumed = () => {
+  document.getElementById('call-resumed-event').innerHTML = 'Current call is resumed ▶️️';
+};
+```
+
+<div className="event-container" id="call-resumed-event">
+    ⏰ Will react when the current call is resumed
+</div>
+
+### Current call is muted
+
+```js
+softphone.onCallMuted = () => {
+  document.getElementById('call-muted-event').innerHTML = 'Current call is muted 🤐';
+};
+```
+
+<div className="event-container" id="call-muted-event">
+    ⏰ Will react when the current is muted
+</div>
+
+### Current call is un-muted
+
+```js
+softphone.onCallUnMuted = () => {
+  document.getElementById('call-unmuted-event').innerHTML = 'Current call is un-muted 🔊';
+};
+```
+
+<div className="event-container" id="call-unmuted-event">
+    ⏰ Will react when the current is un-muted
+</div>
+
+### When the user send a DTMF in the current call
+
+```js
+softphone.onDtmfSent = tone => {
+  document.getElementById('call-dtmf-event').innerHTML = `DTMF sent: ${tone}`;
+};
+```
+
+<div className="event-container" id="call-dtmf-event">
+    ⏰ Will react when a DTMF is sent in the current call
+</div>
+
+### When the user transfers directly the current call
+
+```js
+softphone.onDirectTransfer = number => {
+  document.getElementById('call-direct-transfer-event').innerHTML = `Call directly transfered to: ${number}`;
+};
+```
+
+<div className="event-container" id="call-direct-transfer-event">
+    ⏰ Will react when the current call is transferred
+</div>
+
+### When the user creates an indirect transfer
+
+```js
+softphone.onCreateIndirectTransfer = number => {
+  document.getElementById('call-indirect-transfer-event').innerHTML = `Indirect transfer created to: ${number}`;
+};
+```
+
+<div className="event-container" id="call-indirect-transfer-event">
+    ⏰ Will react when the user creates an indirect transfer
+</div>
+
+
+### When the indirect transfer call is created
+
+```js
+softphone.onIndirectCallMade = call => {
+  document.getElementById('call-indirect-transfer-made-event').innerHTML = `Indirect transfer answered from: ${call.number}`;
+};
+```
+
+<div className="event-container" id="call-indirect-transfer-made-event">
+    ⏰ Will react when the user creates an indirect transfer
+</div>
+
+### When the user cancels an indirect transfer
+
+```js
+softphone.onCancelIndirectTransfer = () => {
+  document.getElementById('call-indirect-transfer-cancel-event').innerHTML = 'Indirect transfer canceled';
+};
+```
+
+<div className="event-container" id="call-indirect-transfer-cancel-event">
+    ⏰ Will react when the user cancels an indirect transfer
+</div>
+
+### When the user confirms an indirect transfer
+
+```js
+softphone.onConfirmIndirectTransfer = () => {
+  document.getElementById('call-indirect-transfer-confirm-event').innerHTML = 'Indirect transfer confirmed';
+};
+```
+
+<div className="event-container" id="call-indirect-transfer-confirm-event">
+    ⏰ Will react when the user confirms an indirect transfer
+</div>
+
+### When the user records the current call
+
+```js
+softphone.onStartRecording = () => {
+  document.getElementById('call-start-record-event').innerHTML = 'Current call recorded';
+};
+```
+
+<div className="event-container" id="call-start-record-event">
+    ⏰ Will react when the user records the current call
+</div>
+
+### When the user stops the record of the current call
+
+```js
+softphone.onStopRecording = () => {
+  document.getElementById('call-stop-record-event').innerHTML = 'Current record stopped';
+};
+```
+
+<div className="event-container" id="call-stop-record-event">
+    ⏰ Will react when the user stops the record of the current call
+</div>
+
+### When the user receives a call log
+
+```js
+softphone.onCallLogCreated = callLog => {
+  document.getElementById('call-log-event').innerHTML = `A new call log was created, its duration: ${callLog.duration}`;
+};
+```
+
+<div className="event-container" id="call-log-event">
+    ⏰ Will react when the user receives a call log
+</div>
+
+### When the user receive a message from the Wazo's Websocket
+
+```js
+softphone.onWebsocketMessage = (message) => {
+  document.getElementById('websocket-event').innerHTML = `A new websocket message was received: ${JSON.stringify(message)}`;
+};
+```
+
+<div className="event-container" id="websocket-event">
+    ⏰ Will react when the user receives a websocket message
+</div>
