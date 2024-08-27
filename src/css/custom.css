@@ -128,15 +128,16 @@ a.try-it {
 }
 
 #maximize-button {
-  margin: 10px;
+  margin: 15px;
   z-index: 201;
-  height: 24px;
-  width: 140px;
-  background: #b00;
+  width: 269px;
+  background: var(--ifm-color-primary);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
   border: none;
+  font-weight: bold;
+  padding: 12px 5px;
 }
 
 
