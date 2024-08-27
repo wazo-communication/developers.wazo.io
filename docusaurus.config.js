@@ -72,13 +72,14 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          { to: '/', label: 'Use cases', position: 'left' },
+          { to: '/use-cases', label: 'Use cases', position: 'left' },
           {
             type: 'dropdown',
             label: 'Modular Plugins',
             position: 'left',
             activeBaseRegex: 'docs/plugins/(.*)',
             items: [
+              { to: '/docs/plugins/overview', label: 'Introduction' },
               { to: '/docs/plugins/overview', label: 'Overview' },
               { to: '/docs/plugins/ui/apps', label: 'Applications Plugin' },
               { to: '/docs/plugins/ui/mobile', label: 'Mobile Plugin' },
@@ -110,7 +111,7 @@ const config = {
 
 
           // Right
-          { to: '/', label: 'Case studies', position: 'right' },
+          { to: '/case-studies', label: 'Case studies', position: 'right' },
           {
             href: 'https://github.com/wazo-communication/developers.wazo.io',
             className: 'header-github-link',

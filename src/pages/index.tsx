@@ -1,51 +1,41 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import UseCases from '@site/src/components/UseCases';
+import PageHeader from '@site/src/components/PageHeader';
+import { MOBILE, PORTAL, SOFTPHONE, WDA } from './use-cases';
 
-import styles from './index.module.css';
+const HEADER_BUTTONS = [
+  {
+    to: '/docs/plugins/introduction',
+    text: 'Build a Plugin',
+  },
+  {
+    to: '/docs/softphone/introduction',
+    text: 'Integrates a Softphone',
+  },
+]
 
-function HomepageHeader() {
+const HOME_USE_CASES = [WDA, MOBILE, PORTAL, SOFTPHONE];
+
+const Home = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext();
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          {/* <Link
-            className={`button button--lg ${styles.primaryButton}`}
-            to="/docs/installation">
-            Installation 🚀️
-          </Link> */}
+    <Layout
+      title="Wazo E-UC Plugins documentation"
+      description="Our SDK allows any developer to extend all Wazo Products' functionalities or to build a softphone powered by Wazo.">
 
-          {/* <Link
-            className={`button button--lg ${styles.secondaryButton}`}
-            to="/docs/plugins/introduction">
-            Build a Plugin
-          </Link> */}
+      <PageHeader
+        title="Build anything on top of Wazo"
+        description={siteConfig.tagline}
+        buttons={HEADER_BUTTONS}
+      />
 
-          {/* <Link
-            className={`button button--lg ${styles.secondaryButton}`}
-            to="/docs/softphone/introduction">
-            Build a Softphone
-          </Link> */}
-        </div>
-      </div>
-    </header>
+      <main>
+        <UseCases useCases={HOME_USE_CASES} />
+      </main>
+    </Layout>
   );
 }
-
-const Home = (): JSX.Element => (
-  <Layout
-    title="Wazo E-UC Plugins documentation"
-    description="Our SDK allows any developer to extend all Wazo Products' functionalities or to build a softphone powered by Wazo.">
-    <HomepageHeader />
-    <main>
-      <HomepageFeatures />
-    </main>
-  </Layout>
-);
 
 export default Home;

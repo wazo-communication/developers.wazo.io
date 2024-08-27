@@ -2,7 +2,7 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Modular Plug-Ins Introduction
+# Contexts & Goals
 
 We developed an easy way to integrate Modular Plug-Ins inside our products. This solution enable any developers to add components that enhance the Wazo platform's feature set. By doing so, partners can deliver more comprehensive solutions to their customers without requiring them to use multiple products to meet their communication needs.
 

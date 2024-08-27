@@ -69,12 +69,13 @@ const sidebars = {
   ],
 
   pluginsSidebar: [
+    { type: 'ref', id: 'plugins/introduction', label: 'Introduction' },
     {
       type: 'category',
       collapsible: false,
       label: 'Overview',
       items: [
-        { type: 'ref', id: 'plugins/overview/index', label: 'Introduction' },
+        { type: 'ref', id: 'plugins/overview/index' },
         { type: 'ref', id: 'plugins/overview/what-is-modular-plugin' },
         { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
         { type: 'ref', id: 'plugins/overview/why-should-use' },
