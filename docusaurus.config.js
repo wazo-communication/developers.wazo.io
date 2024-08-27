@@ -83,8 +83,8 @@ const config = {
               { to: '/docs/plugins/ui/apps', label: 'Applications Plugin' },
               { to: '/docs/plugins/ui/mobile', label: 'Mobile Plugin' },
               { to: '/docs/plugins/ui/portal', label: 'Portal Plugin' },
-              { to: '/docs/plugins/pbx', label: 'PBX plugin' },
-              { href: 'https://wazo-platform.org/uc-doc/contributors/provisioning/add_phone_to_plugin', label: 'Provisioning plugin' },
+              { to: '/docs/plugins/pbx', label: 'Stack plugin' },
+              { to: '/docs/plugins/provisioning', label: 'Provisioning plugin' },
             ]
           },
           {

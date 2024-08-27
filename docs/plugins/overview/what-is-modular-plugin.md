@@ -1,5 +1,5 @@
 ---
-displayed_sidebar: pluginsOverviewSidebar
+displayed_sidebar: pluginsSidebar
 ---
 
 # What is a Modular Plugin?

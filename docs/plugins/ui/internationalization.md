@@ -1,6 +1,5 @@
 ---
 displayed_sidebar: pluginsSidebar
-# pagination_next: plugins/deploy
 ---
 
 # Internationalization

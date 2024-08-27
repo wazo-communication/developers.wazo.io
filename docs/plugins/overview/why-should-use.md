@@ -1,5 +1,5 @@
 ---
-displayed_sidebar: pluginsOverviewSidebar
+displayed_sidebar: pluginsSidebar
 ---
 
 # Why You Should Try It ?

@@ -1,5 +1,5 @@
 ---
-displayed_sidebar: pluginsOverviewSidebar
+displayed_sidebar: pluginsSidebar
 ---
 
 # What Problem It's Solving ?

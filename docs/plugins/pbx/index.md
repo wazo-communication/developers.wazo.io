@@ -1,6 +1,10 @@
+---
+displayed_sidebar: pluginsSidebar
+---
+
 import OpenSourceButton from '@site/src/components/OpenSourceButton';
 
-# What can be done with a PBX plugin?
+# What can be done with a Stack plugin?
 
 Wazo Modular Plugins enable third parties to extend the Wazo platform by adding various functionalities. Most of our services include extension points that can be leveraged to create comprehensive features within a plugin.
 

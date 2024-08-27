@@ -13,13 +13,6 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  pluginsOverviewSidebar: [
-    { type: 'ref', id: 'plugins/overview/index', label: 'Overview' },
-    { type: 'ref', id: 'plugins/overview/what-is-modular-plugin' },
-    { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
-    { type: 'ref', id: 'plugins/overview/why-should-use' },
-  ],
-
   jsPluginSdkSidebar: [
     {
       type: 'ref',
@@ -76,75 +69,69 @@ const sidebars = {
   ],
 
   pluginsSidebar: [
-  //   {
-  //     type: 'ref',
-  //     id: 'plugins/introduction',
-  //     label: 'Introduction',
-  //   },
-  //   {
-  //     type: 'category',
-  //     collapsible: false,
-  //     label: 'Configuration',
-  //     items: [
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/configuration',
-  //         label: 'Base Configuration',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/web-desktop-application',
-  //         label: 'E-UC Apps - Web & Desktop',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/mobile',
-  //         label: 'E-UC Apps - Mobile',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/portal',
-  //         label: 'E-UC Portal',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/translation',
-  //         label: 'Translation',
-  //       },
-  //     ]
-  //   },
-  //   {
-  //     type: 'ref',
-  //     id: 'plugins/sdk',
-  //     label: 'SDK API',
-  //   },
-  //   {
-  //     type: 'ref',
-  //     id: 'plugins/deploy',
-  //     label: 'Deployment',
-  //   },
-  //   {
-  //     type: 'category',
-  //     collapsible: false,
-  //     label: 'Examples',
-  //     items: [
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/templates',
-  //         label: 'Templates',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/wda-examples',
-  //         label: 'E-UC Apps - Web & Desktop',
-  //       },
-  //       {
-  //         type: 'ref',
-  //         id: 'plugins/portal-examples',
-  //         label: 'E-UC Portal',
-  //       },
-  //     ],
-  //   },
+    {
+      type: 'category',
+      collapsible: false,
+      label: 'Overview',
+      items: [
+        { type: 'ref', id: 'plugins/overview/index', label: 'Introduction' },
+        { type: 'ref', id: 'plugins/overview/what-is-modular-plugin' },
+        { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
+        { type: 'ref', id: 'plugins/overview/why-should-use' },
+      ]
+    },
+
+    {
+      type: 'category',
+      collapsible: false,
+      label: 'UI Plugin',
+      items: [
+        {
+          type: 'category',
+          collapsible: false,
+          label: 'Quick Start',
+          items: [
+            { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Get Started' },
+            { type: 'ref', id: 'plugins/ui/get-started/prerequisites-configuration', label: 'Minimal Configuration' },
+          ]
+        },
+
+        {
+          type: 'category',
+          collapsible: false,
+          label: 'Build App Plugin',
+          items: [
+            { type: 'ref', id: 'plugins/ui/apps/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/apps/examples', label: 'Examples' },
+          ]
+        },
+
+        {
+          type: 'category',
+          collapsible: false,
+          label: 'Build Mobile Plugin',
+          items: [
+            { type: 'ref', id: 'plugins/ui/mobile/index', label: 'How to build' },
+          ]
+        },
+
+        {
+          type: 'category',
+          collapsible: false,
+          label: 'Build Portal Plugin',
+          items: [
+            { type: 'ref', id: 'plugins/ui/portal/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/portal/examples', label: 'Examples' },
+          ]
+        },
+
+
+        { type: 'ref', id: 'plugins/ui/internationalization' },
+      ]
+    },
+
+    { type: 'ref', id: 'plugins/pbx/index', label: 'Stack Plugin' },
+    { type: 'ref', id: 'plugins/provisioning/index', label: 'Provisioning Plugin' },
   ],
 };
 
