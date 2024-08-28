@@ -72,11 +72,11 @@ const sidebars = {
     { type: 'ref', id: 'plugins/introduction', label: 'Introduction' },
     {
       type: 'category',
-      collapsible: false,
-      label: 'Overview',
+      collapsed: false,
+      label: 'Philosophy',
+      link: { type: 'doc', id: 'plugins/overview/index' },
       items: [
         { type: 'ref', id: 'plugins/overview/index' },
-        { type: 'ref', id: 'plugins/overview/what-is-modular-plugin' },
         { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
         { type: 'ref', id: 'plugins/overview/why-should-use' },
       ]
@@ -84,23 +84,26 @@ const sidebars = {
 
     {
       type: 'category',
-      collapsible: false,
       label: 'UI Plugin',
       items: [
         {
           type: 'category',
-          collapsible: false,
-          label: 'Quick Start',
+          collapsed: false,
+          label: 'Get started',
+          link: { type: 'doc', id: 'plugins/ui/get-started/index' },
           items: [
-            { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Get Started' },
-            { type: 'ref', id: 'plugins/ui/get-started/prerequisites-configuration', label: 'Minimal Configuration' },
+            { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Quickstart' },
+            { type: 'ref', id: 'plugins/ui/get-started/configuration', label: 'Configuration' },
+            { type: 'ref', id: 'plugins/ui/internationalization' },
+            { type: 'ref', id: 'plugins/ui/deploy' },
+            { type: 'ref', id: 'plugins/ui/templates' },
           ]
         },
 
         {
           type: 'category',
-          collapsible: false,
           label: 'Build App Plugin',
+          link: { type: 'doc', id: 'plugins/ui/apps/index' },
           items: [
             { type: 'ref', id: 'plugins/ui/apps/index', label: 'How to build' },
             { type: 'ref', id: 'plugins/ui/apps/examples', label: 'Examples' },
@@ -109,8 +112,8 @@ const sidebars = {
 
         {
           type: 'category',
-          collapsible: false,
           label: 'Build Mobile Plugin',
+          link: { type: 'doc', id: 'plugins/ui/mobile/index' },
           items: [
             { type: 'ref', id: 'plugins/ui/mobile/index', label: 'How to build' },
           ]
@@ -118,16 +121,13 @@ const sidebars = {
 
         {
           type: 'category',
-          collapsible: false,
           label: 'Build Portal Plugin',
+          link: { type: 'doc', id: 'plugins/ui/portal/index' },
           items: [
             { type: 'ref', id: 'plugins/ui/portal/index', label: 'How to build' },
             { type: 'ref', id: 'plugins/ui/portal/examples', label: 'Examples' },
           ]
         },
-
-
-        { type: 'ref', id: 'plugins/ui/internationalization' },
       ]
     },
 
