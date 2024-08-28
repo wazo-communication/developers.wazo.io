@@ -2,13 +2,13 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Deploying your Plugin
+# Deployment
 
-As previously mentioned, plugins must be hosted on your own infrastructure. This gives you full control over the technologies you use and when to update your plugin(s).
+Plugins must be hosted on your own infrastructure. This gives you full control over the technologies you use and when to update your plugin(s).
 
 ## Where to Deploy
 
-You can deploy your plugin/app anywhere. But it's important to make the plugin accessible publicly from the web. Otherwise, the features of your plugin will not be visible to users.
+You can deploy your plugin anywhere. But it's important to make the plugin accessible publicly from the web. Otherwise, the features of your plugin will not be visible to your clients.
 
 ## CORS Enabled
 

@@ -7,9 +7,11 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
 # Templates
 
+The templates are structured with the minimal necessary components. The next step is to ship the code.
+
 ## All-In-One Template
 
-Our react template is designed to streamline your development process, allowing you to focus on the core functionality of your plugin without the hassle of starting from scratch. You'll find all the necessary components and configurations pre-set, so you can simply plug in your ideas and get coding right away.
+Our React template is designed to streamline your development process, allowing you to focus on the core functionality of your plugin without the hassle of starting from scratch. You'll find all the necessary components and configurations pre-set, so you can simply plug in your ideas and get coding right away. This template includes two folders one for an App plugin and another for a Portal plugin.
 
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">

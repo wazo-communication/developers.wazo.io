@@ -4,9 +4,9 @@ displayed_sidebar: pluginsSidebar
 
 import OpenSourceButton from '@site/src/components/OpenSourceButton';
 
-# What can be done with a Stack plugin?
+# What is a Stack plugin?
 
-Wazo Modular Plugins enable third parties to extend the Wazo platform by adding various functionalities. Most of our services include extension points that can be leveraged to create comprehensive features within a plugin.
+Wazo Stack allow third parties to extend the platform by adding various functionalities from python plugin. Most of our services include extension points that can be leveraged to create comprehensive features within a plugin.
 
 Here’s a non-exhaustive list of what can be achieved with plugins:
 

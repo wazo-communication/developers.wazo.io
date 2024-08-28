@@ -2,7 +2,7 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# What Problem It's Solving ?
+# What It's Solve ?
 
 Wazo aims to empower partners to customize the Wazo platform according to their business models, enabling them to add value for their end customers in ways that differentiate their products and services. Currently, this level of customization is difficult to achieve for several reasons—chief among them being that the user interface (UI) in the portal and end-user applications is 'hard-coded' and not easily editable by our enterprise clients. As a result, partners can only integrate Wazo functionality into external or adjacent software products using the Wazo API or build data integrations, but they cannot directly modify Wazo itself.
 

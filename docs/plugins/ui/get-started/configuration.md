@@ -2,24 +2,24 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Plugins Configuration
+# Configuration
 
-:::caution
-This part is still in the development process, changes may happen frequently to the schema.
-:::
+
+This guide will walk you through the general configuration required to get started. After this initial setup, you'll have the flexibility to select the specific Wazo product you wish to develop with, and additional configuration options will become available to interact with your chosen Wazo product.
+
+Let's begin by setting up the basic parameters for your UI plugin.
 
 ## Manifest File
 
-This file describes how your plugin is integrated into a Wazo Product. Using one or multiple manifest files you can
-customize all the Wazo E-UC Products (Web, Desktop, Portal and Mobile).
+This file is the entrypoint of all UI plugins. It describes how your plugin is integrated into a Wazo Product.
+
+:::note
+If are building a plugin for all the Wazo E-UC Products (Web, Desktop, Portal and Mobile), you will have to create on manifest file for each of them with a different `productType` value.
+:::
 
 ### Required Fields
 
-:::info
-`manifest.json` files should be served using a CORS-enabled HTTP server.
-:::
-
-Your manifest.json must provide at least all required fields to make it installable.
+Your `manifest.json` must provide at least all required fields to make it installable.
 
 | Manifest Field      | Type                                              |
 | ------------------- | ------------------------------------------------- |
@@ -34,6 +34,10 @@ Your manifest.json must provide at least all required fields to make it installa
 | `description.full`  | **Required** - String (max: 4000)                 |
 | `icons.color`       | **Required** - String                             |
 | `developer.name`    | **Required** - String                             |
+
+:::info
+`manifest.json` files should be served using a CORS-enabled HTTP server.
+:::
 
 ### Example of a Manifest File
 
@@ -107,7 +111,7 @@ Example of all fields that a manifest can contain. The manifest file must be in 
     {
       // Unique identifier for this tab.
       "entityId": "sms",
-      // Context where the tab by accessible.
+      // Context where the tab will be accessible.
       "context": ["generalTab", "userTab", "phonebookTab"],
       // Tab display name
       "name": "SMS",
@@ -139,51 +143,3 @@ Example of all fields that a manifest can contain. The manifest file must be in 
 For development or production environment, the process is the same. See our deployment section on how to deploy each type of application.
 
 After that you'll be ready to customize the [Web and Desktop application](./web-desktop-application), the [Mobile Application](./mobile) or [Portal](./portal)
-
-## Translation Support
-
-Using the `localizationInfo` you can add other `manifest.json` files containing translations for a specific language.
-
-In your main `manifest.json` file:
-
-```json
-"localizationInfo": {
-  "defaultLanguageTag": "en",
-  "additionalLanguages": [
-    {
-      "languageTag": "fr",
-      "file": "fr.json"
-    }
-  ]
-}
-```
-
-The `file` path can be relative to the `manifest.json` path or absolute.
-
-The `fr.json` file will look like this :
-
-```json
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.5/MicrosoftTeams.Localization.schema.json",
-  "manifestVersion": "0.1",
-  "staticTabs[0].name": "Texto"
-}
-```
-
-You can create an entry with the JSON path to every `manifest.json` elements, here we change the `staticTabs[0].name` element.
-So if we have in our `manifest.json` file :
-
-```json
-"staticTabs": [
-  {
-    "entityId": "sms",
-    "context": ["generalTab"],
-    "name": "SMS",
-    "contentUrl": "./general.html"
-  }
-],
-```
-
-The value `SMS` will be translated to `Texto` when the user changes locale to `fr`.
-
-Currently supported locales are : `en` and `fr`.
