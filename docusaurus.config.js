@@ -18,6 +18,11 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -130,7 +135,12 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['bash', 'diff', 'json', 'javascript', 'typescript', 'python'],
       },
+
+      mermaid: {
+        theme: {light: 'neutral', dark: 'dark'},
+      }
     }),
+
   clientModules: [
     require.resolve('./src/softphone-module.js'),
   ],
