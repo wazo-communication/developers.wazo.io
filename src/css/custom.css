@@ -177,3 +177,10 @@ footer.footer a:hover, footer.footer a:active {
   margin-bottom: 5px;
   opacity: 0.5;
 }
+
+
+/* Image in the content */
+main img {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 4px;
+}
