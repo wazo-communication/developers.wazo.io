@@ -22,7 +22,7 @@ const Home = (): JSX.Element => {
 
   return (
     <Layout
-      title="Wazo E-UC Plugins documentation"
+      title="Extend anything around Wazo"
       description="Our SDK allows any developer to extend all Wazo Products' functionalities or to build a softphone powered by Wazo.">
 
       <PageHeader

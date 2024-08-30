@@ -142,4 +142,4 @@ Example of all fields that a manifest can contain. The manifest file must be in 
 
 For development or production environment, the process is the same. See our deployment section on how to deploy each type of application.
 
-After that you'll be ready to customize the [Web and Desktop application](./web-desktop-application), the [Mobile Application](./mobile) or [Portal](./portal)
+After that you'll be ready to customize the [Web and Desktop application](../apps), the [Mobile Application](../mobile) or [Portal](../portal)

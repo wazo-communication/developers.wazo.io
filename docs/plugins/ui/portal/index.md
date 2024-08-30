@@ -4,12 +4,6 @@ displayed_sidebar: pluginsSidebar
 
 # Customizing E-UC Portal (coming soon)
 
-:::info
-`manifest.json` files should be served using a CORS-enabled http server.
-:::
-
-## The Possibilities
-
 Portal plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add new sections and links in the stack menu
@@ -21,7 +15,7 @@ Portal plugins allow many great ways to extend the interface. Here's a quick sum
 
 ## Adding tabs in the main page of the PBX section
 
-![App configuration (small](/img/portal-pbx-home-tab.png)
+![App configuration (small](/img/plugins/ui/portal/portal-pbx-home-tab.png)
 
 To create a new tab in the PBX main screen, add a `staticTabs` in your manifest with a `generalPbxTab` `context` :
 ```json
@@ -41,7 +35,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding tabs in a form
 
-![App configuration](/img/portal-pbx-form.png)
+![App configuration](/img/plugins/ui/portal/portal-pbx-form.png)
 
 To create a new tab in the PBX main screen, add a `staticTabs` in your manifest with a `pbx.*` `context` :
 ```json
@@ -64,7 +58,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding page in an existing menu of the PBX section
 
-![App configuration (small](/img/portal-existing-menu.png)
+![App configuration (small](/img/plugins/ui/portal/portal-existing-menu.png)
 
 To create a new page the PBX menu, add a `staticTabs` in your manifest with a `pbxMenu` `context` :
 ```json
@@ -87,7 +81,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding you own menu to display custom page
 
-![App configuration (small](/img/portal-pbx-own-menu.png)
+![App configuration (small](/img/plugins/ui/portal/portal-pbx-own-menu.png)
 
 To create a new menu in the PBX section, add a `staticTabs` in your manifest with a `pbxMenu` `context` :
 ```json
@@ -119,7 +113,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding you own section in the global settings page
 
-![App configuration (small](/img/portal-pbx-global-settings.png)
+![App configuration (small](/img/plugins/ui/portal/portal-pbx-global-settings.png)
 
 To create a new menu in the PBX section, add a `staticTabs` in your manifest with a `globalSettings` `context` :
 ```json

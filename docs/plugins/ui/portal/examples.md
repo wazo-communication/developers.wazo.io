@@ -12,7 +12,7 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 ```mdx-code-block
 <BrowserWindow url="https://portal.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/portal-custom-dashboard-tab.jpg)
+![New PBX Dashboard Tab](/img/plugins/ui/portal/portal-custom-dashboard-tab.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -36,7 +36,7 @@ document.getElementById('name').innerHTML = context.app.extra.record.auth.userna
 ```mdx-code-block
 <BrowserWindow url="https://portal.wazo.io">
 ```
-![New PBX users tab](/img/portal-custom-pbx-user-tab.jpg)
+![New PBX users tab](/img/plugins/ui/portal/portal-custom-pbx-user-tab.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```

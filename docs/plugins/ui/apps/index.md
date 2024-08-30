@@ -4,12 +4,6 @@ displayed_sidebar: pluginsSidebar
 
 # Customizing our Web and Desktop App
 
-:::info
-`manifest.json` files should be served using a CORS-enabled http server.
-:::
-
-## The Possibilities
-
 Apps plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add new pages/sections
@@ -19,7 +13,7 @@ Apps plugins allow many great ways to extend the interface. Here's a quick summa
 
 ## Adding tabs in the main page
 
-![App configuration](/img/wda-tab-example.png)
+![App configuration](/img/plugins/ui/app/wda-tab-example.png)
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `generalTab` `context` :
 ```json
@@ -39,7 +33,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding tabs in the sidebar
 
-![App configuration (small)](/img/wda-sidebar.png)
+![App configuration (small)](/img/plugins/ui/app/wda-sidebar.png)
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `sidebarTab` `context` :
 ```json
@@ -62,7 +56,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding tabs for a contact
 
-![App configuration](/img/wda-contact.png)
+![App configuration](/img/plugins/ui/app/wda-contact.png)
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `contactTab` `context` :
 ```json
@@ -82,7 +76,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding tabs in the phonebook
 
-![App configuration](/img/wda-phonebook.png)
+![App configuration](/img/plugins/ui/app/wda-phonebook.png)
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `phonebookTab` `context` :
 ```json
@@ -102,7 +96,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding tabs in the setting menu
 
-![App configuration](/img/wda-settings-menu.png)
+![App configuration](/img/plugins/ui/app/wda-settings-menu.png)
 
 To create a new tab in the settings menu, add a `staticTabs` in your manifest with a `settingsTab` `context` :
 ```json
@@ -143,7 +137,7 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ## Adding a custom panel inside the setting menu
 
-![App configuration](/img/wda-settings-inner.png)
+![App configuration](/img/plugins/ui/app/wda-settings-inner.png)
 
 To create a new tab in the settings menu, add a `staticTabs` in your manifest with a `innerSettingsTab` `context` :
 ```json

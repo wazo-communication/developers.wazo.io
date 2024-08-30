@@ -4,17 +4,15 @@ displayed_sidebar: pluginsSidebar
 
 # Customizing our Mobile App
 
-## The Possibilities
-
 Mobile plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add tabs on the main page of the application
 
 ## Adding tabs in the main page
 
-![App configuration (small)](/img/mobile-tab1.png)
+![App configuration (small)](/img/plugins/ui/mobile/mobile-tab1.png)
 
-![App configuration (small)](/img/mobile-tab2.png)
+![App configuration (small)](/img/plugins/ui/mobile/mobile-tab2.png)
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `mobileTab` context :
 ```json

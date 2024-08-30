@@ -19,10 +19,9 @@ Let's walk through a minimal setup of a plugin to explain clearly how plugins sy
 
 ### Manifest
 
-`manifest.json` is the entrypoint of every plugin. It defines generic information about the plugins (_authors_, _name_, _icons_, ...), but also **give indications on which pages** the plugins want to display them and where to display them.
+`manifest.json` is the entrypoint of every plugin. It defines generic information about the plugin (_authors_, _name_, _icons_, ...), but also **give directives about all pages** the plugins want to display and where to display them.
 
-
-The concept is the same for each type of plugin (_app_, _mobile_ or _portal_). You must defines inside `staticTabs` the page your plugin have and which path to display.
+The concept is the same for each plugin type (_app_, _mobile_ or _portal_). Developers must defines `staticTabs` key, all the pages and related content URL.
 
 ```json
 {
@@ -78,7 +77,7 @@ const wazoApp = new App();
 })();
 ```
 
-### StyleSheet
+### Style Sheet
 
 `my-app.css` contains styles of you plugin. Since your plugin is inside an `iframe`, you can redefine all styles by yourself and it won't impact our design.
 
@@ -92,6 +91,26 @@ const wazoApp = new App();
 ```
 
 :::info
-At Wazo, our products are build on top of [MUI](https://mui.com/), we suggest using this library to make you plugin looks perfectly integrated with ours.
+Our products are build on top of [MUI](https://mui.com/), we suggest using this library keep same design between our apps and your plugin.
 :::
 
+## Structure Overview
+
+Visual learners, here's a simplified view of how our Wazo Apps interacts with plugins tabs. Also you can see that plugin can also Wazo Apps by using the available [SDK methods](/docs/sdk-librairies/plugins-js-sdk/plugins-apis). This concepts applies to all our products: Apps, Mobile and Portal.
+
+![UI interaction with plugin](/img/plugins/ui/app-plugin-schema.png)
+
+---
+
+Here's is another sequence diagram on how our apps retreive information of installed plugins at a tenant level. We store only an URL where the manifest.json is stored on your infrastructure. All plugin implementation details are inside the plugin `manifest.json`, so you have the full control on your plugin ecosystem.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    App UI->>POST Plugins (API): Admins installs plugins (manifest.json)
+    App UI->>GET Plugins (API): Fetchs installed plugins
+    GET Plugins (API)->>App UI: List of installed plugins manifest.json
+    App UI->>Plugin's manifest.json: Fetchs manifest.json
+    Plugin's manifest.json->>App UI: Receive manifest.json instructions
+    App UI->>App UI: Loads pages defined in the plugin's manifest
+```

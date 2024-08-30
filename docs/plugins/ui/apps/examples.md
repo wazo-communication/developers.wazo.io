@@ -13,7 +13,7 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![Change app color](/img/app-example-color.jpg)
+![Change app color](/img/plugins/ui/app/app-example-color.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -44,7 +44,7 @@ app.changeNavBarColor('#8e6a3a');
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![Incoming modal](/img/app-example-modal.jpg)
+![Incoming modal](/img/plugins/ui/app/app-example-modal.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -74,7 +74,7 @@ await app.initialize();
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![Banner](/img/app-example-banner.png)
+![Banner](/img/plugins/ui/app/app-example-banner.png)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -114,7 +114,7 @@ In the `banner.html` file:
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![Incoming modal](/img/app-example-background.jpg)
+![Incoming modal](/img/plugins/ui/app/app-example-background.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -150,7 +150,7 @@ app.initialize();
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![Incoming modal](/img/app-example-setting.jpg)
+![Incoming modal](/img/plugins/ui/app/app-example-setting.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```

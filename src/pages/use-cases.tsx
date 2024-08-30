@@ -51,7 +51,7 @@ const ALL_USE_CASES = [ WDA, MOBILE, PORTAL, SOFTPHONE ];
 
 const UseCases = (): JSX.Element => (
   <Layout
-    title="Wazo E-UC Plugins - Use Cases"
+    title="Use Cases"
     description="Empower your development with our SDK, extending Wazo Products or building custom softphones. Explore our use cases for inspiration.">
     <PageHeader title="Use Cases" description="Explore how Wazo Products can be extended or integrates for any kind of solutions." />
     <main>

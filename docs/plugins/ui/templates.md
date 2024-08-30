@@ -16,7 +16,7 @@ Our React template is designed to streamline your development process, allowing 
 ```mdx-code-block
 <BrowserWindow url="https://app.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/all-in-one-template-app.jpg)
+![New PBX Dashboard Tab](/img/plugins/ui/templates/all-in-one-template-app.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -24,7 +24,7 @@ Our React template is designed to streamline your development process, allowing 
 ```mdx-code-block
 <BrowserWindow url="https://portal.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/all-in-one-template-portal.jpg)
+![New PBX Dashboard Tab](/img/plugins/ui/templates/all-in-one-template-portal.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -42,7 +42,7 @@ This template uses vanilla Javascript, HTML and [Materialize](https://materializ
 ```mdx-code-block
 <BrowserWindow url="https://portal.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/portal-template-materialize.jpg)
+![New PBX Dashboard Tab](/img/plugins/ui/templates/portal-template-materialize.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
@@ -60,7 +60,7 @@ This template uses vanilla Javascript, HTML and [MUI (css)](https://www.muicss.c
 ```mdx-code-block
 <BrowserWindow url="https://portal.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/portal-template-mui.jpg)
+![New PBX Dashboard Tab](/img/plugins/ui/templates/portal-template-mui.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
