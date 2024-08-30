@@ -180,7 +180,7 @@ footer.footer a:hover, footer.footer a:active {
 
 
 /* Image in the content */
-main img {
+.docs-wrapper main img {
   border: 1px solid var(--ifm-toc-border-color);
   border-radius: 4px;
 }

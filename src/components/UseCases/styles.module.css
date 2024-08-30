@@ -32,3 +32,17 @@
 
 [data-theme='dark'] .features { color: #FFF; }
 [data-theme='dark'] .feature:hover, .feature:active { background: #202020; }
+
+/* ----- */
+.horizontalContent {
+  width: 66.66%;
+}
+
+.horizontalImage {
+  width: 33.33%
+}
+
+.horizontalImage img {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 4px;
+}

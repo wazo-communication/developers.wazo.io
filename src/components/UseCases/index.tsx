@@ -1,12 +1,6 @@
 import clsx from 'clsx';
 import styles from './styles.module.css';
-
-type UseCase = {
-  title: string;
-  link: string,
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: JSX.Element;
-};
+import type { UseCase } from '@site/src/pages/use-cases';
 
 export function Feature({ title, Svg, description, link }: UseCase ) {
   return (
