@@ -140,7 +140,7 @@ if (typeof window !== "undefined") {
 
     const maximizeButton = document.createElement('button');
     maximizeButton.id = 'maximize-button';
-    maximizeButton.innerHTML = 'Show Softphone';
+    maximizeButton.innerHTML = 'Show Embedded Softphone';
     softphone.wrapper.appendChild(maximizeButton);
 
     minimizeButton.addEventListener('click', softphone.hide.bind(softphone));

@@ -1,6 +1,14 @@
 # developers.wazo.io
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This repository contains the source and building scripts for https://developers.wazo.io.
+
+Goal of the website: Explain to developers how to extend EU-C Wazo with modular plugins or from integrations. Explain Wazo architecture with use cases, documentation, and examples. This website should not go in the deep of the wazo-platform/micro-service
+details.
+
+
+## Contribute
+
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 

@@ -1,13 +1,12 @@
 ---
 displayed_sidebar: pluginsSidebar
-pagination_next: plugins/configuration
 ---
 
-# Plugins Introduction
+# Modular Plugins
 
-Modular plugins give the capacity to any partner to add new features and third-party libraries inside our applications. Plugins interact and extend our products in every possible way.
+Modular plugins give the capacity to any partners and developers to add new features and third-party libraries inside our applications. Plugins interact and extend our products in every possible way.
 
-Plugins must be hosted on your own infrastructure. This gives you full control over the technologies you use and when you want to update your plugin(s).
+![Introduction modular plugin](/img/plugins/introduction.jpg)
 
 ## Use Cases
 
@@ -24,3 +23,9 @@ Here's some ideas on how to extend our products, imagination is our only limitat
 - **Realtime dashboard**: Add a new tab inside your stack's dashboard to show realtime metrics. This dashboard could be built to show specific KPIs or any other data from an external API.
 - **Extend any form**: Plugins allow you to add any tabs in any form. You could map information related to any users, devices, or conferences from an external or internal system.
 - **Support Center Dashboard**: Add your own support center page to help your customers troubleshoot problems or contact the support team.
+
+### E-UC Stack
+
+- **CRM**: A plugin can be developed to integrate the PBX server with a Customer Relationship Management (CRM) system. This integration can allow for call logging, call recording, and call analytics to be directly linked with customer data.
+- **AI-Powered Routing**: A plugin can be developed to leverage AI and machine learning algorithms to route calls based on various factors such as caller sentiment, call history, and availability of agents.
+- **Real-time Analytics**: A plugin can be developed to provide a real-time analytics dashboard that displays key performance indicators (KPIs) such as call volume, average call duration, and customer satisfaction scores.

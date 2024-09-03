@@ -13,8 +13,12 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  installSidebar: [
-    'installation',
+  jsPluginSdkSidebar: [
+    {
+      type: 'ref',
+      id: 'sdk-librairies/plugins-js-sdk/index',
+      label: 'Installation',
+    },
     {
       type: 'category',
       collapsible: false,
@@ -22,126 +26,113 @@ const sidebars = {
       items: [
         {
           type: 'ref',
-          id: 'plugins/sdk',
+          id: 'sdk-librairies/plugins-js-sdk/plugins-apis',
           label: 'Plugins',
         },
         {
           type: 'ref',
-          id: 'softphone/introduction',
-          label: 'Softphone',
+          id: 'sdk-librairies/plugins-js-sdk/embedded-softphone-apis',
+          label: 'Embedded Softphone',
         },
       ]
     },
     {
       type: 'category',
-      label: 'Guides',
+      label: '📚 Guides',
       collapsible: false,
       items: [
         {
           type: 'ref',
-          id: 'plugins/introduction',
-          label: 'Plugins Introduction'
+          id: 'plugins/ui/get-started/index',
+          label: 'Get Started (Modular Plugins)'
         },
         {
           type: 'ref',
-          id: 'softphone/introduction',
-          label: 'Softphone Introduction'
+          id: 'integrations/embedded-softphone/index',
+          label: 'Get Started (Embedded Softphone)'
         },
       ]
     }
   ],
 
-  pluginsSidebar: [
-    {
-      type: 'ref',
-      id: 'plugins/introduction',
-      label: 'Introduction',
-    },
-    {
-      type: 'category',
-      collapsible: false,
-      label: 'Configuration',
-      items: [
-        {
-          type: 'ref',
-          id: 'plugins/configuration',
-          label: 'Base Configuration',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/web-desktop-application',
-          label: 'E-UC Apps - Web & Desktop',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/mobile',
-          label: 'E-UC Apps - Mobile',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/portal',
-          label: 'E-UC Portal',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/translation',
-          label: 'Translation',
-        },
-      ]
-    },
-    {
-      type: 'ref',
-      id: 'plugins/sdk',
-      label: 'SDK API',
-    },
-    {
-      type: 'ref',
-      id: 'plugins/deploy',
-      label: 'Deployment',
-    },
-    {
-      type: 'category',
-      collapsible: false,
-      label: 'Examples',
-      items: [
-        {
-          type: 'ref',
-          id: 'plugins/templates',
-          label: 'Templates',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/wda-examples',
-          label: 'E-UC Apps - Web & Desktop',
-        },
-        {
-          type: 'ref',
-          id: 'plugins/portal-examples',
-          label: 'E-UC Portal',
-        },
-      ],
-    },
-  ],
-
   softphoneSidebar: [
     {
       type: 'ref',
-      id: 'softphone/introduction',
+      id: 'integrations/embedded-softphone/index',
       label: 'Introduction'
     },
     {
       type: 'ref',
-      id: 'softphone/examples',
-      label: 'Examples',
+      id: 'sdk-librairies/plugins-js-sdk/embedded-softphone-apis',
+      label: 'SDK APIs',
     },
   ],
 
-  deeplinkSidebar: [
+  pluginsSidebar: [
+    { type: 'ref', id: 'plugins/introduction', label: 'Introduction' },
     {
-      type: 'ref',
-      id: 'deeplink/deeplink',
-      label: 'Deep Linking'
+      type: 'category',
+      collapsed: false,
+      label: 'Philosophy',
+      link: { type: 'doc', id: 'plugins/overview/index' },
+      items: [
+        { type: 'ref', id: 'plugins/overview/index' },
+        { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
+        { type: 'ref', id: 'plugins/overview/why-should-use' },
+      ]
     },
+
+    {
+      type: 'category',
+      label: 'UI Plugin',
+      items: [
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Get started',
+          link: { type: 'doc', id: 'plugins/ui/get-started/index' },
+          items: [
+            { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Quickstart' },
+            { type: 'ref', id: 'plugins/ui/get-started/configuration', label: 'Configuration' },
+            { type: 'ref', id: 'plugins/ui/internationalization' },
+            { type: 'ref', id: 'plugins/ui/deploy', label: 'Deployment' },
+            { type: 'ref', id: 'plugins/ui/templates' },
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Build App Plugin',
+          link: { type: 'doc', id: 'plugins/ui/apps/index' },
+          items: [
+            { type: 'ref', id: 'plugins/ui/apps/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/apps/examples', label: 'Examples' },
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Build Mobile Plugin',
+          link: { type: 'doc', id: 'plugins/ui/mobile/index' },
+          items: [
+            { type: 'ref', id: 'plugins/ui/mobile/index', label: 'How to build' },
+          ]
+        },
+
+        {
+          type: 'category',
+          label: 'Build Portal Plugin',
+          link: { type: 'doc', id: 'plugins/ui/portal/index' },
+          items: [
+            { type: 'ref', id: 'plugins/ui/portal/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/portal/examples', label: 'Examples' },
+          ]
+        },
+      ]
+    },
+
+    { type: 'ref', id: 'plugins/pbx/index', label: 'Stack Plugin' },
+    { type: 'ref', id: 'plugins/provisioning/index', label: 'Provisioning Plugin' },
   ],
 };
 

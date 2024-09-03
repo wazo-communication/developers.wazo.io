@@ -128,18 +128,59 @@ a.try-it {
 }
 
 #maximize-button {
-  margin: 10px;
+  margin: 15px;
   z-index: 201;
-  height: 24px;
-  width: 140px;
-  background: #b00;
+  width: 269px;
+  background: var(--ifm-color-primary);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
   border: none;
+  font-weight: bold;
+  padding: 12px 5px;
 }
 
 
 footer.footer a:hover, footer.footer a:active {
   color: #FFF !important;
+}
+
+/* Sidebar, change style of root/category element */
+.theme-doc-sidebar-container .menu__list .menu__list-item-collapsible a:not(href),
+.theme-doc-sidebar-container .menu__link[href="/docs/plugins/pbx/"],
+.theme-doc-sidebar-container .menu__link[href="/docs/plugins/provisioning/"] {
+  color: var(--ifm-color);
+  background: none !important;
+  letter-spacing: 0.75px;
+}
+
+.theme-doc-sidebar-container .menu__link.menu__link--active[href="/docs/plugins/pbx/"],
+.theme-doc-sidebar-container .menu__link.menu__link--active[href="/docs/plugins/provisioning/"] {
+  color: var(--ifm-menu-color-active);
+}
+
+
+.theme-doc-sidebar-container .menu__list .menu__list-item-collapsible:hover:has(a:not(href)),
+.theme-doc-sidebar-container .menu__list .menu__list-item-collapsible.menu__list-item-collapsible--active {
+  background: none !important;
+}
+
+
+.theme-doc-sidebar-container .menu__list .menu__link--sublist-caret::after,
+.theme-doc-sidebar-container .menu__list .menu__caret {
+  opacity: 0.25;
+}
+
+/* Header Menu */
+.navbar hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+
+
+/* Image in the content */
+.docs-wrapper main img {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 4px;
 }

@@ -10,14 +10,19 @@ const isDev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Wazo E-UC Plugins SDK',
-  tagline: 'Extend every functionality in Wazo Products or integrate Wazo softphone into any existing tool.',
+  title: 'Wazo Developers Center',
+  tagline: 'Extend the capabilities of Wazo Products through our open architecture, leveraging public REST APIs, WebSocket support, Webhooks, and WebRTC. Seamlessly integrate the Wazo softphone or other tools into any existing system, and customize functionality with our powerful plugin system.',
 
   url: 'https://wazo.io',
   baseUrl: isDev ? '/' : 'developers.wazo.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -39,10 +44,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/wazo-communication/developers.wazo.io/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -52,51 +54,70 @@ const config = {
   ],
 
   plugins: [
-    path.resolve(__dirname, 'plugins', 'softphone-plugin')
+    path.resolve(__dirname, 'doc-assets', 'softphone-plugin'),
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        blogTitle: 'Case Studies',
+        id: 'case-studies',
+        routeBasePath: 'case-studies',
+        path: './case-studies',
+      },
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        hideOnScroll: true,
-        title: 'Wazo',
+        hideOnScroll: false,
+        title: 'Developers',
         logo: {
           alt: 'Wazo Logo',
           src: 'img/logo.png',
         },
         items: [
+          { to: '/use-cases', label: 'Use cases', position: 'left' },
           {
-            type: 'doc',
-            docId: 'installation',
+            type: 'dropdown',
+            label: 'Modular Plugins',
             position: 'left',
-            label: 'Javascript SDK',
+            to: '/docs/plugins/introduction',
+            items: [
+              { to: '/docs/plugins/introduction', label: 'Introduction' },
+              { to: '/docs/plugins/overview', label: 'Philosophy' },
+              { type: 'html', value: "<hr />"  },
+              { to: '/docs/plugins/ui/get-started/', label: 'UI Plugin' },
+              { to: '/docs/plugins/pbx', label: 'Stack Plugin' },
+              { to: '/docs/plugins/provisioning', label: 'Provisioning Plugin' },
+            ]
           },
           {
-            type: 'doc',
-            docId: 'plugins/introduction',
+            type: 'dropdown',
+            label: 'Integrations',
             position: 'left',
-            label: 'Plugins',
-            activeBaseRegex: '/plugins/'
-          },
-          {
-            type: 'doc',
-            docId: 'softphone/introduction',
-            position: 'left',
-            label: 'Softphone',
-            activeBaseRegex: '/softphone/'
-          },
-          {
-            type: 'doc',
-            docId: 'deeplink/deeplink',
-            position: 'left',
-            label: 'Deep Linking',
-            activeBaseRegex: '/deeplink/'
+            items: [
+              { to: '/docs/integrations/embedded-softphone', label: 'Embedded Softphone' },
+              { to: '/docs/integrations/deeplink', label: 'Deep Linking' },
+            ]
           },
 
-          // Right
           {
-            href: 'https://github.com/wazo-communication/euc-plugins-js-sdk',
+            type: 'dropdown',
+            label: 'APIs & References',
+            position: 'left',
+            items: [
+              { to: '/docs/sdk-librairies/plugins-js-sdk', label: 'JS - Plugins SDK' },
+              { href: 'https://github.com/wazo-platform/wazo-js-sdk?tab=readme-ov-file#wazos-javascript-software-development-kit', label: 'JS - Wazo SDK' },
+              { href: 'https://github.com/wazo-platform/?q=client&type=all&language=python&sort=', label: 'Python - Library Clients' },
+            ]
+          },
+
+
+          // Right
+          // { to: '/case-studies', label: 'Case studies', position: 'right' },
+          {
+            href: 'https://github.com/wazo-communication/developers.wazo.io',
             className: 'header-github-link',
             position: 'right',
             title: 'GitHub Repository',
@@ -106,51 +127,20 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Installation',
-                to: '/docs/installation',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Wazo Developers Center',
-                href: 'https://developers.wazo.io/',
-              },
-              {
-                label: 'Discourse',
-                href: 'https://wazo-platform.discourse.group/',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/wazo',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/wazo-communication/euc-plugins-js-sdk',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Wazo. Built with Docusaurus.`,
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} Wazo Communication Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['bash', 'diff', 'json', 'javascript', 'typescript', 'python'],
       },
+
+      mermaid: {
+        theme: {light: 'neutral', dark: 'dark'},
+      }
     }),
+
   clientModules: [
     require.resolve('./src/softphone-module.js'),
   ],
