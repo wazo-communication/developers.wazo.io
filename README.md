@@ -2,6 +2,10 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+Goal of this website: Explain to developers how to extend EU-C Wazo with modular
+plugins. This website will not go in the deep of the wazo-platform/micro-service
+details, links to platform website must be used
+
 ### Installation
 
 ```
