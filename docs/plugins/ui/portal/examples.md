@@ -42,7 +42,7 @@ document.getElementById('name').innerHTML = context.app.extra.record.auth.userna
 ```
 
 You may want to create your own page/form in a PBX form.
-See [This section](./portal#adding-tabs-in-a-form) for more information.
+See [This section](/docs/plugins/ui/portal#adding-tabs-in-a-form) for more information.
 
 ```js
 await app.initialize();

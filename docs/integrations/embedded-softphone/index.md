@@ -8,7 +8,7 @@ import '../../../src/softphone-example.js';
 
 ## Displaying the Embedded softphone
 
-Please refer to the [Installation page](../../sdk-librairies/installation) for information on how to import the Embedded Softphone SDK.
+Please refer to the [Installation page](/docs/sdk-librairies/plugins-js-sdk) for information on how to import the Embedded Softphone SDK.
 
 ```js
 softphone.show();

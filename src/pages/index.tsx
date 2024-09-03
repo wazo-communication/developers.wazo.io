@@ -13,10 +13,10 @@ const HEADER_BUTTONS = [
     text: 'Build a Plugin',
   },
   {
-    to: '/docs/softphone/introduction',
+    to: '/docs/integrations/embedded-softphone',
     text: 'Integrates a Softphone',
   },
-]
+];
 
 const HOME_USE_CASES = [WDA, PORTAL, STACK, SOFTPHONE];
 

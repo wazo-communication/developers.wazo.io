@@ -67,8 +67,8 @@ const app = new App();
 
 ## What's Next?
 
-🎉 Good job, you officially installed our SDK. The next step is to decide if you want to [build a plugin](./plugins/introduction) to extend our
-products or [integrate the embedded softphone](./softphone/introduction) in your system.
+🎉 Good job, you officially installed our SDK. The next step is to decide if you want to [build a plugin](/docs/plugins/ui/get-started/) to extend our
+products or [integrate the embedded softphone](/docs/integrations/embedded-softphone) in your system.
 
 Enjoy!
 
