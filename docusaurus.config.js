@@ -115,7 +115,7 @@ const config = {
 
 
           // Right
-          { to: '/case-studies', label: 'Case studies', position: 'right' },
+          // { to: '/case-studies', label: 'Case studies', position: 'right' },
           {
             href: 'https://github.com/wazo-communication/developers.wazo.io',
             className: 'header-github-link',
