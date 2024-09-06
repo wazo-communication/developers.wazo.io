@@ -107,6 +107,7 @@ const config = {
             label: 'APIs & References',
             position: 'left',
             items: [
+              { href: 'https://api.wazo.io', label: 'API Reference' },
               { to: '/docs/sdk-librairies/plugins-js-sdk', label: 'JS - Plugins SDK' },
               { href: 'https://github.com/wazo-platform/wazo-js-sdk?tab=readme-ov-file#wazos-javascript-software-development-kit', label: 'JS - Wazo SDK' },
               { href: 'https://github.com/wazo-platform/?q=client&type=all&language=python&sort=', label: 'Python - Library Clients' },
