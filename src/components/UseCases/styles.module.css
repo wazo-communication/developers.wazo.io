@@ -11,6 +11,7 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--ifm-toc-border-color);
+  height: 100%;
 }
 
 .useCase:hover, .useCase:active {
@@ -67,11 +68,12 @@
 .useCaseBottom :global .button svg {
   transition: 250ms ease fill;
   fill: var(--ifm-color-primary);
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   vertical-align: middle;
-  margin-top: -1px;
+  margin-top: -2px;
+  margin-right: -3px;
 }
 
 [data-theme='dark'] .useCases { color: #FFF; }

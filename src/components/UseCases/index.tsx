@@ -1,7 +1,7 @@
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import type { UseCase } from '@site/src/pages/use-cases';
-import ArrowSvg from '@site/static/img/icons/arrow_forward.svg';
+import ChevronRight from '@site/static/img/icons/chevron_right.svg';
 
 export function UseCaseItem({ title, Svg, description, link }: UseCase) {
   return (
@@ -11,8 +11,9 @@ export function UseCaseItem({ title, Svg, description, link }: UseCase) {
         <p>{description}</p>
 
         <div className={styles.useCaseBottom}>
-          <span className="button button--primary button--outline">
-            More information <ArrowSvg />
+          <span className="button button--primary button--outline padding-horiz--sm">
+            More Information
+            <ChevronRight />
           </span>
 
           <Svg className={styles.useCaseSvg} role="img" />
