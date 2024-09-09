@@ -1,18 +1,24 @@
-import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import type { UseCase } from '@site/src/pages/use-cases';
+import ArrowSvg from '@site/static/img/icons/arrow_forward.svg';
 
-export function Feature({ title, Svg, description, link }: UseCase ) {
+export function UseCaseItem({ title, Svg, description, link }: UseCase) {
   return (
-    <a className={`${clsx('col col--6')} ${styles.feature}`} href={link}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <Link className={`col col--6 margin-bottom--lg ${styles.useCase}`} href={link}>
+      <div className="padding--lg">
         <h3>{title}</h3>
         <p>{description}</p>
+
+        <div className={styles.useCaseBottom}>
+          <span className="button button--primary button--outline">
+            More information <ArrowSvg />
+          </span>
+
+          <Svg className={styles.useCaseSvg} role="img" />
+        </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -22,10 +28,12 @@ type Props = {
 
 export default ({ useCases }: Props) => {
   return (
-    <section className={styles.features}>
+    <section className={styles.useCases}>
       <div className="container">
         <div className="row">
-          {useCases.map((props, idx) => <Feature key={idx} {...props} />)}
+          {useCases.map((props, idx) => (
+            <UseCaseItem key={idx} {...props} />
+          ))}
         </div>
       </div>
     </section>
