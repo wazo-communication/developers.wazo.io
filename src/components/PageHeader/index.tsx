@@ -12,24 +12,25 @@ type ButtonProps = {
 type Props = {
   title: string;
   description?: string;
-  buttons?: ButtonProps[],
-}
+  buttons?: ButtonProps[];
+  className?: string;
+};
 
 const HeaderButton = ({ to, text, type = 'secondary' }: ButtonProps) =>
   <Link className={`button button--lg ${styles[`${type}Button`]}`} to={to}>{text}</Link>
 
-const PageHeader = ({ title, description, buttons = [] }: Props) => (
-  <header className={clsx('hero hero--primary', styles.heroBanner)}>
+const PageHeader = ({ title, description, buttons = [], className }: Props) => (
+  <header className={clsx('hero hero--primary', styles.heroBanner, className)}>
     <div className="container">
-      <h1 className="hero__title">{ title }</h1>
-      { description && <p className="hero__subtitle">{ description }</p> }
-      { buttons.length > 0 &&
+      <h1 className="hero__title">{title}</h1>
+      {description && <p className="hero__subtitle">{description}</p>}
+      {buttons.length > 0 && (
         <div className={styles.buttons}>
-          {
-            buttons.map(button => <HeaderButton key={button.to} {...button} />)
-          }
+          {buttons.map((button) => (
+            <HeaderButton key={button.to} {...button} />
+          ))}
         </div>
-      }
+      )}
     </div>
   </header>
 );
