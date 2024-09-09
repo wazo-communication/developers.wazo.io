@@ -74,6 +74,10 @@
     no-repeat;
 }
 
+footer.footer--dark {
+  background-color: #262829;
+}
+
 img[alt*="small"] {
   width: 50%;
   margin: 0 auto;
