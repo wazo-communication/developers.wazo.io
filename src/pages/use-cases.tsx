@@ -81,7 +81,7 @@ export const PROVISIONING: UseCase = {
   title: 'Create a Provisioning Plugin',
   imageSrc: require('@site/static/img/use-cases/provisioning.jpg').default,
   Svg: require('@site/static/img/use-cases/provisioning.svg').default,
-  link: './docs/plugins/pbx',
+  link: './docs/plugins/provisioning',
   description: (
     <>
       Extend Wazo Provisioning by adding third-party plugins to support new devices, customize phone

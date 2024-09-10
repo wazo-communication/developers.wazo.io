@@ -10,9 +10,20 @@ Mobile plugins allow many great ways to extend the interface. Here's a quick sum
 
 ## Adding tabs in the main page
 
-![App configuration (small)](/img/plugins/ui/mobile/mobile-tab1.png)
-
-![App configuration (small)](/img/plugins/ui/mobile/mobile-tab2.png)
+```mdx-code-block
+<div className="row">
+  <div className="col col--6">
+```
+    ![Mobile Home Plugin (small)](/img/plugins/ui/mobile/mobile-home-plugin-tab.jpg)
+```mdx-code-block
+  </div>
+  <div className="col col--6">
+```
+    ![Mobile Plugin Loaded (small)](/img/plugins/ui/mobile/mobile-plugin-loaded.jpg)
+```mdx-code-block
+  </div>
+</div>
+```
 
 To create a new tab in the main screen, add a `staticTabs` in your manifest with a `mobileTab` context :
 ```json
