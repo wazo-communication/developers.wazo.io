@@ -116,6 +116,7 @@ const sidebars = {
           link: { type: 'doc', id: 'plugins/ui/mobile/index' },
           items: [
             { type: 'ref', id: 'plugins/ui/mobile/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/mobile/examples', label: 'Examples' },
           ]
         },
 
