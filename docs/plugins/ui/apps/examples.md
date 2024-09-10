@@ -35,8 +35,8 @@ app.changeNavBarColor('#8e6a3a');
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/sidebar-color/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/sidebar-color"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/sidebar-color/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/sidebar-color"
 />
 
 ## Displaying a modal for incoming calls
@@ -65,8 +65,8 @@ await app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/incoming-call-modal/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/incoming-call-modal"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/incoming-call-modal/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/incoming-call-modal"
 />
 
 ## Displaying a banner
@@ -141,8 +141,8 @@ app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/iframe-bg-messaging/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/iframe-bg-messaging"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/iframe-bg-messaging/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/iframe-bg-messaging"
 />
 
 ## Adding a settings menu
@@ -173,8 +173,8 @@ app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/settings-menu/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/settings-menu"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/settings-menu/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/settings-menu"
 />
 
 ## Displaying local and remote video as miniature
@@ -219,8 +219,8 @@ app.onCallAnswered = (call) => {
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/video-pip/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/video-pip"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/video-pip/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/video-pip"
 />
 
 ## Configuring and playing sounds
@@ -241,6 +241,6 @@ setTimeout(() => {
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/euc-plugins-js-sdk/examples/wda/configure-sounds/manifest.json"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/wda/configure-sounds"
+    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/configure-sounds/manifest.json"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/configure-sounds"
 />

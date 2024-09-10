@@ -36,5 +36,5 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
 <ButtonsTrySource
     product="app"
-    source="https://github.com/wazo-communication/euc-plugins-js-sdk/tree/master/documentation/static/examples/mobile/general"
+    source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/mobile/general"
 />
