@@ -2,7 +2,7 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Customizing E-UC Portal (coming soon)
+# Customizing E-UC Portal
 
 Portal plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 

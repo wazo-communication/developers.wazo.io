@@ -1,37 +1,83 @@
-.features {
+.useCases {
   display: flex;
   align-items: center;
   padding: 2rem 0;
   width: 100%;
 }
 
-.feature {
-  transition: 250ms ease background;
+.useCase > div {
+  transition: 250ms ease background, 250ms ease box-shadow;
   color: var(--ifm-font-color-base);
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid var(--ifm-toc-border-color);
+  height: 100%;
 }
 
-.feature:hover, .feature:active {
-  cursor: pointer;
+.useCase:hover, .useCase:active {
   text-decoration: none;
+}
+
+.useCase:hover > div, .useCase:active > div {
+  cursor: pointer;
+  text-decoration: none !important;
   color: var(--ifm-font-color-base);
   background: #F7F7F7;
+  box-shadow: 0 0 30px rgba(0,0,0,.05);
 }
 
-.feature:hover svg, .feature:active svg {
+.useCase:hover .useCaseSvg, .useCase:active .useCaseSvg {
   scale: 1.1;
 }
 
-.featureSvg {
+.useCase:hover :global .button, .useCase:active :global .button {
+  background-color: var(--ifm-color-primary) !important;
+  color: #FFF;
+}
+
+.useCase:hover :global .button svg {
+  fill: #FFF;
+}
+
+.useCase h3 {
+  font-size: 1.4rem;
+}
+
+.useCase p {
+  opacity: 0.75;
+}
+
+
+.useCaseBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.useCaseSvg {
   transition: 250ms ease scale;
   height: 200px;
   width: 200px;
+  margin-bottom: 0;
+}
+
+.useCaseBottom :global .button {
   margin-bottom: 10px;
 }
 
-[data-theme='dark'] .features { color: #FFF; }
-[data-theme='dark'] .feature:hover, .feature:active { background: #202020; }
+.useCaseBottom :global .button svg {
+  transition: 250ms ease fill;
+  fill: var(--ifm-color-primary);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: -3px;
+}
+
+[data-theme='dark'] .useCases { color: #FFF; }
+[data-theme='dark'] .useCase:hover > div, [data-theme='dark'] .useCase:active > div { background: #202020; }
 
 /* ----- */
 .horizontalContent {

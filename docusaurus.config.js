@@ -2,16 +2,44 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const path = require('path');
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
 const isDev = process.env.NODE_ENV === 'development';
 
+const MODULAR_PLUGINS_ITEMS = [
+  { to: '/docs/plugins/introduction', label: 'Introduction' },
+  { to: '/docs/plugins/overview', label: 'Philosophy' },
+  { type: 'html', value: '<hr />' },
+  { to: '/docs/plugins/ui/get-started/', label: 'UI Plugin' },
+  { to: '/docs/plugins/pbx', label: 'Stack Plugin' },
+  { to: '/docs/plugins/provisioning', label: 'Provisioning Plugin' },
+];
+
+const INTEGRATIONS_ITEMS = [
+  { to: '/docs/integrations/embedded-softphone', label: 'Embedded Softphone' },
+  { to: '/docs/integrations/deeplink', label: 'Deep Linking' },
+];
+
+const API_LIBS_ITEMS = [
+  { to: '/docs/sdk-librairies/plugins-js-sdk', label: 'JS - Plugins SDK' },
+  { href: 'https://api.wazo.io', label: 'API Reference' },
+  {
+    href: 'https://github.com/wazo-platform/wazo-js-sdk?tab=readme-ov-file#wazos-javascript-software-development-kit',
+    label: 'JS - Wazo SDK',
+  },
+  {
+    href: 'https://github.com/wazo-platform/?q=client&type=all&language=python&sort=',
+    label: 'Python - Library Clients',
+  },
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wazo Developers Center',
-  tagline: 'Extend the capabilities of Wazo Products through our open architecture, leveraging public REST APIs, WebSocket support, Webhooks, and WebRTC. Seamlessly integrate the Wazo softphone or other tools into any existing system, and customize functionality with our powerful plugin system.',
+  tagline:
+    'Extend the capabilities of Wazo Products through our open architecture, leveraging public REST APIs, WebSocket support, Webhooks, and WebRTC. Seamlessly integrate the Wazo softphone or other tools into any existing system, and customize functionality with our powerful plugin system.',
 
   url: 'https://wazo.io',
   baseUrl: isDev ? '/' : 'developers.wazo.io/',
@@ -22,7 +50,6 @@ const config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -83,36 +110,21 @@ const config = {
             label: 'Modular Plugins',
             position: 'left',
             to: '/docs/plugins/introduction',
-            items: [
-              { to: '/docs/plugins/introduction', label: 'Introduction' },
-              { to: '/docs/plugins/overview', label: 'Philosophy' },
-              { type: 'html', value: "<hr />"  },
-              { to: '/docs/plugins/ui/get-started/', label: 'UI Plugin' },
-              { to: '/docs/plugins/pbx', label: 'Stack Plugin' },
-              { to: '/docs/plugins/provisioning', label: 'Provisioning Plugin' },
-            ]
+            items: MODULAR_PLUGINS_ITEMS,
           },
           {
             type: 'dropdown',
             label: 'Integrations',
             position: 'left',
-            items: [
-              { to: '/docs/integrations/embedded-softphone', label: 'Embedded Softphone' },
-              { to: '/docs/integrations/deeplink', label: 'Deep Linking' },
-            ]
+            items: INTEGRATIONS_ITEMS,
           },
 
           {
             type: 'dropdown',
             label: 'APIs & References',
             position: 'left',
-            items: [
-              { to: '/docs/sdk-librairies/plugins-js-sdk', label: 'JS - Plugins SDK' },
-              { href: 'https://github.com/wazo-platform/wazo-js-sdk?tab=readme-ov-file#wazos-javascript-software-development-kit', label: 'JS - Wazo SDK' },
-              { href: 'https://github.com/wazo-platform/?q=client&type=all&language=python&sort=', label: 'Python - Library Clients' },
-            ]
+            items: API_LIBS_ITEMS,
           },
-
 
           // Right
           // { to: '/case-studies', label: 'Case studies', position: 'right' },
@@ -127,7 +139,69 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [],
+        links: [
+          {
+            title: 'Use Cases',
+            items: [
+              {
+                label: 'Web & Desktop Plugin',
+                to: '/docs/plugins/ui/apps',
+              },
+              {
+                label: 'Mobile Plugin',
+                to: '/docs/plugins/ui/mobile',
+              },
+              {
+                label: 'Portal Plugin',
+                to: '/docs/plugins/ui/portal',
+              },
+              {
+                label: 'Stack Plugin',
+                to: '/docs/plugins/pbx',
+              },
+              {
+                label: 'Provisioning Plugin',
+                to: '/docs/plugins/pbx',
+              },
+              {
+                label: 'Embedded Softphone',
+                to: '/docs/integrations/embedded-softphone',
+              },
+            ],
+          },
+          {
+            title: 'Modular Plugins',
+            items: MODULAR_PLUGINS_ITEMS.filter((item) => item.type !== 'html'),
+          },
+          {
+            title: 'Integrations',
+            items: INTEGRATIONS_ITEMS,
+          },
+          {
+            title: 'APIs & References',
+            items: API_LIBS_ITEMS,
+          },
+          {
+            title: 'Who We Are',
+            items: [
+              {
+                label: 'Our Company',
+                href: 'https://wazo.io/about/',
+              },
+              {
+                label: 'Careers',
+                href: 'https://wazo.io/careers/',
+              },
+            ],
+          },
+        ],
+        logo: {
+          alt: 'Wazo Communication Logo',
+          src: 'img/logo-white.svg',
+          href: 'https://wazo.io',
+          width: 160,
+          height: 51,
+        },
         copyright: `Copyright © ${new Date().getFullYear()} Wazo Communication Inc. Built with Docusaurus.`,
       },
       prism: {
@@ -137,13 +211,11 @@ const config = {
       },
 
       mermaid: {
-        theme: {light: 'neutral', dark: 'dark'},
-      }
+        theme: { light: 'neutral', dark: 'dark' },
+      },
     }),
 
-  clientModules: [
-    require.resolve('./src/softphone-module.js'),
-  ],
+  clientModules: [require.resolve('./src/softphone-module.js')],
 };
 
 module.exports = config;

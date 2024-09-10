@@ -1,7 +1,4 @@
-import type { CSSProperties } from 'react';
-
 import styles from './styles.module.css';
-import BrowserWindow from '../BrowserWindow';
 import type { UseCase } from '@site/src/pages/use-cases';
 import Link from '@docusaurus/Link';
 
@@ -27,9 +24,11 @@ type Props = {
 
 export default ({ useCases }: Props) => {
   return (
-    <section className={styles.features}>
+    <section className={styles.useCases}>
       <div className="container">
-        {useCases.map((props, idx) => <UseCaseItem key={idx} {...props} />)}
+        {useCases.map((props, idx) => (
+          <UseCaseItem key={idx} {...props} />
+        ))}
       </div>
     </section>
   );
