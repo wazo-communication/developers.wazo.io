@@ -2,7 +2,7 @@ import PageHeader from '@site/src/components/PageHeader';
 
 <PageHeader title="Deep Linking" insideContent />
 
-# <span class="hide">Deep Linking</span>
+# <span className="hide">Deep Linking</span>
 
 Deep linking enables direct navigation to specific in-app content or actions, enhancing user experience. It allows users to seamlessly access relevant app pages or features via links, improving engagement and user retention.
 

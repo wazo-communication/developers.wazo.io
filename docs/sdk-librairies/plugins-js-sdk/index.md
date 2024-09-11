@@ -76,15 +76,15 @@ const app = new App();
 🎉 Good job, you officially installed our SDK. The next step is to decide if you want to [build a plugin](/docs/plugins/ui/get-started/) to extend our
 products or [integrate the embedded softphone](/docs/integrations/embedded-softphone/) in your system.
 
-<nav class="pagination-nav margin-bottom--md" aria-label="Docs pages">
-  <Link class="pagination-nav__link" to="/docs/plugins/ui/get-started/">
-    <div class="pagination-nav__sublabel">Get Started</div>
-    <div class="pagination-nav__label">Build a UI Plugin</div>
+<nav className="pagination-nav margin-bottom--md" aria-label="Docs pages">
+  <Link className="pagination-nav__link" to="/docs/plugins/ui/get-started/">
+    <div className="pagination-nav__sublabel">Get Started</div>
+    <div className="pagination-nav__label">Build a UI Plugin</div>
   </Link>
 
-  <Link class="pagination-nav__link" to="/docs/integrations/embedded-softphone/">
-    <div class="pagination-nav__sublabel">Introduction</div>
-    <div class="pagination-nav__label">Embed Wazo Softphone</div>
+  <Link className="pagination-nav__link" to="/docs/integrations/embedded-softphone/">
+    <div className="pagination-nav__sublabel">Introduction</div>
+    <div className="pagination-nav__label">Embed Wazo Softphone</div>
   </Link>
 </nav>
 

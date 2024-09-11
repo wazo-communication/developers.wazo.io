@@ -10,30 +10,30 @@ Modular plugins give the capacity to any developers to add new features or exten
 
 ![Introduction modular plugin](/img/plugins/introduction.jpg)
 
-<nav class="pagination-nav" aria-label="Docs pages">
-  <Link class="pagination-nav__link" to="/docs/plugins/ui/portal/">
-    <div class="pagination-nav__sublabel">Portal Plugin</div>
-    <div class="pagination-nav__label">Documentation</div>
+<nav className="pagination-nav" aria-label="Docs pages">
+  <Link className="pagination-nav__link" to="/docs/plugins/ui/portal/">
+    <div className="pagination-nav__sublabel">Portal Plugin</div>
+    <div className="pagination-nav__label">Documentation</div>
   </Link>
 
-  <Link class="pagination-nav__link" to="/docs/plugins/pbx/">
-    <div class="pagination-nav__sublabel">Stack Plugin</div>
-    <div class="pagination-nav__label">What is a Stack plugin?</div>
+  <Link className="pagination-nav__link" to="/docs/plugins/pbx/">
+    <div className="pagination-nav__sublabel">Stack Plugin</div>
+    <div className="pagination-nav__label">What is a Stack plugin?</div>
   </Link>
 
-  <Link class="pagination-nav__link" to="/docs/plugins/ui/apps">
-    <div class="pagination-nav__sublabel">App Plugin</div>
-    <div class="pagination-nav__label">Documentation</div>
+  <Link className="pagination-nav__link" to="/docs/plugins/ui/apps">
+    <div className="pagination-nav__sublabel">App Plugin</div>
+    <div className="pagination-nav__label">Documentation</div>
   </Link>
 
-  <Link class="pagination-nav__link" to="/docs/plugins/ui/mobile">
-    <div class="pagination-nav__sublabel">Mobile Plugin</div>
-    <div class="pagination-nav__label">Documentation</div>
+  <Link className="pagination-nav__link" to="/docs/plugins/ui/mobile">
+    <div className="pagination-nav__sublabel">Mobile Plugin</div>
+    <div className="pagination-nav__label">Documentation</div>
   </Link>
 
-  <Link class="pagination-nav__link" to="/docs/plugins/provisioning">
-    <div class="pagination-nav__sublabel">Provisioning Plugin</div>
-    <div class="pagination-nav__label">What is a Provisioning plugin?</div>
+  <Link className="pagination-nav__link" to="/docs/plugins/provisioning">
+    <div className="pagination-nav__sublabel">Provisioning Plugin</div>
+    <div className="pagination-nav__label">What is a Provisioning plugin?</div>
   </Link>
 </nav>
 
