@@ -1,10 +1,21 @@
+const DEFAULT_SERVER = 'example.com';
+
 // We don 't want to run this server-side
 if (typeof window !== "undefined") {
   const { softphone } = require('@wazo/euc-plugins-sdk');
   const Wazo = require('@wazo/sdk/lib/simple').default;
 
+  const setDefaultServer = (server) => {
+    defaultServer = server;
+    localStorage.setItem('softphone-server', server);
+    updateSoftphone(null, server);
+
+    Wazo.Auth.init('softphone-example');
+    Wazo.Auth.setHost(server);
+  }
+
   const initSoftphone = (server = defaultServer) => {
-    softphone.init({ server: defaultServer, width: 400 });
+    softphone.init({ server: server, width: 400 });
 
     softphone.onIFrameLoaded = () => {
       document.getElementById('iframe-loaded-event').innerText = 'Softphone iframe is loaded';
@@ -159,6 +170,20 @@ if (typeof window !== "undefined") {
   global.initButtons = () => {
     initSoftphone();
 
+    // Setup default server everywhere
+    if(defaultServer !== DEFAULT_SERVER) {
+      document.querySelector('#stack-form #default-server').value = defaultServer;
+      document.querySelector('#login-form #server').value = defaultServer;
+      document.querySelector('#default-server-warning').classList.add('hide');
+    }
+
+    // Setup stack
+    document.querySelector('#stack-form').addEventListener('submit', async e => {
+      e.preventDefault();
+
+      setDefaultServer(document.querySelector('#default-server').value);
+    });
+
     // Display
     document.querySelector('#display-softphone').addEventListener('click', e => {
       e.preventDefault();
@@ -188,14 +213,7 @@ if (typeof window !== "undefined") {
 
       const login = document.querySelector('#login').value;
       const password = document.querySelector('#password').value;
-      const server = document.querySelector('#server').value;
-
-      localStorage.setItem('softphone-server', server);
-      defaultServer = server;
-
-      updateSoftphone(null, server);
-      Wazo.Auth.init('softphone-example');
-      Wazo.Auth.setHost(server);
+      setDefaultServer(document.querySelector('#login-form #server').value)
 
       try {
         const session = await Wazo.Auth.logIn(login, password);
@@ -353,6 +371,6 @@ if (typeof window !== "undefined") {
     document.querySelector('#maximize-button')?.remove();
   };
 
-  let defaultServer = typeof localStorage !== 'undefined' ? localStorage.getItem('softphone-server') || 'my-server' : 'my-server';
+  let defaultServer = typeof localStorage !== 'undefined' ? localStorage.getItem('softphone-server') || DEFAULT_SERVER : DEFAULT_SERVER;
   let displayed = false;
 }

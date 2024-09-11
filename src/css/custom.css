@@ -97,14 +97,16 @@ a.try-it {
 }
 
 /* Softphone example */
-#login-form {
+#login-form, #stack-form {
   width: 400px;
   margin: 30px auto;
   border: 1px solid #eee;
 }
 
 #login-form input,
-#login-form button {
+#login-form button,
+#stack-form input,
+#stack-form button {
   margin: 10px auto;
   display: block;
   width: 250px;
