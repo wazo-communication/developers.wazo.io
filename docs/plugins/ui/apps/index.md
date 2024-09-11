@@ -2,7 +2,7 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Customizing our Web and Desktop App
+# Documentation - Web & Desktop Plugin
 
 Apps plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
@@ -11,7 +11,7 @@ Apps plugins allow many great ways to extend the interface. Here's a quick summa
 - Extend Settings pannel
 - Run code logic inside a background script
 
-## Adding tabs in the main page
+## Tabs - Add menu item (dashbaord)
 
 ![App configuration](/img/plugins/ui/app/wda-tab-example.png)
 
@@ -31,7 +31,7 @@ To create a new tab in the main screen, add a `staticTabs` in your manifest with
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding tabs in the sidebar
+## Tabs - Add menu item (sidebar)
 
 ![App configuration (small)](/img/plugins/ui/app/wda-sidebar.png)
 
@@ -54,7 +54,7 @@ The `icon` should be a white `svg` file for better results.
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding tabs for a contact
+## Tabs - Add menu item (contact)
 
 ![App configuration](/img/plugins/ui/app/wda-contact.png)
 
@@ -74,7 +74,7 @@ To create a new tab in the main screen, add a `staticTabs` in your manifest with
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding tabs in the phonebook
+## Tabs - Add menu item (phonebook)
 
 ![App configuration](/img/plugins/ui/app/wda-phonebook.png)
 
@@ -94,7 +94,7 @@ To create a new tab in the main screen, add a `staticTabs` in your manifest with
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding tabs in the setting menu
+## Tabs - Add menu item (settings)
 
 ![App configuration](/img/plugins/ui/app/wda-settings-menu.png)
 
@@ -114,7 +114,9 @@ To create a new tab in the settings menu, add a `staticTabs` in your manifest wi
 ]
 ```
 
-You can define the menu item's position using the `position` attributes. Existing positions in the application are :
+You can define the menu item's position using the `position` attributes. Your menu will be ordered depending on the `position` value you will define. When the user clicks on the tab, the `contentUrl` will be loaded.
+
+Current positions used in the application are:
 
 | Position | Name            |
 |----------|-----------------|
@@ -131,11 +133,7 @@ You can define the menu item's position using the `position` attributes. Existin
 | 1100     | Update App      |
 | 1200     | About           |
 
-Your menu will be ordered depending on the `position` value.
-
-When the user clicks on the tab, the `contentUrl` will be loaded.
-
-## Adding a custom panel inside the setting menu
+## Tabs - Add custom settinng panel (settings)
 
 ![App configuration](/img/plugins/ui/app/wda-settings-inner.png)
 
@@ -157,7 +155,7 @@ To create a new tab in the settings menu, add a `staticTabs` in your manifest wi
 
 Please refer to the documentation of `settingsTab` about the position attribute.
 
-## Adding a background script
+## Background Script
 
 You can add custom code when the user is not using a custom tab. It can be useful to handle incoming calls, or other events.
 

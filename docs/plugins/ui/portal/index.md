@@ -2,7 +2,7 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Customizing E-UC Portal
+# Documentation - Portal Plugin
 
 Portal plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
@@ -13,7 +13,7 @@ Portal plugins allow many great ways to extend the interface. Here's a quick sum
 - Extend dashboards
 - Run code logic inside a background script
 
-## Adding tabs in the main page of the PBX section
+## Tabs - Add a new tab stack dashboard
 
 ![App configuration (small](/img/plugins/ui/portal/portal-pbx-home-tab.png)
 
@@ -33,30 +33,7 @@ To create a new tab in the PBX main screen, add a `staticTabs` in your manifest 
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding tabs in a form
-
-![App configuration](/img/plugins/ui/portal/portal-pbx-form.png)
-
-To create a new tab in the PBX main screen, add a `staticTabs` in your manifest with a `pbx.*` `context` :
-```json
-"staticTabs": [
-  {
-    "entityId": "my id",
-    "context": [
-      "pbx.users"
-    ],
-    "name": "My label",
-    "contentUrl": "./content.html"
-  }
-],
-```
-
-The `context` key can be one of `pbx.*` where `*` is : `users`, `lines`, `devices`, `ring-groups`, `voicemails`, ...
-
-
-When the user clicks on the tab, the `contentUrl` will be loaded.
-
-## Adding page in an existing menu of the PBX section
+## Tabs - Add a page within an existing menu
 
 ![App configuration (small](/img/plugins/ui/portal/portal-existing-menu.png)
 
@@ -79,9 +56,9 @@ The `parent` key can be one of `common.layout.pbxMenu.*` where `*` is : `globalS
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding you own menu to display custom page
+## Tabs - Add menu items
 
-![App configuration (small](/img/plugins/ui/portal/portal-pbx-own-menu.png)
+![App configuration (small)](/img/plugins/ui/portal/portal-pbx-own-menu.png)
 
 To create a new menu in the PBX section, add a `staticTabs` in your manifest with a `pbxMenu` `context` :
 ```json
@@ -111,7 +88,7 @@ To create a new menu in the PBX section, add a `staticTabs` in your manifest wit
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding you own section in the global settings page
+## Tabs - Add new section in Global Settings
 
 ![App configuration (small](/img/plugins/ui/portal/portal-pbx-global-settings.png)
 
@@ -132,7 +109,51 @@ To create a new menu in the PBX section, add a `staticTabs` in your manifest wit
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Adding a background script
+## Tabs - Extend an existing form
+
+![App configuration](/img/plugins/ui/portal/portal-pbx-form.png)
+
+To create a new tab in the PBX main screen, add a `staticTabs` in your manifest with a `pbx.*` `context` :
+```json
+"staticTabs": [
+  {
+    "entityId": "my id",
+    "context": [
+      "pbx.users"
+    ],
+    "name": "My label",
+    "contentUrl": "./content.html"
+  }
+],
+```
+
+The `context` key can be one of `pbx.*` where `*` is : `users`, `lines`, `devices`, `ring-groups`, `voicemails`, ...
+
+
+When the user clicks on the tab, the `contentUrl` will be loaded.
+
+## Security - Administrator role
+
+Sometimes you may want to prevent an administrator to modify a sensitive information from a plugin page. From `context`, you can retrieve the administrator organization type of the current user and then handle the right logic.
+
+```js
+await app.initialize();
+const context = app.getContext();
+
+const accountType = context.extra.administrator.organization.resource;
+switch(accountType) {
+  case: 'resellers':
+    return true;
+
+  case: 'customers':
+  case: 'locations':
+  default:
+    return false;
+}
+```
+
+
+## Background Script
 
 You can add custom code when the user is not using a custom tab. It can be useful to handle custom events.
 
@@ -147,7 +168,7 @@ Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) docu
 
 The background script is always running, even when the user is logged out. Please make sure to remove all related background tasks when the `onLogout` listener event is fired.
 
-## Icons Support
+## Stack Menu - Supported Icons
 
 To defined `icon` and `parentIcon` image, we support two types of values:
 1. Path to a black `.svg` icon (recommended)
@@ -161,18 +182,26 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `AccountBox`
     - `AccountCircle`
     - `Add`
+    - `AddCircleOutline`
+    - `AddIcCallOutlined`
     - `AndroidSharp`
     - `Apps`
+    - `AppSettingsAlt`
     - `ArrowBack`
     - `ArrowDownward`
     - `ArrowDropDown`
     - `ArrowForward`
+    - `ArrowForwardIos`
     - `ArrowUpward`
     - `Block`
+    - `Bolt`
     - `BrightnessHigh`
     - `BugReport`
     - `Build`
     - `Business`
+    - `BusinessOutlined`
+    - `CakeOutlined`
+    - `CalendarMonth`
     - `Call`
     - `CallEnd`
     - `CallMerge`
@@ -189,23 +218,27 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `Cloud`
     - `CloudDownload`
     - `Dashboard`
+    - `DateRange`
     - `DateRangeOutlined`
     - `Delete`
     - `DeleteOutline`
     - `Description`
     - `DesktopMac`
+    - `DesktopWindowsOutlined`
     - `DeviceHub`
     - `DialerSip`
+    - `Dialpad`
     - `DirectionsCar`
     - `Done`
+    - `DoneAll`
     - `DoneOutlined`
     - `DragHandle`
     - `Edit`
     - `Email`
+    - `EmailOutlined`
     - `Equalizer`
     - `Error`
     - `ErrorOutline`
-    - `ErrorOutlineOutlined`
     - `EventSeat`
     - `ExitToApp`
     - `ExpandLess`
@@ -220,6 +253,7 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `FormatListBulleted`
     - `GetApp`
     - `Group`
+    - `GroupOutlined`
     - `HeadsetMic`
     - `Help`
     - `HelpOutline`
@@ -228,40 +262,47 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `InfoOutlined`
     - `InsertChart`
     - `InsertDriveFile`
+    - `Key`
     - `KeyboardArrowLeft`
     - `KeyboardArrowRight`
+    - `KeyboardReturn`
     - `Laptop`
     - `Launch`
     - `LibraryBooks`
     - `LibraryMusic`
     - `List`
     - `LocationOn`
+    - `LocationOnOutlined`
     - `Lock`
     - `LockOutlined`
     - `Menu`
+    - `MonitorHeart`
     - `MoreHoriz`
     - `MoreVert`
     - `MusicNote`
     - `NavigateNext`
+    - `NoteOutlined`
     - `NotificationsNone`
     - `OpenInNew`
     - `People`
     - `PermDataSetting`
     - `Person`
+    - `PersonOutlined`
     - `Phone`
     - `PhoneForwarded`
+    - `PhoneOutlined`
     - `PieChart`
     - `PlayArrow`
     - `PlaylistAdd`
     - `Public`
     - `Publish`
+    - `QueryBuilder`
     - `Receipt`
     - `ReceiptOutlined`
     - `RecordVoiceOver`
     - `Redo`
     - `Refresh`
     - `Remove`
-    - `ReportProblemOutlined`
     - `Restore`
     - `RingVolume`
     - `RoomService`
@@ -275,6 +316,9 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `SettingsPhone`
     - `Shuffle`
     - `SignalCellular4Bar`
+    - `Smartphone`
+    - `SmartphoneOutlined`
+    - `Sms`
     - `Speaker`
     - `Star`
     - `Stop`
@@ -285,8 +329,11 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `Sync`
     - `Timeline`
     - `Toc`
+    - `Today`
     - `Transform`
     - `TrendingFlat`
+    - `Troubleshoot`
+    - `TtyOutlined`
     - `Tune`
     - `Update`
     - `VerifiedUser`
@@ -301,5 +348,6 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `VpnLock`
     - `Warning`
     - `Web`
+    - `WebAsset`
 
     </details>

@@ -4,7 +4,7 @@ displayed_sidebar: pluginsSidebar
 
 # Modular Plugins
 
-Modular plugins give the capacity to any partners and developers to add new features and third-party libraries inside our applications. Plugins interact and extend our products in every possible way.
+Modular plugins give the capacity to any developers to add new features or extended existing ones from our applications. Plugins interact and extend our products in every possible way.
 
 ![Introduction modular plugin](/img/plugins/introduction.jpg)
 

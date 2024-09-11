@@ -2,13 +2,13 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Customizing our Mobile App
+# Documentation - Mobile Plugin
 
 Mobile plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add tabs on the main page of the application
 
-## Adding tabs in the main page
+## Tabs - Add a new menu item
 
 ```mdx-code-block
 <div className="row">
@@ -46,7 +46,13 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) documentation to know how to inject custom code in the application.
 
-## Sending a push notification that opens the application directly on the plugin screen
+## Push Notifications
+
+Push notifications enhance user engagement, keeping users informed and connected to the Wazo app. Plugins and push are well integrated into our mobile application.
+
+### Redirect to page tab
+
+In many case, you may when to send a push notification that will opens the application directly on your plugin screen.
 
 You can send a push through Wazo API like :
 
@@ -73,7 +79,7 @@ When the user's Wazo Mobile application is not open, they will receive a notific
 
 By tapping on this notification, the Wazo Mobile application will open, and the user will be redirected to your plugin's tab.
 
-## Receiving payload from the push
+### Retreive extra information from payload
 
 When sending a push notification, you have the option to include additional data in the `extra.plugin` field.
 
