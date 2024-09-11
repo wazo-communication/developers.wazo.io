@@ -2,21 +2,41 @@
 displayed_sidebar: softphoneSidebar
 ---
 
-# Embedded Softphone Examples
-
 import '../../../src/softphone-example.js';
+import PageHeader from '@site/src/components/PageHeader';
 
-## Displaying the Embedded softphone
+<PageHeader title="Embedded Softphone" insideContent />
 
-Please refer to the [Installation page](/docs/sdk-librairies/plugins-js-sdk) for information on how to import the Embedded Softphone SDK.
+# <span className="hide">Embedded Softphone</span>
+
+Here's an interactive introduction on how Wazo Embedded works. Want to learn from a technical approch, please refer to the [E-UC Plugins SDK documentation](/docs/sdk-librairies/plugins-js-sdk/embedded-softphone-apis) to see how the SDK works.
+
+## Assign the softphone to your stack
+
+<div id="default-server-warning">
+:::warning
+Please enter you stack domain! Otherwise the interactive demo will be limited to the login form
+:::
+</div>
+
+First of all, we need to define a server associated to the softphone, it's required to fully enable the full interactive demo.
+
+<form id="stack-form">
+    <input required type="text" id="default-server" placeholder="Server (ex: stack.example.com)" />
+    <button className="button button--secondary button--md" type="submit">🔑 Setup</button>
+</form>
+
+
+## Show
+
 
 ```js
 softphone.show();
 ```
 
-<a className="try-it button button--secondary button--lg" id="display-softphone">🚀 Display the Embedded Softphone</a>
+<a className="try-it button button--secondary button--lg" id="display-softphone">🚀 Show me</a>
 
-## Hiding the Embedded softphone
+## Hide
 
 ```js
 softphone.hide();
@@ -70,9 +90,9 @@ softphone.loginWithToken(session.token, session.refreshToken);
 ```
 
 <form id="login-form">
-    <input type="text" id="login" placeholder="Login" />
-    <input type="password" id="password" placeholder="Password"  />
-    <input type="text" id="server" placeholder="Server"  />
+    <input required type="text" id="login" placeholder="Login" />
+    <input required type="password" id="password" placeholder="Password"  />
+    <input required type="text" id="server" placeholder="Server (ex: stack.example.com)"  />
     <button className="button button--secondary button--md" type="submit">🔑 Login</button>
 </form>
 

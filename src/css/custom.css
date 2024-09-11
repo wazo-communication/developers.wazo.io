@@ -56,6 +56,10 @@
 
 [data-theme='dark'] .button.button--primary { color: #FFF; }
 
+.hide {
+  display: none !important;
+}
+
 .header-github-link:hover {
   opacity: 0.6;
 }
@@ -78,7 +82,7 @@ footer.footer--dark {
   background-color: #262829;
 }
 
-img[alt*="small"] {
+img[alt*="(small)"] {
   width: 50%;
   margin: 0 auto;
   display: block;
@@ -93,14 +97,16 @@ a.try-it {
 }
 
 /* Softphone example */
-#login-form {
+#login-form, #stack-form {
   width: 400px;
   margin: 30px auto;
   border: 1px solid #eee;
 }
 
 #login-form input,
-#login-form button {
+#login-form button,
+#stack-form input,
+#stack-form button {
   margin: 10px auto;
   display: block;
   width: 250px;

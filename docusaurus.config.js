@@ -23,8 +23,8 @@ const INTEGRATIONS_ITEMS = [
 ];
 
 const API_LIBS_ITEMS = [
+  { href: 'https://api.wazo.io', label: 'API References' },
   { to: '/docs/sdk-librairies/plugins-js-sdk', label: 'JS - Plugins SDK' },
-  { href: 'https://api.wazo.io', label: 'API Reference' },
   {
     href: 'https://github.com/wazo-platform/wazo-js-sdk?tab=readme-ov-file#wazos-javascript-software-development-kit',
     label: 'JS - Wazo SDK',
@@ -32,6 +32,10 @@ const API_LIBS_ITEMS = [
   {
     href: 'https://github.com/wazo-platform/?q=client&type=all&language=python&sort=',
     label: 'Python - Library Clients',
+  },
+  {
+    href: 'https://github.com/wazo-platform/wazo-sdk',
+    label: 'Python - Developer Toolkit',
   },
 ];
 
@@ -41,7 +45,7 @@ const config = {
   tagline:
     'Extend the capabilities of Wazo Products through our open architecture, leveraging public REST APIs, WebSocket support, Webhooks, and WebRTC. Seamlessly integrate the Wazo softphone or other tools into any existing system, and customize functionality with our powerful plugin system.',
 
-  url: 'https://wazo.io',
+  url: 'https://developers.wazo.io',
   baseUrl: isDev ? '/' : 'developers.wazo.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -82,15 +86,15 @@ const config = {
 
   plugins: [
     path.resolve(__dirname, 'doc-assets', 'softphone-plugin'),
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        blogTitle: 'Case Studies',
-        id: 'case-studies',
-        routeBasePath: 'case-studies',
-        path: './case-studies',
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-content-blog',
+    //   {
+    //     blogTitle: 'Case Studies',
+    //     id: 'case-studies',
+    //     routeBasePath: 'case-studies',
+    //     path: './case-studies',
+    //   },
+    // ],
   ],
 
   themeConfig:
@@ -121,7 +125,7 @@ const config = {
 
           {
             type: 'dropdown',
-            label: 'APIs & References',
+            label: 'APIs & Librairies',
             position: 'left',
             items: API_LIBS_ITEMS,
           },
@@ -161,7 +165,7 @@ const config = {
               },
               {
                 label: 'Provisioning Plugin',
-                to: '/docs/plugins/pbx',
+                to: '/docs/plugins/provisioning',
               },
               {
                 label: 'Embedded Softphone',

@@ -12,26 +12,34 @@
   color: #FFF;
   background: var(--ifm-color-primary-dark);
   background: linear-gradient(90deg, var(--ifm-color-primary-dark) 20%, var(--wazo-red) 100%);
+}
 
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url(/static/img/herro-background.webp) no-repeat bottom right;
-    background-position: cover;
-    mix-blend-mode: multiply;
-    z-index: 0;
-    opacity: 0.25;
-  }
+.heroBanner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url(/img/herro-background.webp) no-repeat bottom right;
+  background-size: cover;
+  mix-blend-mode: overlay;
+  z-index: 0;
+  opacity: 0.25;
+}
 
-  :global .container {
-    z-index: 1;
-    position: relative;
-  }
+.heroBanner :global .container {
+  z-index: 1;
+  position: relative;
+}
+
+.heroBanner :global .hero__title {
+  font-weight: bold;
+}
+
+.heroBanner :global .hero__title:last-child {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 996px) {
@@ -45,10 +53,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  gap: 15px;
 }
 
-.buttons a { color: #FFF }
+.buttons a {
+  color: #FFF;
+  margin: 0 7.5px;
+}
 .buttons a.primaryButton { color: var(--ifm-color-primary); }
 
 .primaryButton {

@@ -2,13 +2,19 @@
 displayed_sidebar: jsPluginSdkSidebar
 ---
 
+import '../../../src/softphone-example.js';
+import PageHeader from '@site/src/components/PageHeader';
+import Link from '@docusaurus/Link';
+
+<PageHeader title="E-UC Plugins SDK" insideContent />
+
 # Installation
 
-Welcome to the **Wazo EUC Plugins SDK** documentation!
+Welcome to the **Wazo E-UC Plugins SDK** documentation!
 
-Our powerful toolkit is designed to help you create and integrate around Wazo products, from an embedded softphone to modular plugins. Whether you're a seasoned developer or just starting out, the Wazo EUC Plugins SDK is designed to fit any JavaScript project.
+Our powerful toolkit is designed to help you create and integrate around Wazo products, from an embedded softphone to modular plugins. Whether you're a seasoned developer or just starting out, the Wazo E-UC Plugins SDK is designed to fit any JavaScript project.
 
-In this section, we'll guide you through the process of installing the Wazo EUC Plugins SDK in few minutes. By the end of this guide, you'll have the base foundation for creating your own custom plugins or embed a softphone into any project.
+In this section, we'll guide you through the process of installing the Wazo E-UC Plugins SDK in few minutes. By the end of this guide, you'll have the base foundation for creating your own custom plugins or embed a softphone into any project.
 
 ## Prerequisites
 
@@ -68,7 +74,19 @@ const app = new App();
 ## What's Next?
 
 🎉 Good job, you officially installed our SDK. The next step is to decide if you want to [build a plugin](/docs/plugins/ui/get-started/) to extend our
-products or [integrate the embedded softphone](/docs/integrations/embedded-softphone) in your system.
+products or [integrate the embedded softphone](/docs/integrations/embedded-softphone/) in your system.
+
+<nav className="pagination-nav margin-bottom--md" aria-label="Docs pages">
+  <Link className="pagination-nav__link" to="/docs/plugins/ui/get-started/">
+    <div className="pagination-nav__sublabel">Get Started</div>
+    <div className="pagination-nav__label">Build a UI Plugin</div>
+  </Link>
+
+  <Link className="pagination-nav__link" to="/docs/integrations/embedded-softphone/">
+    <div className="pagination-nav__sublabel">Introduction</div>
+    <div className="pagination-nav__label">Embed Wazo Softphone</div>
+  </Link>
+</nav>
 
 Enjoy!
 

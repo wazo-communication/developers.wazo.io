@@ -76,7 +76,7 @@ const sidebars = {
       label: 'Philosophy',
       link: { type: 'doc', id: 'plugins/overview/index' },
       items: [
-        { type: 'ref', id: 'plugins/overview/index' },
+        { type: 'ref', id: 'plugins/overview/index', label: 'Our Main Goal' },
         { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
         { type: 'ref', id: 'plugins/overview/why-should-use' },
       ]
@@ -85,6 +85,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'UI Plugin',
+      link: { type: 'doc', id: 'plugins/ui/get-started/index' },
       items: [
         {
           type: 'category',
@@ -105,7 +106,7 @@ const sidebars = {
           label: 'Build App Plugin',
           link: { type: 'doc', id: 'plugins/ui/apps/index' },
           items: [
-            { type: 'ref', id: 'plugins/ui/apps/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/apps/index', label: 'Documentation' },
             { type: 'ref', id: 'plugins/ui/apps/examples', label: 'Examples' },
           ]
         },
@@ -115,7 +116,8 @@ const sidebars = {
           label: 'Build Mobile Plugin',
           link: { type: 'doc', id: 'plugins/ui/mobile/index' },
           items: [
-            { type: 'ref', id: 'plugins/ui/mobile/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/mobile/index', label: 'Documentation' },
+            { type: 'ref', id: 'plugins/ui/mobile/examples', label: 'Examples' },
           ]
         },
 
@@ -124,7 +126,7 @@ const sidebars = {
           label: 'Build Portal Plugin',
           link: { type: 'doc', id: 'plugins/ui/portal/index' },
           items: [
-            { type: 'ref', id: 'plugins/ui/portal/index', label: 'How to build' },
+            { type: 'ref', id: 'plugins/ui/portal/index', label: 'Documentation' },
             { type: 'ref', id: 'plugins/ui/portal/examples', label: 'Examples' },
           ]
         },

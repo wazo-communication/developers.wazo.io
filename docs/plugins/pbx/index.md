@@ -3,6 +3,9 @@ displayed_sidebar: pluginsSidebar
 ---
 
 import OpenSourceButton from '@site/src/components/OpenSourceButton';
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="Stack Plugin" insideContent />
 
 # What is a Stack plugin?
 
