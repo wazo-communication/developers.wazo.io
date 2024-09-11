@@ -2,13 +2,19 @@
 displayed_sidebar: jsPluginSdkSidebar
 ---
 
+import '../../../src/softphone-example.js';
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="E-UC Plugins SDK" insideContent />
+
+
 # Installation
 
-Welcome to the **Wazo EUC Plugins SDK** documentation!
+Welcome to the **Wazo E-UC Plugins SDK** documentation!
 
-Our powerful toolkit is designed to help you create and integrate around Wazo products, from an embedded softphone to modular plugins. Whether you're a seasoned developer or just starting out, the Wazo EUC Plugins SDK is designed to fit any JavaScript project.
+Our powerful toolkit is designed to help you create and integrate around Wazo products, from an embedded softphone to modular plugins. Whether you're a seasoned developer or just starting out, the Wazo E-UC Plugins SDK is designed to fit any JavaScript project.
 
-In this section, we'll guide you through the process of installing the Wazo EUC Plugins SDK in few minutes. By the end of this guide, you'll have the base foundation for creating your own custom plugins or embed a softphone into any project.
+In this section, we'll guide you through the process of installing the Wazo E-UC Plugins SDK in few minutes. By the end of this guide, you'll have the base foundation for creating your own custom plugins or embed a softphone into any project.
 
 ## Prerequisites
 

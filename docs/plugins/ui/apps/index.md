@@ -2,7 +2,11 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Documentation - Web & Desktop Plugin
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="Web & Desktop Plugin" insideContent />
+
+# Documentation
 
 Apps plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 

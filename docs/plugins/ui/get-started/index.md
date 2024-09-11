@@ -2,6 +2,10 @@
 displayed_sidebar: pluginsSidebar
 ---
 
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="UI Plugin" insideContent />
+
 # Let's Get Started
 
 Let's walk through a minimal setup of a plugin to explain clearly how plugins systems works.

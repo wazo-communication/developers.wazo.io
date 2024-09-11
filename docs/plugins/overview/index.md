@@ -2,6 +2,10 @@
 displayed_sidebar: pluginsSidebar
 ---
 
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="Philosophy" insideContent />
+
 # Our Main Goal
 
 Our goal is to offer an easy way to integrate Modular Plug-Ins inside our products. A solution to allow any developers to add any components that enhance the Wazo feature set. By doing so, business using Wazo can deliver more comprehensive solutions to their customers without requiring them to use multiple products to meet their communication needs.

@@ -2,7 +2,11 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Documentation - Portal Plugin
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="Portal Plugin" insideContent />
+
+# Documentation
 
 Portal plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 

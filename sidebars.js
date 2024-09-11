@@ -76,7 +76,7 @@ const sidebars = {
       label: 'Philosophy',
       link: { type: 'doc', id: 'plugins/overview/index' },
       items: [
-        { type: 'ref', id: 'plugins/overview/index' },
+        { type: 'ref', id: 'plugins/overview/index', label: 'Our Main Goal' },
         { type: 'ref', id: 'plugins/overview/what-problem-it-solve' },
         { type: 'ref', id: 'plugins/overview/why-should-use' },
       ]
@@ -85,6 +85,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'UI Plugin',
+      link: { type: 'doc', id: 'plugins/ui/get-started/index' },
       items: [
         {
           type: 'category',

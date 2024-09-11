@@ -2,7 +2,11 @@
 displayed_sidebar: pluginsSidebar
 ---
 
-# Documentation - Mobile Plugin
+import PageHeader from '@site/src/components/PageHeader';
+
+<PageHeader title="Mobile Plugin" insideContent />
+
+# Documentation
 
 Mobile plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
@@ -50,7 +54,7 @@ Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) docu
 
 Push notifications enhance user engagement, keeping users informed and connected to the Wazo app. Plugins and push are well integrated into our mobile application.
 
-### Redirect to page tab
+### Redirect to plugin tab
 
 In many case, you may when to send a push notification that will opens the application directly on your plugin screen.
 

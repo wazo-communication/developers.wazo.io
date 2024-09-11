@@ -2,21 +2,25 @@
 displayed_sidebar: softphoneSidebar
 ---
 
-# Embedded Softphone Examples
-
 import '../../../src/softphone-example.js';
+import PageHeader from '@site/src/components/PageHeader';
 
-## Displaying the Embedded softphone
+<PageHeader title="Embedded Softphone" insideContent />
 
-Please refer to the [Installation page](/docs/sdk-librairies/plugins-js-sdk) for information on how to import the Embedded Softphone SDK.
+# <span class="hide">Embedded Softphone</span>
+
+Here's an interactive introduction on how Wazo Embedded works. Want to learn from a technical approch, please refer to the [E-UC Plugins SDK documentation](/docs/sdk-librairies/plugins-js-sdk) to see how the SDK works.
+
+## Show
+
 
 ```js
 softphone.show();
 ```
 
-<a className="try-it button button--secondary button--lg" id="display-softphone">🚀 Display the Embedded Softphone</a>
+<a className="try-it button button--secondary button--lg" id="display-softphone">🚀 Show me</a>
 
-## Hiding the Embedded softphone
+## Hide
 
 ```js
 softphone.hide();

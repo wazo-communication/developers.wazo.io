@@ -56,6 +56,10 @@
 
 [data-theme='dark'] .button.button--primary { color: #FFF; }
 
+.hide {
+  display: none !important;
+}
+
 .header-github-link:hover {
   opacity: 0.6;
 }
