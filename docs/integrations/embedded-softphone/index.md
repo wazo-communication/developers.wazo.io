@@ -9,7 +9,7 @@ import PageHeader from '@site/src/components/PageHeader';
 
 # <span className="hide">Embedded Softphone</span>
 
-Here's an interactive introduction on how Wazo Embedded works. Want to learn from a technical approch, please refer to the [E-UC Plugins SDK documentation](/docs/sdk-librairies/plugins-js-sdk) to see how the SDK works.
+Here's an interactive introduction on how Wazo Embedded works. Want to learn from a technical approch, please refer to the [E-UC Plugins SDK documentation](/docs/sdk-librairies/plugins-js-sdk/embedded-softphone-apis) to see how the SDK works.
 
 ## Assign the softphone to your stack
 

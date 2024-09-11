@@ -8,10 +8,6 @@ toc_max_heading_level: 5
 
 The part of the SDK is designed to help you build your own modular plugins, allowing you to extend the functionality of Wazo applications. This documentation will focus on the APIs provided by the SDK for plugins.
 
-:::caution
-This part is still in the development process, changes may happen frequently.
-:::
-
 ## Initilization
 
 After installing the SDK, you must require the app/plugin it with the following lines.
