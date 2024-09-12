@@ -6,7 +6,7 @@ title: Examples | Portal Plugin
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
-# Portal Plugin Examples
+# Portal Plugin - Examples
 
 ## Adding a Tab in the PBX Dashboard Page
 

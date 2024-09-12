@@ -16,10 +16,11 @@ Let's walk through a minimal setup of a plugin to explain clearly how plugins sy
 ```
 # Example of a minimalist plugin structure
 
-|- manifest.json
-|- index.html
-|- my-app.js
-|- my-app.css
+📁 my-plugin
+├── manifest.json
+├── index.html
+├── my-app.js
+└── my-app.css
 ```
 
 ### Manifest

@@ -6,7 +6,7 @@ title: Examples | Web & Desktop Plugin
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
-# E-UC Apps Plugin Examples
+# E-UC Apps Plugin - Examples
 
 ## Changing the sidebar color when entering the module, and resetting the color when leaving it
 

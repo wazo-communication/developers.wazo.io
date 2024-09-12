@@ -16,7 +16,7 @@
     "lint": "biome check src/* docs/* case-studies/*",
     "lint:file": "biome check",
     "format": "biome check --write src/* docs/* case-studies/*",
-    "format:fille": "biome check --write"
+    "format:file": "biome check --write"
   },
   "dependencies": {
     "@docusaurus/core": "^3.5.2",

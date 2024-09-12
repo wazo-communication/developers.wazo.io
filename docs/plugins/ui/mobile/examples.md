@@ -6,7 +6,7 @@ title: Examples | Mobile Plugin
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
-# Mobile Plugin Examples
+# Mobile Plugin - Examples
 
 ## Adding a New Tab
 
