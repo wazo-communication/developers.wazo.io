@@ -5,8 +5,13 @@ if (typeof window !== 'undefined') {
   const { softphone } = require('@wazo/euc-plugins-sdk');
   const Wazo = require('@wazo/sdk/lib/simple').default;
 
+  const getDefaultServer = () =>
+    typeof localStorage !== 'undefined'
+        ? localStorage.getItem('softphone-server') || DEFAULT_SERVER
+        : DEFAULT_SERVER;
+
+
   const setDefaultServer = (server) => {
-    defaultServer = server;
     localStorage.setItem('softphone-server', server);
     updateSoftphone(null, server);
 
@@ -15,8 +20,8 @@ if (typeof window !== 'undefined') {
     document.querySelector('#stack-form button').innerHTML = '✅ Setup';
   };
 
-  const initSoftphone = (server = defaultServer) => {
-    softphone.init({ server: server, width: 400 });
+  const initSoftphone = () => {
+    softphone.init({ server: getDefaultServer(), width: 400 });
 
     softphone.onIFrameLoaded = () => {
       document.getElementById('iframe-loaded-event').innerText =
@@ -204,10 +209,10 @@ if (typeof window !== 'undefined') {
     initSoftphone();
 
     // Setup default server everywhere
-    if (defaultServer !== DEFAULT_SERVER) {
-      document.querySelector('#stack-form #default-server').value =
-        defaultServer;
-      document.querySelector('#login-form #server').value = defaultServer;
+    if (getDefaultServer() !== DEFAULT_SERVER) {
+      const savedServer = getDefaultServer();
+      document.querySelector('#stack-form #default-server').value = savedServer;
+      document.querySelector('#login-form #server').value = savedServer;
       document.querySelector('#default-server-warning').classList.add('hide');
       document.querySelector('#stack-form button').innerHTML = '✅ Setup';
     }
@@ -437,9 +442,5 @@ if (typeof window !== 'undefined') {
     document.querySelector('#maximize-button')?.remove();
   };
 
-  let defaultServer =
-    typeof localStorage !== 'undefined'
-      ? localStorage.getItem('softphone-server') || DEFAULT_SERVER
-      : DEFAULT_SERVER;
   const displayed = false;
 }

@@ -23,7 +23,7 @@
     "@docusaurus/preset-classic": "^3.5.2",
     "@docusaurus/theme-mermaid": "^3.5.2",
     "@mdx-js/react": "^3.0.1",
-    "@wazo/euc-plugins-sdk": "^0.0.14",
+    "@wazo/euc-plugins-sdk": "^0.0.23",
     "@wazo/sdk": "^0.39.0-beta.11",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.3.1",
