@@ -19,3 +19,4 @@ Wazo Provisioning provide a way for third parties to expand the capabilities of 
 
 <OpenSourceButton href="https://wazo-platform.org/uc-doc/contributors/provisioning/developing_plugins" text="Read Documentation" />
 
+

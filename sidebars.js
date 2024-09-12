@@ -143,7 +143,15 @@ const sidebars = {
       ]
     },
 
-    { type: 'ref', id: 'plugins/provisioning/index', label: 'Provisioning Plugin' },
+    {
+      type: 'category',
+      label: 'Provisioning Plugin',
+      link: { type: 'doc', id: 'plugins/provisioning/index' },
+      items: [
+        { type: 'ref', id: 'plugins/provisioning/index', label: 'Documentation' },
+        { type: 'ref', id: 'plugins/provisioning/examples', label: 'Examples' },
+      ]
+    },
   ],
 };
 
