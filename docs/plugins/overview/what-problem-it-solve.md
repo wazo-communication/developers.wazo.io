@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: What does it solve ? | Modular Plugins
 ---
 
 # What does it solve ?

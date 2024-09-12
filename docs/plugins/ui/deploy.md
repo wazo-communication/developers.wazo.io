@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Deployment | UI Plugin
 ---
 
 # Deployment Guide

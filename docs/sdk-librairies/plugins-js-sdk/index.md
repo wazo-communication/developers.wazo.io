@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: jsPluginSdkSidebar
+title: E-UC Plugins SDK
 ---
 
 import '../../../src/softphone-example.js';

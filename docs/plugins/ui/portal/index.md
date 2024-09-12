@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Documentation | Portal Plugin
 ---
 
 import PageHeader from '@site/src/components/PageHeader';

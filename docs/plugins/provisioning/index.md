@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Provisioning Plugin
 ---
 
 import OpenSourceButton from '@site/src/components/OpenSourceButton';

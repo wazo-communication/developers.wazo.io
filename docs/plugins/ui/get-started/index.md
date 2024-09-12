@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Get Started | UI Plugin
 ---
 
 import PageHeader from '@site/src/components/PageHeader';

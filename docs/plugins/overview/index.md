@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Our Main Goal | Modular Plugins
 ---
 
 import PageHeader from '@site/src/components/PageHeader';

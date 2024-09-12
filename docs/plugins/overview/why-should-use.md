@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: You Should Try It | Modular Plugins
 ---
 
 # Why You Should Try It ?

@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Documentation | Web & Desktop Plugin
 ---
 
 import PageHeader from '@site/src/components/PageHeader';

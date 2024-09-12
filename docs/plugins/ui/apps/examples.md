@@ -1,10 +1,10 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Examples | Web & Desktop Plugin
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
-
 
 # E-UC Apps Plugin Examples
 

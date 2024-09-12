@@ -1,5 +1,7 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Templates | UI Plugin
+sidebarTitle: Templates
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';

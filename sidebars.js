@@ -95,9 +95,9 @@ const sidebars = {
           items: [
             { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Quickstart' },
             { type: 'ref', id: 'plugins/ui/get-started/configuration', label: 'Configuration' },
-            { type: 'ref', id: 'plugins/ui/internationalization' },
+            { type: 'ref', id: 'plugins/ui/internationalization', label: 'Internationalization' },
             { type: 'ref', id: 'plugins/ui/deploy', label: 'Deployment' },
-            { type: 'ref', id: 'plugins/ui/templates' },
+            { type: 'ref', id: 'plugins/ui/templates', label: 'Templates' },
           ]
         },
 

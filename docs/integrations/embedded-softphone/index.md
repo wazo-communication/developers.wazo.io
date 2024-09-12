@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: softphoneSidebar
+title: Embedded Softphone
 ---
 
 import '../../../src/softphone-example.js';

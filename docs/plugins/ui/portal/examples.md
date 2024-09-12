@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Examples | Portal Plugin
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
