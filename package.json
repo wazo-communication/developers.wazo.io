@@ -12,7 +12,11 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "biome check src/* docs/* case-studies/*",
+    "lint:file": "biome check",
+    "format": "biome check --write src/* docs/* case-studies/*",
+    "format:fille": "biome check --write"
   },
   "dependencies": {
     "@docusaurus/core": "^3.5.2",
@@ -27,6 +31,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@docusaurus/module-type-aliases": "^3.5.2",
     "@docusaurus/tsconfig": "^3.5.2",
     "assert": "^2.1.0",
@@ -53,5 +58,6 @@
   },
   "engines": {
     "node": ">=18.0"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
