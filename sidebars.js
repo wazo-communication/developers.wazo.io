@@ -95,9 +95,9 @@ const sidebars = {
           items: [
             { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Quickstart' },
             { type: 'ref', id: 'plugins/ui/get-started/configuration', label: 'Configuration' },
-            { type: 'ref', id: 'plugins/ui/internationalization' },
+            { type: 'ref', id: 'plugins/ui/internationalization', label: 'Internationalization' },
             { type: 'ref', id: 'plugins/ui/deploy', label: 'Deployment' },
-            { type: 'ref', id: 'plugins/ui/templates' },
+            { type: 'ref', id: 'plugins/ui/templates', label: 'Templates' },
           ]
         },
 
@@ -133,8 +133,25 @@ const sidebars = {
       ]
     },
 
-    { type: 'ref', id: 'plugins/pbx/index', label: 'Stack Plugin' },
-    { type: 'ref', id: 'plugins/provisioning/index', label: 'Provisioning Plugin' },
+    {
+      type: 'category',
+      label: 'Stack Plugin',
+      link: { type: 'doc', id: 'plugins/pbx/index' },
+      items: [
+        { type: 'ref', id: 'plugins/pbx/index', label: 'Documentation' },
+        { type: 'ref', id: 'plugins/pbx/examples', label: 'Examples' },
+      ]
+    },
+
+    {
+      type: 'category',
+      label: 'Provisioning Plugin',
+      link: { type: 'doc', id: 'plugins/provisioning/index' },
+      items: [
+        { type: 'ref', id: 'plugins/provisioning/index', label: 'Documentation' },
+        { type: 'ref', id: 'plugins/provisioning/examples', label: 'Examples' },
+      ]
+    },
   ],
 };
 

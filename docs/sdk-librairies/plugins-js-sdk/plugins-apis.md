@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: jsPluginSdkSidebar
+title: Plugins APIs | E-UC Plugins SDK
 toc_max_heading_level: 5
 ---
 

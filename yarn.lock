@@ -3513,10 +3513,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wazo/euc-plugins-sdk@npm:^0.0.14":
-  version: 0.0.14
-  resolution: "@wazo/euc-plugins-sdk@npm:0.0.14"
-  checksum: 10c0/5957415c5e8e31241738f0a2c06d056031b680915b5866dc1dea1881cc99e07740cd0897c92b38c6df61002a295a8c483189d6eebf0e114f0a457c6338686417
+"@wazo/euc-plugins-sdk@npm:^0.0.23":
+  version: 0.0.23
+  resolution: "@wazo/euc-plugins-sdk@npm:0.0.23"
+  dependencies:
+    events: "npm:^3.3.0"
+  checksum: 10c0/208b0b87378668d3d04bdd6bda5b2804e95ca2aefce7dc3a8a04f097a4aa7e80c8cb63eb63d2b45008eac7b71716267d19ec5babe73bce5a753b14efd5f945c0
   languageName: node
   linkType: hard
 
@@ -5892,7 +5894,7 @@ __metadata:
     "@docusaurus/theme-mermaid": "npm:^3.5.2"
     "@docusaurus/tsconfig": "npm:^3.5.2"
     "@mdx-js/react": "npm:^3.0.1"
-    "@wazo/euc-plugins-sdk": "npm:^0.0.14"
+    "@wazo/euc-plugins-sdk": "npm:^0.0.23"
     "@wazo/sdk": "npm:^0.39.0-beta.11"
     assert: "npm:^2.1.0"
     browserify-zlib: "npm:^0.2.0"

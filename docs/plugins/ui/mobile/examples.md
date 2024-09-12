@@ -1,18 +1,19 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Examples | Mobile Plugin
 ---
 
 import BrowserWindow from '@site/src/components/BrowserWindow';
 import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
-# Mobile Plugin Examples
+# Mobile Plugin - Examples
 
 ## Adding a New Tab
 
 ```mdx-code-block
 <BrowserWindow url="https://mobile.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/plugins/ui/portal/portal-custom-dashboard-tab.jpg)
+![Mobile New Tab Example](/img/plugins/ui/mobile/example-general-mobile.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```

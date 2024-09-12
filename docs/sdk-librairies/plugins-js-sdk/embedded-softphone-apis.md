@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: jsPluginSdkSidebar
+title: Embedded Softphone APIs | E-UC Plugins SDK
 ---
 
 # Embedded Softphone APIs

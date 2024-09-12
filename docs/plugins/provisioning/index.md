@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Provisioning Plugin
 ---
 
 import OpenSourceButton from '@site/src/components/OpenSourceButton';
@@ -17,4 +18,5 @@ Wazo Provisioning provide a way for third parties to expand the capabilities of 
 - Enhancing the user interface one some devices
 
 <OpenSourceButton href="https://wazo-platform.org/uc-doc/contributors/provisioning/developing_plugins" text="Read Documentation" />
+
 

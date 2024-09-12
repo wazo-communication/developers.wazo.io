@@ -1,3 +1,7 @@
+---
+title: Deep Linking
+---
+
 import PageHeader from '@site/src/components/PageHeader';
 
 <PageHeader title="Deep Linking" insideContent />

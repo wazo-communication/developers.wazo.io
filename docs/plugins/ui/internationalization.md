@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Internationalization | UI Plugin
 ---
 
 # Internationalization

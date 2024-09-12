@@ -1,5 +1,6 @@
 ---
 displayed_sidebar: pluginsSidebar
+title: Configuration | UI Plugin
 ---
 
 # Configuration
