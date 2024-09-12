@@ -109,7 +109,7 @@ softphone.makeCall('*10');
 
 We can parse links contains `tel://` and `callto://` on the current page.
 
-<a className="call-link" href="tel://*10">This is a like to call *10</a>
+<a className="call-link" href="tel://*10">This is a link to call *10</a>
 
 Link are already parsed when we authenticate, so we have to call `removeParsedLinksEvent` to be able to parse them again.
 ```js

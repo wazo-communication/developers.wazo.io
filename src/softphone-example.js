@@ -7,9 +7,8 @@ if (typeof window !== 'undefined') {
 
   const getDefaultServer = () =>
     typeof localStorage !== 'undefined'
-        ? localStorage.getItem('softphone-server') || DEFAULT_SERVER
-        : DEFAULT_SERVER;
-
+      ? localStorage.getItem('softphone-server') || DEFAULT_SERVER
+      : DEFAULT_SERVER;
 
   const setDefaultServer = (server) => {
     localStorage.setItem('softphone-server', server);
@@ -20,8 +19,8 @@ if (typeof window !== 'undefined') {
     document.querySelector('#stack-form button').innerHTML = '✅ Setup';
   };
 
-  const initSoftphone = () => {
-    softphone.init({ server: getDefaultServer(), width: 400 });
+  const initSoftphone = (server = getDefaultServer()) => {
+    softphone.init({ server, width: 400 });
 
     softphone.onIFrameLoaded = () => {
       document.getElementById('iframe-loaded-event').innerText =
@@ -39,37 +38,37 @@ if (typeof window !== 'undefined') {
 
     softphone.onCallIncoming = (call) => {
       document.getElementById('call-incoming-event').innerText =
-        `Incoming call from ${call.displayName}, number: ${call.number}`;
+        `Incoming call from ${call?.displayName}, number: ${call?.number}`;
     };
 
     softphone.onCallLocallyAnswered = (call) => {
       document.getElementById('call-locally-answered-event').innerText =
-        `Call answered here, number: ${call.number}`;
+        `Call answered here, number: ${call?.number}`;
     };
 
     softphone.onCallEstablished = (call) => {
       document.getElementById('call-established-event').innerText =
-        `Call answered, number: ${call.number}`;
+        `Call answered, number: ${call?.number}`;
     };
 
     softphone.onOutgoingCallMade = (call) => {
       document.getElementById('call-outgoing-event').innerText =
-        `Call created here, number: ${call.number}`;
+        `Call created here, number: ${call?.number}`;
     };
 
     softphone.onCallRejected = (call) => {
       document.getElementById('call-rejected-event').innerText =
-        `Call rejected here, number: ${call.number}`;
+        `Call rejected here, number: ${call?.number}`;
     };
 
     softphone.onCallEnded = (call) => {
       document.getElementById('call-ended-event').innerText =
-        `Call ended, duration: ${(call.endTime - call.answerTime) / 1000}s`;
+        `Call ended, duration: ${(call?.endTime - call?.answerTime) / 1000}s`;
     };
 
     softphone.onCardSaved = (card) => {
       document.getElementById('card-saved-event').innerHTML =
-        `Client: ${card.clientId.label}<br /> title: ${card.title}<br /> note: ${card.note}`;
+        `Client: ${card.clientId?.label}<br /> title: ${card.title}<br /> note: ${card.note}`;
     };
 
     softphone.onCardCanceled = () => {
@@ -134,7 +133,7 @@ if (typeof window !== 'undefined') {
 
     softphone.onIndirectCallMade = (call) => {
       document.getElementById('call-indirect-transfer-made-event').innerHTML =
-        `Indirect transfer answered from: ${call.number}`;
+        `Indirect transfer answered from: ${call?.number}`;
     };
 
     softphone.onCancelIndirectTransfer = () => {
@@ -206,11 +205,11 @@ if (typeof window !== 'undefined') {
 
   // Had to use setTimeout because `window.load` or `window.addEventListener('load', ...)` aren't called
   global.initButtons = () => {
-    initSoftphone();
+    const savedServer = getDefaultServer();
+    initSoftphone(savedServer);
 
     // Setup default server everywhere
-    if (getDefaultServer() !== DEFAULT_SERVER) {
-      const savedServer = getDefaultServer();
+    if (savedServer !== DEFAULT_SERVER) {
       document.querySelector('#stack-form #default-server').value = savedServer;
       document.querySelector('#login-form #server').value = savedServer;
       document.querySelector('#default-server-warning').classList.add('hide');
@@ -287,7 +286,8 @@ if (typeof window !== 'undefined') {
 
       softphone.removeParsedLinksEvent();
       softphone.onLinkEnabled = (link) => {
-        link.style.color = 'red';
+        link.style.color = 'green';
+        link.innerText = `✅ ${link.innerText} (parsed)`;
       };
       softphone.parseLinks();
     });
@@ -341,22 +341,7 @@ if (typeof window !== 'undefined') {
         softphone.show();
       });
 
-    document
-      .querySelector('#update-form-value')
-      .addEventListener('click', (e) => {
-        e.preventDefault();
-
-        softphone.setCardValue('title', 'My new title !');
-      });
-
-    // Add simple form
-    document.querySelector('#add-form').addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (!displayed) {
-        updateSoftphone();
-      }
-
+    const setSimpleForm = () => {
       softphone.setFormSchema(
         {
           type: 'object',
@@ -375,6 +360,43 @@ if (typeof window !== 'undefined') {
           note: { 'ui:widget': 'textarea' },
         },
       );
+    };
+
+    document
+      .querySelector('#update-form-value')
+      .addEventListener('click', (e) => {
+        e.preventDefault();
+
+        setSimpleForm();
+        softphone.makeCall('*10');
+
+        const delay = 750;
+        setTimeout(() => {
+          softphone.setCardValue('subject', 'Greetings');
+        }, delay);
+
+        setTimeout(() => {
+          softphone.setCardValue('title', "Hello Dev, here's a title!");
+        }, delay * 2);
+
+        setTimeout(() => {
+          softphone.setCardValue(
+            'note',
+            `\nHello Again, here's a description updated from the code with a delay of ${delay}ms between fields updates.`,
+          );
+        }, delay * 3);
+      });
+
+    // Add simple form
+    document.querySelector('#add-form').addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (!displayed) {
+        updateSoftphone();
+      }
+
+      setSimpleForm();
+      softphone.makeCall('*10');
     });
 
     // Advanced form
@@ -434,6 +456,8 @@ if (typeof window !== 'undefined') {
         softphone.onOptionsResults(fieldId, results);
       };
     });
+
+    softphone.makeCall('*10');
   };
 
   global.removeSoftphone = () => {
