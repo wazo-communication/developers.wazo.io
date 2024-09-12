@@ -12,7 +12,7 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 ```mdx-code-block
 <BrowserWindow url="https://mobile.wazo.io">
 ```
-![New PBX Dashboard Tab](/img/plugins/ui/portal/portal-custom-dashboard-tab.jpg)
+![Mobile New Tab Example](/img/plugins/ui/mobile/example-general-mobile.jpg)
 ```mdx-code-block
 </BrowserWindow>
 ```
