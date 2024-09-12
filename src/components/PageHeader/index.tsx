@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
@@ -31,8 +31,18 @@ const Title = ({ title, insideContent }: TileProps) => {
   return <TitleElement className="hero__title">{title}</TitleElement>;
 };
 
-const PageHeader = ({ title, description, buttons = [], className, insideContent = false }: Props) => (
-  <header className={clsx('hero hero--primary', styles.heroBanner, className, { 'margin-bottom--lg': insideContent })}>
+const PageHeader = ({
+  title,
+  description,
+  buttons = [],
+  className,
+  insideContent = false,
+}: Props) => (
+  <header
+    className={clsx('hero hero--primary', styles.heroBanner, className, {
+      'margin-bottom--lg': insideContent,
+    })}
+  >
     <div className="container">
       <Title insideContent={insideContent} title={title} />
       {description && <p className="hero__subtitle">{description}</p>}

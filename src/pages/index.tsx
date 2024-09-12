@@ -1,13 +1,13 @@
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import UseCases from '@site/src/components/UseCases';
-import PageHeader from '@site/src/components/PageHeader';
-import { PORTAL, SOFTPHONE, STACK, WDA } from './use-cases';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import PageHeader from '@site/src/components/PageHeader';
+import UseCases from '@site/src/components/UseCases';
 import ChevronRight from '@site/static/img/icons/chevron_right.svg';
+import Layout from '@theme/Layout';
+import { PORTAL, SOFTPHONE, STACK, WDA } from './use-cases';
 
-import styles from './index.module.css'
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './index.module.css';
 
 const HEADER_BUTTONS = [
   {
@@ -43,15 +43,19 @@ const Home = (): JSX.Element => {
             <p className="pre-title">Use cases</p>
             <h2>Discover a wide range of possiblities with Wazo</h2>
             <p>
-              From one-to-one interactions to unlimited scalability in a single SDK. No need to set
-              up, babysit, and burn dollars with multiple SDKs.
+              From one-to-one interactions to unlimited scalability in a single
+              SDK. No need to set up, babysit, and burn dollars with multiple
+              SDKs.
             </p>
           </div>
 
           <UseCases useCases={HOME_USE_CASES} />
           <div className={`container ${styles.useCases}`}>
             <div className="row row--align-center">
-              <Link className="button button--lg button--primary" to="/use-cases">
+              <Link
+                className="button button--lg button--primary"
+                to="/use-cases"
+              >
                 All Use Cases
               </Link>
             </div>
@@ -64,9 +68,10 @@ const Home = (): JSX.Element => {
             <div className="text--center">
               <h2>Deliver Unique UCaaS Experiences</h2>
               <p className="padding-horiz--xl">
-                Deliver communication experiences that set you apart from the competition. Our
-                flexible APIs and integrations let you create the solutions your customers need to
-                succeed in the new world of work.
+                Deliver communication experiences that set you apart from the
+                competition. Our flexible APIs and integrations let you create
+                the solutions your customers need to succeed in the new world of
+                work.
               </p>
             </div>
 
@@ -84,7 +89,9 @@ const Home = (): JSX.Element => {
               <div className="col col--2">
                 <p>
                   <img
-                    src={useBaseUrl('/img/icons/wazo/white/icon-ucaas-fast.svg')}
+                    src={useBaseUrl(
+                      '/img/icons/wazo/white/icon-ucaas-fast.svg',
+                    )}
                     alt="fast unified communication"
                   />
                   <span>Gain faster speed-to-market.</span>
@@ -94,7 +101,9 @@ const Home = (): JSX.Element => {
               <div className="col col--2">
                 <p>
                   <img
-                    src={useBaseUrl('/img/icons/wazo/white/icon-ucaas-goodbye.svg')}
+                    src={useBaseUrl(
+                      '/img/icons/wazo/white/icon-ucaas-goodbye.svg',
+                    )}
                     alt="easy integration unified communication"
                   />
                   <span>Stand out with APIs and integrations.</span>
@@ -104,7 +113,9 @@ const Home = (): JSX.Element => {
               <div className="col col--2">
                 <p>
                   <img
-                    src={useBaseUrl('/img/icons/wazo/white/icon-ucaas-owncustomers.svg')}
+                    src={useBaseUrl(
+                      '/img/icons/wazo/white/icon-ucaas-owncustomers.svg',
+                    )}
                     alt="custom development PBX"
                   />
                   <span>Own your platform and your customers</span>
@@ -114,7 +125,9 @@ const Home = (): JSX.Element => {
               <div className="col col--2">
                 <p>
                   <img
-                    src={useBaseUrl('/img/icons/wazo/white/icon-ucaas-simpleapi.svg')}
+                    src={useBaseUrl(
+                      '/img/icons/wazo/white/icon-ucaas-simpleapi.svg',
+                    )}
                     alt="API extendable UC platform"
                   />
                   <span>Say goodbye to black-box solutions.</span>
@@ -129,7 +142,10 @@ const Home = (): JSX.Element => {
             <h2>
               Stand Out. <span>Own Your Customer.</span> Develop Today.
             </h2>
-            <p>Ready to deliver customized, unique UCaaS experiences? Start your Wazo journey</p>
+            <p>
+              Ready to deliver customized, unique UCaaS experiences? Start your
+              Wazo journey
+            </p>
 
             <div>
               {HEADER_BUTTONS.map(({ to, text }) => (
@@ -147,6 +163,6 @@ const Home = (): JSX.Element => {
       </main>
     </Layout>
   );
-}
+};
 
 export default Home;

@@ -1,6 +1,6 @@
-import Layout from '@theme/Layout';
 import PageHeader from '@site/src/components/PageHeader';
 import UseCasesItems from '@site/src/components/UseCases/horizontal';
+import Layout from '@theme/Layout';
 
 export type UseCase = {
   title: string;
@@ -17,8 +17,9 @@ export const WDA: UseCase = {
   link: './docs/plugins/ui/apps',
   description: (
     <>
-      Add tabs, icons, and new pages to the Web and desktop app, significantly expand functionality
-      based on your need. Lead to a more engaging experience based on your needs.
+      Add tabs, icons, and new pages to the Web and desktop app, significantly
+      expand functionality based on your need. Lead to a more engaging
+      experience based on your needs.
     </>
   ),
 };
@@ -30,8 +31,8 @@ export const MOBILE: UseCase = {
   link: './docs/plugins/ui/mobile',
   description: (
     <>
-      Customize Wazo Mobile by adding unique sections and features, creating a personalized mobile
-      communication solution for your end-users.
+      Customize Wazo Mobile by adding unique sections and features, creating a
+      personalized mobile communication solution for your end-users.
     </>
   ),
 };
@@ -43,9 +44,9 @@ export const PORTAL: UseCase = {
   link: './docs/plugins/ui/portal',
   description: (
     <>
-      Customize the Wazo Portal to add new pages, menu items, custom forms, and even new dashboards.
-      This flexibility allows you to improve the platform to meet your unique business needs,
-      enhancing your user experience.
+      Customize the Wazo Portal to add new pages, menu items, custom forms, and
+      even new dashboards. This flexibility allows you to improve the platform
+      to meet your unique business needs, enhancing your user experience.
     </>
   ),
 };
@@ -57,9 +58,10 @@ export const SOFTPHONE: UseCase = {
   link: './docs/integrations/embedded-softphone',
   description: (
     <>
-      Empower your application with an Embedded Softphone, offering unparalleled control and
-      flexibility. This feature allows to use real-time communication, enabling communication
-      features within your application environment.
+      Empower your application with an Embedded Softphone, offering unparalleled
+      control and flexibility. This feature allows to use real-time
+      communication, enabling communication features within your application
+      environment.
     </>
   ),
 };
@@ -71,8 +73,9 @@ export const STACK: UseCase = {
   link: './docs/plugins/pbx',
   description: (
     <>
-      Extend your Wazo Stack with custom functionalities through Python plugins, utilizing extension
-      points in various services to create comprehensive features base on you customers' needs.
+      Extend your Wazo Stack with custom functionalities through Python plugins,
+      utilizing extension points in various services to create comprehensive
+      features base on you customers' needs.
     </>
   ),
 };
@@ -84,13 +87,20 @@ export const PROVISIONING: UseCase = {
   link: './docs/plugins/provisioning',
   description: (
     <>
-      Extend Wazo Provisioning by adding third-party plugins to support new devices, customize phone
-      features, and enhance phone interface.
+      Extend Wazo Provisioning by adding third-party plugins to support new
+      devices, customize phone features, and enhance phone interface.
     </>
   ),
 };
 
-const ALL_USE_CASES: UseCase[] = [WDA, MOBILE, PORTAL, STACK, SOFTPHONE, PROVISIONING];
+const ALL_USE_CASES: UseCase[] = [
+  WDA,
+  MOBILE,
+  PORTAL,
+  STACK,
+  SOFTPHONE,
+  PROVISIONING,
+];
 
 const UseCases = (): JSX.Element => (
   <Layout

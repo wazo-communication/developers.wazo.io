@@ -10,26 +10,44 @@ interface Props {
 const PRODUCT_URLS = {
   portal: 'https://portal.wazo.io/?manifestUrl=',
   app: 'https://app.wazo.io/?manifestUrl=',
-}
+};
 
 export default function ButtonTrySource({
   source,
   manifest,
-  product
+  product,
 }: Props): JSX.Element {
   const showSource: boolean = !!source;
   const showExample: boolean = !!manifest && !!product;
 
-  if(!showSource && !showExample) {
+  if (!showSource && !showExample) {
     return null;
   }
 
-  const productUrl: string = PRODUCT_URLS[product]+manifest;
+  const productUrl: string = PRODUCT_URLS[product] + manifest;
 
   return (
     <div className="button-group button-group--block">
-      { showExample && <a className="button button--primary button--lg" href={productUrl} target="_blank">👀 TRY IT</a> }
-      { showSource && <a className="button button--secondary button--lg" href={source} target="_blank">⚙️ VIEW SOURCE</a> }
+      {showExample && (
+        <a
+          className="button button--primary button--lg"
+          href={productUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          👀 TRY IT
+        </a>
+      )}
+      {showSource && (
+        <a
+          className="button button--secondary button--lg"
+          href={source}
+          target="_blank"
+          rel="noreferrer"
+        >
+          ⚙️ VIEW SOURCE
+        </a>
+      )}
     </div>
   );
 }
