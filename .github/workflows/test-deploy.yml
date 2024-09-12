@@ -18,10 +18,18 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version-file: '.nvmrc'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Test build website
+        run: |
+          corepack enable
+          yarn install --frozen-lockfile
+
+      - name: Test (Linter)
+        run: yarn lint
+
+      - name: Test (Typescript)
+        run: yarn lint
+
+      - name: Test (Build website)
         run: yarn build
