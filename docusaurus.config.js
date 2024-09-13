@@ -6,8 +6,6 @@ const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
-const isDev = process.env.NODE_ENV === 'development';
-
 const MODULAR_PLUGINS_ITEMS = [
   { to: '/docs/plugins/introduction', label: 'Introduction' },
   { to: '/docs/plugins/overview', label: 'Philosophy' },
@@ -46,7 +44,7 @@ const config = {
     'Extend the capabilities of Wazo Products through our open architecture, leveraging public REST APIs, WebSocket support, Webhooks, and WebRTC. Seamlessly integrate the Wazo softphone or other tools into any existing system, and customize functionality with our powerful plugin system.',
 
   url: 'https://developers.wazo.io',
-  baseUrl: isDev ? '/' : 'developers.wazo.io/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
