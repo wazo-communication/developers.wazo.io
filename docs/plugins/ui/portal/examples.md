@@ -27,7 +27,7 @@ document.getElementById('name').innerHTML = context.app.extra.record.auth.userna
 
 <ButtonsTrySource
     product="portal"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/portal/pbx-dashboard-tab/manifest.json"
+    manifest="https://developers.wazo.io/examples/portal/pbx-dashboard-tab/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/portal/pbx-dashboard-tab"
 />
 
@@ -55,7 +55,7 @@ document.getElementById('name').innerHTML = context.app.extra.record.auth.userna
 
 <ButtonsTrySource
     product="portal"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/portal/pbx-user-form-tab/manifest.json"
+    manifest="https://developers.wazo.io/examples/portal/pbx-user-form-tab/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/portal/pbx-user-form-tab"
 />
 

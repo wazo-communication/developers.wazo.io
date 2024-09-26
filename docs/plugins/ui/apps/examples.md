@@ -35,7 +35,7 @@ app.changeNavBarColor('#8e6a3a');
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/sidebar-color/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/sidebar-color/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/sidebar-color"
 />
 
@@ -65,7 +65,7 @@ await app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/incoming-call-modal/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/incoming-call-modal/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/incoming-call-modal"
 />
 
@@ -141,7 +141,7 @@ app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/iframe-bg-messaging/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/iframe-bg-messaging/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/iframe-bg-messaging"
 />
 
@@ -173,7 +173,7 @@ app.initialize();
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/settings-menu/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/settings-menu/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/settings-menu"
 />
 
@@ -219,7 +219,7 @@ app.onCallAnswered = (call) => {
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/video-pip/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/video-pip/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/video-pip"
 />
 
@@ -241,6 +241,6 @@ setTimeout(() => {
 
 <ButtonsTrySource
     product="app"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/wda/configure-sounds/manifest.json"
+    manifest="https://developers.wazo.io/examples/wda/configure-sounds/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/wda/configure-sounds"
 />
