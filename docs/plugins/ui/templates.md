@@ -51,7 +51,7 @@ This template uses vanilla Javascript, HTML and [Materialize](https://materializ
 
 <ButtonsTrySource
     product="portal"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/portal/css/manifest.json"
+    manifest="https://developers.wazo.io/examples/portal/css/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/portal/css/materializecss.html"
 />
 
@@ -69,7 +69,7 @@ This template uses vanilla Javascript, HTML and [MUI (css)](https://www.muicss.c
 
 <ButtonsTrySource
     product="portal"
-    manifest="https://wazo-communication.github.io/developers.wazo.io/examples/portal/css/manifest.json"
+    manifest="https://developers.wazo.io/examples/portal/css/manifest.json"
     source="https://github.com/wazo-communication/developers.wazo.io/tree/main/static/examples/portal/css/muicss.html"
 />
 
