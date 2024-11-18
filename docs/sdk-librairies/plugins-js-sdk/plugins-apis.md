@@ -406,15 +406,17 @@ app.displayBanner({ url, height, width, hideCloseButton });
 - `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
 - `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
 
-We can then call `app.removeBanner()` in the `backgroundScript` or the loaded content.
-
-:::note
-On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
-:::
-
 :::note
 On Web/Desktop App, the banner will be integrated with other banners like incoming calls. Other banners will be displayed below.
 :::
+
+#### `closeBanner`
+
+We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+
+```js
+app.closeBanner();
+```
 
 #### `hasLocalVideoStream`
 
@@ -653,6 +655,31 @@ app.onSwitchTenant = (uuid: string, name: string) => {};
 ## **E-UC Mobile** \{#mobile}
 
 ### Methods
+
+#### `displayBanner`
+
+We can display a mobile banner from the `backgroundScript` file.
+
+```js
+app.displayBanner({ url, height, width, hideCloseButton });
+```
+
+- If `url` is present, the modal will display an iframe with the content of the url.
+- `height` accepts valid CSS values, like `500px` or `80%`.
+- `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
+- `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
+
+:::note
+On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
+:::
+
+#### `closeBanner`
+
+We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+
+```js
+app.closeBanner();
+```
 
 #### `setMobileHeader`
 
