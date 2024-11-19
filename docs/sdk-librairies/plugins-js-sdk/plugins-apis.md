@@ -622,36 +622,6 @@ Listener when a participant leaves a room.
 app.onParticipantLeaveRoom = (room, participant) => {};
 ```
 
-## **E-UC Portal** {#portal}
-
-### Methods
-
-#### `changeToolbarDisplay`
-
-Changes the status/visibility of the toolbar.
-
-```js
-app.changeToolbarDisplay(displayed: boolean);
-```
-
-### Events
-
-#### `onConnectedToStack`
-
-Listener when the user is successfuly connected to a stack.
-
-```js
-app.onConnectedToStack = (stackSession: Object) => {};
-```
-
-#### `onSwitchTenant`
-
-Listener when the user is switching to a stack tenant.
-
-```js
-app.onSwitchTenant = (uuid: string, name: string) => {};
-```
-
 ## **E-UC Mobile** \{#mobile}
 
 ### Methods
@@ -881,4 +851,34 @@ Listener to Wazo Websocket message(s). Useful to react on a call event from `bac
 
 ```js
 app.onWebsocketMessage = (message: MessageEvent) =>  {};
+```
+
+## **E-UC Portal** {#portal}
+
+### Methods
+
+#### `changeToolbarDisplay`
+
+Changes the status/visibility of the toolbar.
+
+```js
+app.changeToolbarDisplay(displayed: boolean);
+```
+
+### Events
+
+#### `onConnectedToStack`
+
+Listener when the user is successfuly connected to a stack.
+
+```js
+app.onConnectedToStack = (stackSession: Object) => {};
+```
+
+#### `onSwitchTenant`
+
+Listener when the user is switching to a stack tenant.
+
+```js
+app.onSwitchTenant = (uuid: string, name: string) => {};
 ```
