@@ -16,7 +16,7 @@ Apps plugins allow many great ways to extend the interface. Here's a quick summa
 - Extend Settings pannel
 - Run code logic inside a background script
 
-## Tabs - Add menu item (dashbaord)
+## Tabs - Add menu item (dashboard)
 
 ![App configuration](/img/plugins/ui/app/wda-tab-example.png)
 
@@ -40,7 +40,8 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 ![App configuration (small)](/img/plugins/ui/app/wda-sidebar.png)
 
-To create a new tab in the main screen, add a `staticTabs` in your manifest with a `sidebarTab` `context` :
+To create a new tab in the main screen, add a `staticTabs` in your manifest with a `sidebarTab` `context`.
+
 ```json
 "staticTabs": [
   {
@@ -55,9 +56,12 @@ To create a new tab in the main screen, add a `staticTabs` in your manifest with
 ],
 ```
 
-The `icon` should be a white `svg` file for better results.
+:::info
+For optimal results, `icon` must be a **white** SVG. `<svg fill="#FFF" />`
+:::
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
+
 
 ## Tabs - Add menu item (contact)
 
