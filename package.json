@@ -19,9 +19,9 @@
     "format:file": "biome check --write"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.2",
-    "@docusaurus/preset-classic": "^3.5.2",
-    "@docusaurus/theme-mermaid": "^3.5.2",
+    "@docusaurus/core": "^3.6.2",
+    "@docusaurus/preset-classic": "^3.6.2",
+    "@docusaurus/theme-mermaid": "^3.6.2",
     "@mdx-js/react": "^3.0.1",
     "@wazo/euc-plugins-sdk": "^0.0.23",
     "@wazo/sdk": "^0.39.0-beta.11",
@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@docusaurus/module-type-aliases": "^3.5.2",
-    "@docusaurus/tsconfig": "^3.5.2",
+    "@docusaurus/module-type-aliases": "^3.6.2",
+    "@docusaurus/tsconfig": "^3.6.2",
     "assert": "^2.1.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
