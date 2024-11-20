@@ -371,10 +371,6 @@ app.displayModal({ url, title, text, htmlText, height, width, hideCloseButton })
 - `height` and `width` accept valid CSS values, like `500px` or `80%`.
 - `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
 
-:::note
-On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
-:::
-
 Example:
 
 Displaying client data when receiving a call
@@ -393,6 +389,14 @@ app.onCallIncoming = async call => {
 };
 ```
 
+#### `removeModal`
+
+Will remove the shown modal in the application, the method must called from the `backgroundScript` file or within the modal HTML.
+
+```js
+app.removeModal();
+```
+
 #### `displayBanner`
 
 We can display a mobile banner from the `backgroundScript` file.
@@ -406,15 +410,17 @@ app.displayBanner({ url, height, width, hideCloseButton });
 - `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
 - `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
 
-We can then call `app.removeBanner()` in the `backgroundScript` or the loaded content.
-
-:::note
-On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
-:::
-
 :::note
 On Web/Desktop App, the banner will be integrated with other banners like incoming calls. Other banners will be displayed below.
 :::
+
+#### `closeBanner`
+
+We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+
+```js
+app.closeBanner();
+```
 
 #### `hasLocalVideoStream`
 
@@ -515,12 +521,8 @@ Display a notification next to the navigation bar icon button. It uses MUI's [Ba
 When used in `backgroundScript` file, it requires `entityId` as set in a tab in the `staticTabs` section of `manifest.json`, and that tab must include "sidebarTab" in its context (`entityId` should automatically be set when called from the iframe).
 
 ```js
-app.updateBadge({ badgeContent: number, color?: string = 'error', variant?: string, max?: number, overlap?: string, anchorOrigin?: Object, showZero?: boolean });
+app.updateBadge({ badgeContent: number, entityId: string, color?: string = 'error', variant?: string, max?: number, overlap?: string, anchorOrigin?: Object, showZero?: boolean, entityId?: string });
 ```
-
-:::info
-On Wazo Mobile, only the field `badgeContent: number` is used to display the badge.
-:::
 
 ### Events
 
@@ -620,6 +622,237 @@ Listener when a participant leaves a room.
 app.onParticipantLeaveRoom = (room, participant) => {};
 ```
 
+## **E-UC Mobile** \{#mobile}
+
+### Methods
+
+#### `setMobileHeader`
+
+Will change the header inside the app.
+
+```js
+app.setMobileHeader({ title?: string | null, callback?: Function | null });
+```
+
+- `title`: Changes the label displayed in the header. Set this value to `null` to set it back to the default value.
+- `callback`: Handles the back button click. If a callback is registered, the app will forgo its normal behavior and run it. Setting the value to `null` reinstates the original behavior.
+
+#### `setMobileShowBottomNav`
+
+Define whether you want to show or hide the bottom navigation.
+
+```js
+app.setMobileShowBottomNav(show: boolean);
+```
+
+#### `startCall`
+
+Starting a call audio or video call
+
+```js
+app.startCall({ targets , requestedModalities = ['audio'] });
+```
+
+Example:
+
+```js
+app.startCall({ targets: ['8008'], requestedModalities: ['video'] });
+```
+
+#### `playProgressSound`
+
+Play the ringback sound when we make a call (🔁 loop)
+
+```js
+app.playProgressSound();
+```
+
+
+#### `playNewMessageSound`
+
+Play the sound when we receive a text message.
+
+```js
+app.playNewMessageSound();
+```
+
+#### `playHangupSound`
+
+Play the hangup sound
+
+```js
+app.playHangupSound();
+```
+
+#### `stopCurrentSound`
+
+Stop the current sound. Sounds marked "🔁 loop" can be stopped only using this method.
+
+```js
+app.stopCurrentSound();
+```
+
+
+#### `displayBanner`
+
+We can display a mobile banner from the `backgroundScript` file.
+
+```js
+app.displayBanner({ url, height, width, hideCloseButton });
+```
+
+- If `url` is present, the modal will display an iframe with the content of the url.
+- `height` accepts valid CSS values, like `500px` or `80%`.
+- `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
+- `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
+
+:::note
+On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
+:::
+
+#### `closeBanner`
+
+We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+
+```js
+app.closeBanner();
+```
+
+#### `displayModal`
+
+Will display a modal in the application, the method must called from the `backgroundScript` file.
+
+```js
+app.displayModal({ url, title, text, htmlText, height, width, hideCloseButton });
+```
+
+- If `url` is present, the modal will display an iframe with the content of the url.
+- If `htmlText` is present, the modal will display this text in a html contact, otherwise the `text` attribute will be used.
+- `height` and `width` accept valid CSS values, like `500px` or `80%`.
+- `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
+
+:::note
+On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
+:::
+
+Example:
+
+Displaying client data when receiving a call
+
+```js
+app.onCallIncoming = async call => {
+  console.log('background onCallIncoming', call);
+  const clientData = await fetchClientData(call.number); // Where `fetchClientData` is a method that return client information from an extension
+
+  app.displayModal({
+    title: `Incoming call for ${call.displayName}`,
+    text: `Last call was: ${clientData.lastCall} for : ${clientData.lastCallSubject}`,
+    height: '50%',
+    width: '70%',
+  });
+};
+```
+
+#### `removeModal`
+
+Will remove the shown modal in the application, the method must called from the `backgroundScript` file or within the modal HTML.
+
+```js
+app.removeModal();
+```
+
+#### `updateBadge`
+
+Display a notification next to the navigation bar icon button. It uses MUI's [Badge](https://mui.com/material-ui/react-badge/) component to display a notification, generally an integer.
+
+When used in `backgroundScript` file, it requires `entityId` as set in a tab in the `staticTabs` section of `manifest.json`, and that tab must include "sidebarTab" in its context (`entityId` should automatically be set when called from the iframe).
+
+```js
+app.updateBadge({ badgeContent: number, entityId: string });
+```
+
+:::info
+On Wazo Mobile, only the field `badgeContent: number` is used to display the badge.
+:::
+
+#### `sendMessageToBackground`
+
+Sending a message from the iframe to background script. Receive message from event `onBackgroundMessage`
+
+```js
+// my-plugins.js (Sending message to background)
+app.sendMessageToBackground({ value: 'ping' });
+
+// background.js (Receiving a message from the iframe)
+app.onBackgroundMessage = msg => {
+  console.log('onBackgroundMessage', msg);
+
+```
+
+#### `sendMessageToIframe`
+
+In the background script
+
+```js
+// background.js (Sending a message to the plugin's iframe)
+app.sendMessageToIframe({ value: 'pong' });
+
+// my-plugin.js (Receiving a message from the background script)
+app.onIframeMessage = (msg) => {
+  console.log('onIframeMessage', msg);
+}
+```
+
+### Events
+
+#### `onCallIncoming`
+
+Listener when a call for the current user is incoming. Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onCallIncoming = (call: Call) =>  {};
+```
+
+#### `onCallMade`
+
+Listener when a call is made by the user (eg: outgoing call). Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onCallMade = (call: Call) =>  {};
+```
+
+#### `onCallAnswered`
+
+Listener when an incoming call is answered by the current user. Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onCallAnswered = (call: Call) =>  {};
+```
+
+#### `onCallAccepted`
+
+Listener when a call is answered (by one or the other side). Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onCallAccepted = (call: Call) =>  {};
+```
+
+#### `onCallHungUp`
+
+Listener when a call is hung up. Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onCallHungUp = (call: Call) =>  {};
+```
+
+#### `onWebsocketMessage`
+
+Listener to Wazo Websocket message(s). Useful to react on a call event from `backgroundScript` file.
+
+```js
+app.onWebsocketMessage = (message: MessageEvent) =>  {};
+```
+
 ## **E-UC Portal** {#portal}
 
 ### Methods
@@ -648,27 +881,4 @@ Listener when the user is switching to a stack tenant.
 
 ```js
 app.onSwitchTenant = (uuid: string, name: string) => {};
-```
-
-## **E-UC Mobile** \{#mobile}
-
-### Methods
-
-#### `setMobileHeader`
-
-Will change the header inside the app.
-
-```js
-app.setMobileHeader({ title?: string | null, callback?: Function | null });
-```
-
-- `title`: Changes the label displayed in the header. Set this value to `null` to set it back to the default value.
-- `callback`: Handles the back button click. If a callback is registered, the app will forgo its normal behavior and run it. Setting the value to `null` reinstates the original behavior.
-
-#### `setMobileShowBottomNav`
-
-Define whether you want to show or hide the bottom navigation.
-
-```js
-app.setMobileShowBottomNav(show: boolean);
 ```

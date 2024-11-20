@@ -1,15 +1,8 @@
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
-
 // @ts-check
+const generateLinkNewTab = (href, text) => {
+  const externalSVG = `<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>`;
+  return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="menu__link menuExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link-styles-module" tabindex="0">${ text }&nbsp;${externalSVG}</a>`;
+}
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -96,8 +89,9 @@ const sidebars = {
             { type: 'ref', id: 'plugins/ui/get-started/index', label: 'Quickstart' },
             { type: 'ref', id: 'plugins/ui/get-started/configuration', label: 'Configuration' },
             { type: 'ref', id: 'plugins/ui/internationalization', label: 'Internationalization' },
-            { type: 'ref', id: 'plugins/ui/deploy', label: 'Deployment' },
             { type: 'ref', id: 'plugins/ui/templates', label: 'Templates' },
+            { type: 'ref', id: 'plugins/ui/development', label: 'Development Guide' },
+            { type: 'ref', id: 'plugins/ui/deploy', label: 'Deployment Guide' },
           ]
         },
 
@@ -108,6 +102,8 @@ const sidebars = {
           items: [
             { type: 'ref', id: 'plugins/ui/apps/index', label: 'Documentation' },
             { type: 'ref', id: 'plugins/ui/apps/examples', label: 'Examples' },
+            { type: 'html', value: generateLinkNewTab('/docs/sdk-librairies/plugins-js-sdk/plugins-apis#wda', 'SDK References')},
+
           ]
         },
 
@@ -118,6 +114,7 @@ const sidebars = {
           items: [
             { type: 'ref', id: 'plugins/ui/mobile/index', label: 'Documentation' },
             { type: 'ref', id: 'plugins/ui/mobile/examples', label: 'Examples' },
+            { type: 'html', value: generateLinkNewTab('/docs/sdk-librairies/plugins-js-sdk/plugins-apis#mobile', 'SDK References')},
           ]
         },
 
@@ -128,6 +125,7 @@ const sidebars = {
           items: [
             { type: 'ref', id: 'plugins/ui/portal/index', label: 'Documentation' },
             { type: 'ref', id: 'plugins/ui/portal/examples', label: 'Examples' },
+            { type: 'html', value: generateLinkNewTab('/docs/sdk-librairies/plugins-js-sdk/plugins-apis#portal', 'SDK References')},
           ]
         },
       ]

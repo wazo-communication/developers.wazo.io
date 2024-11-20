@@ -5,14 +5,7 @@ title: Deployment | UI Plugin
 
 # Deployment Guide
 
-Guide to help you deploy a Wazo plugin and make it ready to production.
-
-## During Development
-
-Developers can install a plugin from a `localhost` environment. Example the manifest URL could be `https://localhost:3000/manifest.json`. Just keep in mind to don't install it on a real client, because client's users will not be able to load a plugin from your `localhost` environment.
-
-[CORS](#cors) need to be well configured to be able to install a local plugin. The process to install a local vs production plugin is the same, please refer to the [distributing section](#distributing).
-
+This guide will walk you through the process of deploying a Wazo plugin and getting it ready for production. Wazo system allows you to build custom plugins to extend our functionalities.
 
 ## Where to Deploy
 

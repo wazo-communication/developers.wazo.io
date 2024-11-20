@@ -12,8 +12,9 @@ import PageHeader from '@site/src/components/PageHeader';
 Mobile plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add tabs on the main page of the application
+- Run code logic inside a background script
 
-## Tabs - Add a new menu item
+## Add a new menu tab
 
 ```mdx-code-block
 <div className="row">
@@ -96,3 +97,18 @@ const context = app.getContext();
 
 const payloadFromMyPush = context.app.extra.payload;
 ```
+
+## Background Script
+
+You can add custom code when the user is not using a custom tab. It can be useful to handle incoming calls, or other events.
+
+```json
+{
+  // ...
+  "backgroundScript": "./background.js"
+}
+```
+
+Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) documentation to know how to inject custom code in the application.**
+
+The background script is always running, even when the user logs out. Please make sure to remove all related background tasks when the `onLogout` listener event is fired.

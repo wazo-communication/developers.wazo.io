@@ -1,0 +1,33 @@
+{
+  "manifestVersion": "0.1",
+  "version": "1.0.0",
+  "id": "wda-iframe-background-messaging",
+  "packageName": "io.wazo.mboille.iframe-background-messaging",
+  "productType": "mobile",
+  "name" : {
+    "short": "Example - Iframe/Background",
+    "full": "Example - Iframe/Background"
+  },
+  "developer": {
+    "name": "Wazo Inc"
+  },
+  "description": {
+    "short": "Example on how to implement: Iframe / Background Messaging",
+    "full": "Example on how to implement: Iframe / Background Messaging"
+  },
+  "icons": {
+    "color": "https://avatars.githubusercontent.com/u/68688703?s=200&v=4"
+  },
+  "staticTabs": [
+    {
+      "entityId": "new-tab-background",
+      "mobileIcon": "chatbox-ellipses-outline",
+      "context": [
+        "mobileTab"
+      ],
+      "name": "My Plugin",
+      "contentUrl": "./tab.html"
+    }
+  ],
+  "backgroundScript": "./background.js"
+}

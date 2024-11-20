@@ -102,7 +102,7 @@ In the `banner.html` file:
 
         document.getElementById('close').addEventListener('click', (e) => {
           e.preventDefault();
-          app.removeBanner();
+          app.closeBanner();
         });
       </script>
   </body>
