@@ -391,7 +391,7 @@ app.onCallIncoming = async call => {
 
 #### `removeModal`
 
-Will remove the shown modal in the application, the method must called from the `backgroundScript` file or within the modal HTML.
+Will remove the shown modal in the application, the method must be called from the `backgroundScript` file or within the modal HTML.
 
 ```js
 app.removeModal();
@@ -416,7 +416,7 @@ On Web/Desktop App, the banner will be integrated with other banners like incomi
 
 #### `closeBanner`
 
-We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+We can hide a mobile banner from the `backgroundScript` or within the banner HTML page.
 
 ```js
 app.closeBanner();
@@ -647,7 +647,7 @@ app.setMobileShowBottomNav(show: boolean);
 
 #### `startCall`
 
-Starting a call audio or video call
+Start a new audio or video call
 
 ```js
 app.startCall({ targets , requestedModalities = ['audio'] });
@@ -690,32 +690,6 @@ Stop the current sound. Sounds marked "🔁 loop" can be stopped only using this
 
 ```js
 app.stopCurrentSound();
-```
-
-
-#### `displayBanner`
-
-We can display a mobile banner from the `backgroundScript` file.
-
-```js
-app.displayBanner({ url, height, width, hideCloseButton });
-```
-
-- If `url` is present, the modal will display an iframe with the content of the url.
-- `height` accepts valid CSS values, like `500px` or `80%`.
-- `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
-- `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
-
-:::note
-On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
-:::
-
-#### `closeBanner`
-
-We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
-
-```js
-app.closeBanner();
 ```
 
 #### `displayModal`
@@ -761,11 +735,36 @@ Will remove the shown modal in the application, the method must called from the 
 app.removeModal();
 ```
 
+#### `displayBanner`
+
+We can display a mobile banner from the `backgroundScript` file.
+
+```js
+app.displayBanner({ url, height, width, hideCloseButton });
+```
+
+- If `url` is present, the modal will display an iframe with the content of the url.
+- `height` accepts valid CSS values, like `500px` or `80%`.
+- `width` accepts valid CSS values, like `500px` or `80%`, used on Web/Desktop App (min: `300px`).
+- `hideCloseButton` (default to false) determines if the close button should be displayed, or if the user should handle closing of the modal in the html content (through `app.removeModal()` method).
+
+:::note
+On mobile, links with a `target="_blank"` attribute will be opened in the user's default browser.
+:::
+
+#### `closeBanner`
+
+We can hide a mobile banner fro the `backgroundScript` or withing the banner HTML page.
+
+```js
+app.closeBanner();
+```
+
 #### `updateBadge`
 
 Display a notification next to the navigation bar icon button. It uses MUI's [Badge](https://mui.com/material-ui/react-badge/) component to display a notification, generally an integer.
 
-When used in `backgroundScript` file, it requires `entityId` as set in a tab in the `staticTabs` section of `manifest.json`, and that tab must include "sidebarTab" in its context (`entityId` should automatically be set when called from the iframe).
+When used in `backgroundScript` file, it requires `entityId` to be set in a tab in the `staticTabs` section of `manifest.json`, and that tab must include "sidebarTab" in its context (`entityId` should automatically be set when called from the iframe).
 
 ```js
 app.updateBadge({ badgeContent: number, entityId: string });
@@ -807,7 +806,7 @@ app.onIframeMessage = (msg) => {
 
 #### `onCallIncoming`
 
-Listener when a call for the current user is incoming. Useful to react on a call event from `backgroundScript` file.
+Listener to detect incoming calls for the current user. Useful to react on a call event from `backgroundScript` file.
 
 ```js
 app.onCallIncoming = (call: Call) =>  {};
@@ -815,7 +814,7 @@ app.onCallIncoming = (call: Call) =>  {};
 
 #### `onCallMade`
 
-Listener when a call is made by the user (eg: outgoing call). Useful to react on a call event from `backgroundScript` file.
+Listener to detect user's outgoing calls (eg: made by the user). Useful to react on a call event from `backgroundScript` file.
 
 ```js
 app.onCallMade = (call: Call) =>  {};
@@ -823,7 +822,7 @@ app.onCallMade = (call: Call) =>  {};
 
 #### `onCallAnswered`
 
-Listener when an incoming call is answered by the current user. Useful to react on a call event from `backgroundScript` file.
+Listener to detect when an incoming call is answered by the current user. Useful to react on a call event from `backgroundScript` file.
 
 ```js
 app.onCallAnswered = (call: Call) =>  {};
@@ -831,7 +830,7 @@ app.onCallAnswered = (call: Call) =>  {};
 
 #### `onCallAccepted`
 
-Listener when a call is answered (by one or the other side). Useful to react on a call event from `backgroundScript` file.
+Listener  to detect answered calls (by the current user or the other side). Useful to react on a call event from `backgroundScript` file.
 
 ```js
 app.onCallAccepted = (call: Call) =>  {};
@@ -839,7 +838,7 @@ app.onCallAccepted = (call: Call) =>  {};
 
 #### `onCallHungUp`
 
-Listener when a call is hung up. Useful to react on a call event from `backgroundScript` file.
+Listener to detect hung up calls. Useful to react on a call event from `backgroundScript` file.
 
 ```js
 app.onCallHungUp = (call: Call) =>  {};
@@ -869,7 +868,7 @@ app.changeToolbarDisplay(displayed: boolean);
 
 #### `onConnectedToStack`
 
-Listener when the user is successfuly connected to a stack.
+Listener to detect when the user successfuly connects to a stack.
 
 ```js
 app.onConnectedToStack = (stackSession: Object) => {};
