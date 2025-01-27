@@ -599,7 +599,7 @@ Listing user call logs on login.
 
 ```js
 import { softphone } from '@wazo/euc-plugins-sdk';
-import Wazo from '@wazo/sdk/lib/simple';
+import Wazo from '@wazo/sdk';
 
 const server = 'my-stack.com';
 

@@ -5543,25 +5543,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wazo/sdk@npm:^0.39.0-beta.11":
-  version: 0.39.15
-  resolution: "@wazo/sdk@npm:0.39.15"
+"@wazo/sdk@npm:^0.44.0":
+  version: 0.44.0
+  resolution: "@wazo/sdk@npm:0.44.0"
   dependencies:
     events: "npm:^3.3.0"
     fstream: "npm:^1.0.12"
     getstats: "github:wazo-platform/getStats#fix_stats_mobile"
-    google-libphonenumber: "npm:^3.2.32"
-    js-base64: "npm:^3.7.5"
+    js-base64: "npm:^3.7.7"
     json-to-graphql-query: "npm:^2.2.5"
-    jsrsasign: "npm:^10.8.6"
-    moment: "npm:^2.29.1"
-    node-abort-controller: "npm:^3.1.1"
-    node-fetch: "npm:^3.3.1"
+    jsrsasign: "npm:^11.1.0"
+    libphonenumber-js: "npm:^1.10.60"
+    moment: "npm:^2.30.1"
     reconnecting-websocket: "npm:^4.4.0"
-    sdp-transform: "npm:^2.14.1"
+    sdp-transform: "npm:^2.14.2"
     sip.js: "npm:^0.21.2"
     webrtc-adapter: "npm:^8.2.3"
-  checksum: 10c0/b3517a8d590e53a5c1856f14806092a4c918b4c3acf7f71804c260f911ead04bede459fce9f517fd5974a83b964c0845ca7443681fa81bb9a0345f5d96b9cacd
+  checksum: 10c0/72c1bc957809a7a659eb26d74a6fb3d6be7d04076533aaa3b4174c4d1c865314e8715bb4f493067cf4d780244bf86f04ceddc68914284dd4d371b0cad8cad717
   languageName: node
   linkType: hard
 
@@ -7753,13 +7751,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-uri-to-buffer@npm:^4.0.0":
-  version: 4.0.1
-  resolution: "data-uri-to-buffer@npm:4.0.1"
-  checksum: 10c0/20a6b93107597530d71d4cb285acee17f66bcdfc03fd81040921a81252f19db27588d87fc8fc69e1950c55cfb0bf8ae40d0e5e21d907230813eb5d5a7f9eb45b
-  languageName: node
-  linkType: hard
-
 "dayjs@npm:^1.11.10":
   version: 1.11.13
   resolution: "dayjs@npm:1.11.13"
@@ -8055,7 +8046,7 @@ __metadata:
     "@docusaurus/tsconfig": "npm:^3.7.0"
     "@mdx-js/react": "npm:^3.1.0"
     "@wazo/euc-plugins-sdk": "npm:^0.0.23"
-    "@wazo/sdk": "npm:^0.39.0-beta.11"
+    "@wazo/sdk": "npm:^0.44.0"
     assert: "npm:^2.1.0"
     browserify-zlib: "npm:^0.2.0"
     buffer: "npm:^6.0.3"
@@ -8699,16 +8690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
-  version: 3.2.0
-  resolution: "fetch-blob@npm:3.2.0"
-  dependencies:
-    node-domexception: "npm:^1.0.0"
-    web-streams-polyfill: "npm:^3.0.3"
-  checksum: 10c0/60054bf47bfa10fb0ba6cb7742acec2f37c1f56344f79a70bb8b1c48d77675927c720ff3191fa546410a0442c998d27ab05e9144c32d530d8a52fbe68f843b69
-  languageName: node
-  linkType: hard
-
 "figures@npm:^3.2.0":
   version: 3.2.0
   resolution: "figures@npm:3.2.0"
@@ -8880,15 +8861,6 @@ __metadata:
   version: 0.2.2
   resolution: "format@npm:0.2.2"
   checksum: 10c0/6032ba747541a43abf3e37b402b2f72ee08ebcb58bf84d816443dd228959837f1cddf1e8775b29fa27ff133f4bd146d041bfca5f9cf27f048edf3d493cf8fee6
-  languageName: node
-  linkType: hard
-
-"formdata-polyfill@npm:^4.0.10":
-  version: 4.0.10
-  resolution: "formdata-polyfill@npm:4.0.10"
-  dependencies:
-    fetch-blob: "npm:^3.1.2"
-  checksum: 10c0/5392ec484f9ce0d5e0d52fb5a78e7486637d516179b0eb84d81389d7eccf9ca2f663079da56f761355c0a65792810e3b345dc24db9a8bbbcf24ef3c8c88570c6
   languageName: node
   linkType: hard
 
@@ -9198,13 +9170,6 @@ __metadata:
     merge2: "npm:^1.4.1"
     slash: "npm:^4.0.0"
   checksum: 10c0/34199932fad67ae6a4cca764eaad8e7678efabd4321f553bfb8a52046e03f8e8e2f9c14216a6734b692b7c26c4da1b1cfe9ce23733d28d1777d73f4bf34b09c7
-  languageName: node
-  linkType: hard
-
-"google-libphonenumber@npm:^3.2.32":
-  version: 3.2.40
-  resolution: "google-libphonenumber@npm:3.2.40"
-  checksum: 10c0/997857e0dfdd39b169171cfee72ba268e9b0f9c655317701e21f61b2725d48384df3b2dea6977b49fb47efbde319fd71a1f2ec46589e91ab832ada9f54793cff
   languageName: node
   linkType: hard
 
@@ -10365,7 +10330,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-base64@npm:^3.7.5":
+"js-base64@npm:^3.7.7":
   version: 3.7.7
   resolution: "js-base64@npm:3.7.7"
   checksum: 10c0/3c905a7e78b601e4751b5e710edd0d6d045ce2d23eb84c9df03515371e1b291edc72808dc91e081cb9855aef6758292a2407006f4608ec3705373dd8baf2f80f
@@ -10502,10 +10467,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsrsasign@npm:^10.8.6":
-  version: 10.9.0
-  resolution: "jsrsasign@npm:10.9.0"
-  checksum: 10c0/31031f7c9279bc9135c3d0d2c98a75c0b080692c116f3ab0eaf430de7f3feee3f8b9225dfbaa95679fe87c3b3da66ab049c45a0d9d92f9986e414116318bf564
+"jsrsasign@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "jsrsasign@npm:11.1.0"
+  checksum: 10c0/a1c819d5da0eb00e1fdbb3cbbc360e0592f16726bab3f72aba51d3f660c9c486212112b3b4202eb5c233904f69c67821d91ed39ebd64ad4c3500e4dc085ca99c
   languageName: node
   linkType: hard
 
@@ -10607,6 +10572,13 @@ __metadata:
   version: 3.1.0
   resolution: "leven@npm:3.1.0"
   checksum: 10c0/cd778ba3fbab0f4d0500b7e87d1f6e1f041507c56fdcd47e8256a3012c98aaee371d4c15e0a76e0386107af2d42e2b7466160a2d80688aaa03e66e49949f42df
+  languageName: node
+  linkType: hard
+
+"libphonenumber-js@npm:^1.10.60":
+  version: 1.11.18
+  resolution: "libphonenumber-js@npm:1.11.18"
+  checksum: 10c0/4877d2521426e4094cbf1991fd30778d3856e702acce655a767a1ba261d8e765901dc17944d627a7ee083992ee4c427007bf9d488207432b6b5dee982b849de4
   languageName: node
   linkType: hard
 
@@ -11910,7 +11882,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment@npm:^2.29.1":
+"moment@npm:^2.30.1":
   version: 2.30.1
   resolution: "moment@npm:2.30.1"
   checksum: 10c0/865e4279418c6de666fca7786607705fd0189d8a7b7624e2e56be99290ac846f90878a6f602e34b4e0455c549b85385b1baf9966845962b313699e7cb847543a
@@ -11990,20 +11962,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-abort-controller@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "node-abort-controller@npm:3.1.1"
-  checksum: 10c0/f7ad0e7a8e33809d4f3a0d1d65036a711c39e9d23e0319d80ebe076b9a3b4432b4d6b86a7fab65521de3f6872ffed36fc35d1327487c48eb88c517803403eda3
-  languageName: node
-  linkType: hard
-
-"node-domexception@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "node-domexception@npm:1.0.0"
-  checksum: 10c0/5e5d63cda29856402df9472335af4bb13875e1927ad3be861dc5ebde38917aecbf9ae337923777af52a48c426b70148815e890a5d72760f1b4d758cc671b1a2b
-  languageName: node
-  linkType: hard
-
 "node-emoji@npm:^2.1.0":
   version: 2.1.3
   resolution: "node-emoji@npm:2.1.3"
@@ -12013,17 +11971,6 @@ __metadata:
     emojilib: "npm:^2.4.0"
     skin-tone: "npm:^2.0.0"
   checksum: 10c0/e688333373563aa8308df16111eee2b5837b53a51fb63bf8b7fbea2896327c5d24c9984eb0c8ca6ac155d4d9c194dcf1840d271033c1b588c7c45a3b65339ef7
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^3.3.1":
-  version: 3.3.2
-  resolution: "node-fetch@npm:3.3.2"
-  dependencies:
-    data-uri-to-buffer: "npm:^4.0.0"
-    fetch-blob: "npm:^3.1.4"
-    formdata-polyfill: "npm:^4.0.10"
-  checksum: 10c0/f3d5e56190562221398c9f5750198b34cf6113aa304e34ee97c94fd300ec578b25b2c2906edba922050fce983338fde0d5d34fcb0fc3336ade5bd0e429ad7538
   languageName: node
   linkType: hard
 
@@ -14487,7 +14434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sdp-transform@npm:^2.14.1":
+"sdp-transform@npm:^2.14.2":
   version: 2.15.0
   resolution: "sdp-transform@npm:2.15.0"
   bin:
@@ -15900,13 +15847,6 @@ __metadata:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: 10c0/df245f466ad83bd5cd80bfffc1674c7f64b7b84d1de0e4d2c0934fb0782e0a599164e7197a4bce310ee3342fd61817b8047ff04f076a1ce12dd470584142a4bd
-  languageName: node
-  linkType: hard
-
-"web-streams-polyfill@npm:^3.0.3":
-  version: 3.3.3
-  resolution: "web-streams-polyfill@npm:3.3.3"
-  checksum: 10c0/64e855c47f6c8330b5436147db1c75cb7e7474d924166800e8e2aab5eb6c76aac4981a84261dd2982b3e754490900b99791c80ae1407a9fa0dcff74f82ea3a7f
   languageName: node
   linkType: hard
 
