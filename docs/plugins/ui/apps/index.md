@@ -62,7 +62,6 @@ For optimal results, `icon` must be a **white** SVG. `<svg fill="#FFF" />`
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-
 ## Tabs - Add menu item (contact)
 
 ![App configuration](/img/plugins/ui/app/wda-contact.png)
@@ -142,7 +141,7 @@ Current positions used in the application are:
 | 1100     | Update App      |
 | 1200     | About           |
 
-## Tabs - Add custom settinng panel (settings)
+## Tabs - Add custom setting panel (settings)
 
 ![App configuration](/img/plugins/ui/app/wda-settings-inner.png)
 
@@ -163,6 +162,30 @@ To create a new tab in the settings menu, add a `staticTabs` in your manifest wi
 ```
 
 Please refer to the documentation of `settingsTab` about the position attribute.
+
+## Open menu item in Browser or New Tab
+
+Sometimes we may want to open a link in a new tab or in the user's default browser. To change the behavior of the static tab, add `"isExternal": true` to the `staticTab` definition.
+
+```json
+"staticTabs": [
+  {
+    "entityId": "support-tab",
+    "context": [
+      "sidebarTab",
+      "settingsTab"
+    ],
+    "name": "Support",
+    "contentUrl": "https://support.wazo.io/",
+    "icon": "./assets/icon.svg",
+    "isExternal": true,
+  }
+],
+```
+
+:::info
+  `isExternal` will work only with a staticTab of type: "sidebarTab" and "settingsTab"
+:::
 
 ## Background Script
 

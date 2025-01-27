@@ -117,7 +117,7 @@ Example of all fields that a manifest can contain. The manifest file must be in 
       // Tab display name
       "name": "SMS",
       // URL or path to show UI of this tab.
-      "contentUrl": "./sms.html"
+      "contentUrl": "./sms.html",
     }
   ],
 
