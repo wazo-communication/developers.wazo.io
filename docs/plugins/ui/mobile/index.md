@@ -52,6 +52,25 @@ When the user clicks on the tab, the `contentUrl` will be loaded.
 
 Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) documentation to know how to inject custom code in the application.
 
+### Open Tab in The Browser
+
+Sometimes we may want to open a link in the user's browser. To change the behavior of the static tab, add `"isExternal": true` to the `staticTab` definition.
+
+```json
+"staticTabs": [
+  {
+    "entityId": "support-tab",
+    "context": [
+      "mobileTab"
+    ],
+    "name": "Support",
+    "contentUrl": "https://support.wazo.io/",
+    "icon": "./assets/icon.svg",
+    "isExternal": true,
+  }
+],
+```
+
 ## Push Notifications
 
 Push notifications enhance user engagement, keeping users informed and connected to the Wazo app. Plugins and push are well integrated into our mobile application.
