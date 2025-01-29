@@ -3,7 +3,7 @@ const DEFAULT_SERVER = 'example.com';
 // We don 't want to run this server-side
 if (typeof window !== 'undefined') {
   const { softphone } = require('@wazo/euc-plugins-sdk');
-  const Wazo = require('@wazo/sdk/lib/simple').default;
+  const Wazo = require('@wazo/sdk').default;
 
   const getDefaultServer = () =>
     typeof localStorage !== 'undefined'
