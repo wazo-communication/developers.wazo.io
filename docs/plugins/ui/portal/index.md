@@ -18,7 +18,7 @@ Portal plugins allow many great ways to extend the interface. Here's a quick sum
 - Extend dashboards
 - Run code logic inside a background script
 
-## Tabs - Add a new tab stack dashboard
+## Tabs - Add a panel on stack's dashboard
 
 ![App configuration (small](/img/plugins/ui/portal/portal-pbx-home-tab.png)
 
@@ -38,7 +38,7 @@ To create a new tab in the PBX main screen, add a `staticTabs` in your manifest 
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Tabs - Add a page within an existing menu
+## Tabs - Add a link to an existing menu
 
 ![App configuration (small](/img/plugins/ui/portal/portal-existing-menu.png)
 
@@ -61,7 +61,7 @@ The `parent` key can be one of `common.layout.pbxMenu.*` where `*` is : `globalS
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Tabs - Add menu items
+## Tabs - Add a new menu
 
 ![App configuration (small)](/img/plugins/ui/portal/portal-pbx-own-menu.png)
 
@@ -93,7 +93,7 @@ To create a new menu in the PBX section, add a `staticTabs` in your manifest wit
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Tabs - Add new section in Global Settings
+## Tabs - Add link to Global Settings
 
 ![App configuration (small](/img/plugins/ui/portal/portal-pbx-global-settings.png)
 
@@ -137,43 +137,32 @@ The `context` key can be one of `pbx.*` where `*` is : `users`, `lines`, `device
 
 When the user clicks on the tab, the `contentUrl` will be loaded.
 
-## Security - Administrator role
+## Menu Item - Open in a new browser tab
 
-Sometimes you may want to prevent an administrator to modify a sensitive information from a plugin page. From `context`, you can retrieve the administrator organization type of the current user and then handle the right logic.
-
-```js
-await app.initialize();
-const context = app.getContext();
-
-const accountType = context.extra.administrator.organization.resource;
-switch(accountType) {
-  case: 'resellers':
-    return true;
-
-  case: 'customers':
-  case: 'locations':
-  default:
-    return false;
-}
-```
-
-
-## Background Script
-
-You can add custom code when the user is not using a custom tab. It can be useful to handle custom events.
+Sometimes we may want to open a link in a new tab. To change the behavior of the static tab, add `"isExternal": true` to the `staticTab` definition.
 
 ```json
-{
-  // ...
-  "backgroundScript": "./background.js"
-}
+"staticTabs": [
+  {
+    "entityId": "support-tab",
+    "context": [
+      "pbxMenu",
+      "globalSettings"
+    ],
+    "name": "Support",
+    "contentUrl": "https://support.wazo.io/",
+    "icon": "./assets/icon.svg",
+    "isExternal": true,
+  }
+],
 ```
 
-Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) documentation to know how to inject custom code in the application.
+:::info
+  `isExternal` will work only with a staticTab of type: "pbxMenu" and "globalSettings"
+:::
 
-The background script is always running, even when the user is logged out. Please make sure to remove all related background tasks when the `onLogout` listener event is fired.
 
-## Stack Menu - Supported Icons
+## Menu Item - Supported Icons
 
 To defined `icon` and `parentIcon` image, we support two types of values:
 1. Path to a black `.svg` icon (recommended)
@@ -356,3 +345,39 @@ To defined `icon` and `parentIcon` image, we support two types of values:
     - `WebAsset`
 
     </details>
+
+## Security - Administrator role
+
+Sometimes you may want to prevent an administrator to modify a sensitive information from a plugin page. From `context`, you can retrieve the administrator organization type of the current user and then handle the right logic.
+
+```js
+await app.initialize();
+const context = app.getContext();
+
+const accountType = context.extra.administrator.organization.resource;
+switch(accountType) {
+  case: 'resellers':
+    return true;
+
+  case: 'customers':
+  case: 'locations':
+  default:
+    return false;
+}
+```
+
+
+## Background Script
+
+You can add custom code when the user is not using a custom tab. It can be useful to handle custom events.
+
+```json
+{
+  // ...
+  "backgroundScript": "./background.js"
+}
+```
+
+Please refer to the [SDK](/docs/sdk-librairies/plugins-js-sdk/plugins-apis) documentation to know how to inject custom code in the application.
+
+The background script is always running, even when the user is logged out. Please make sure to remove all related background tasks when the `onLogout` listener event is fired.
