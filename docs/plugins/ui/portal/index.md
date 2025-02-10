@@ -348,14 +348,14 @@ To defined `icon` and `parentIcon` image, we support two types of values:
 
 ## Security - Administrator role
 
-Sometimes you may want to prevent an administrator to modify a sensitive information from a plugin page. From `context`, you can retrieve the administrator organization type of the current user and then handle the right logic.
+Sometimes, you may want to prevent an administrator from modifying sensitive information on a plugin page. From `context`, you can retrieve the current user's account type and then handle the right logic.
 
 ```js
 await app.initialize();
 const context = app.getContext();
 
 const accountType = context.extra.administrator.organization.resource;
-switch(accountType) {
+switch (accountType) {
   case: 'resellers':
     return true;
 
