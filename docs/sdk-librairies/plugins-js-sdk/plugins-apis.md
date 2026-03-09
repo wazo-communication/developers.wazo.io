@@ -864,6 +864,22 @@ Changes the status/visibility of the toolbar.
 app.changeToolbarDisplay(displayed: boolean);
 ```
 
+#### `switchPortalTenant`
+
+Switches the current portal tenant. The portal will resolve the tenant name from the provided UUID.
+
+```js
+app.switchPortalTenant(uuid: string);
+```
+
+#### `switchStackTenant`
+
+Switches the current stack tenant. The portal will resolve the tenant name from the provided UUID.
+
+```js
+app.switchStackTenant(uuid: string);
+```
+
 ### Events
 
 #### `onConnectedToStack`
