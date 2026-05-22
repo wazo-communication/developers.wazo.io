@@ -346,6 +346,34 @@ To defined `icon` and `parentIcon` image, we support two types of values:
 
     </details>
 
+## Context - Plugin Extra Payload
+
+Portal plugins receive extra context via `app.getContext().app.extra` once `app.initialize()` resolves. You can use it to call portal/stack APIs or render administrator-specific UI without making extra round trips.
+
+```js
+await app.initialize();
+const { extra } = app.getContext().app;
+```
+
+| Field | Description |
+|-------|-------------|
+| `extra.clientType` | Always `'portal'` for Portal plugins. |
+| `extra.portal.host` | Hostname of the portal API (nestbox), e.g. `127.0.0.1:8842`. Use it to call portal endpoints like `https://${host}/api/confd/1.0/resellers`. |
+| `extra.portal.tenant` | UUID of the currently-selected portal tenant (matches `localStorage.currentTenantUuid` / the toolbar `AccountSwitcher`). |
+| `extra.administrator.uuid` | UUID of the connected administrator. |
+| `extra.administrator.username` | Username of the connected administrator. |
+| `extra.administrator.organization.resource` | Account type: `resellers`, `customers` or `locations`. |
+| `extra.administrator.organization.is_partner` | `true` when the account is a partner. |
+| `extra.administrator.organization.uuid` / `.name` | UUID and name of the administrator's organization. |
+| `extra.stack.host` / `extra.stack.port` | Hostname and port of the connected stack. Use it to call stack endpoints like `https://${host}:${port}/api/auth/0.1/tenants`. |
+| `extra.stack.session.token` | Auth token for the connected stack. |
+| `extra.stack.currentTenant` | UUID of the currently-selected stack tenant. |
+| `extra.stack.wazoUuid` / `extra.stack.version` | Stack identification and engine version. |
+
+:::info
+`extra.stack` is only populated when the plugin tab is mounted in a `pbxMenu` context (i.e. after the user has connected to a stack).
+:::
+
 ## Security - Administrator role
 
 Sometimes, you may want to prevent an administrator from modifying sensitive information on a plugin page. From `context`, you can retrieve the current user's account type and then handle the right logic.
