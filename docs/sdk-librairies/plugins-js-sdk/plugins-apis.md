@@ -864,6 +864,22 @@ Changes the status/visibility of the toolbar.
 app.changeToolbarDisplay(displayed: boolean);
 ```
 
+#### `switchPortalReseller`
+
+Switches the current portal reseller. The portal will resolve the reseller name from the provided UUID.
+
+```js
+app.switchPortalReseller(uuid: string);
+```
+
+#### `switchStackLocation`
+
+Switches the current stack location. The portal will resolve the location name from the provided UUID.
+
+```js
+app.switchStackLocation(uuid: string);
+```
+
 ### Events
 
 #### `onConnectedToStack`
