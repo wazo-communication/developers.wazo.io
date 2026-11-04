@@ -1,6 +1,7 @@
 import Link from '@docusaurus/Link';
 import PageHeader from '@site/src/components/PageHeader';
 import Layout from '@theme/Layout';
+import type { JSX } from 'react';
 
 const UseCases = (): JSX.Element => (
   <Layout

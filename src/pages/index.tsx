@@ -4,6 +4,7 @@ import PageHeader from '@site/src/components/PageHeader';
 import UseCases from '@site/src/components/UseCases';
 import ChevronRight from '@site/static/img/icons/chevron_right.svg';
 import Layout from '@theme/Layout';
+import type { JSX } from 'react';
 import { PORTAL, SOFTPHONE, STACK, WDA } from './use-cases';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
