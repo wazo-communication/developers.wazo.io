@@ -14,7 +14,7 @@ If you're new to Wazo, you might want to familiarize yourself with its architect
 
 Developers can install a plugin from a `localhost` environment. Example the manifest URL could be `https://localhost:3000/manifest.json`. Just keep in mind not to install it for a real client, as users will not be able to load a plugin from a `localhost` environment.
 
-[CORS](#cors) need to be configured to be able to install a local plugin. The process to install a local vs production plugin is the same, please refer to the [distributing section](#distributing).
+[CORS](/docs/plugins/ui/deploy#cors) need to be configured to be able to install a local plugin. The process to install a local vs production plugin is the same, please refer to the [distributing section](/docs/plugins/ui/deploy#distributing).
 
 ### Mobile Development
 
