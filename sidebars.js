@@ -110,11 +110,25 @@ const sidebars = {
         {
           type: 'category',
           label: 'Build Mobile Plugin',
-          link: { type: 'doc', id: 'plugins/ui/mobile/index' },
           items: [
-            { type: 'ref', id: 'plugins/ui/mobile/index', label: 'Documentation' },
-            { type: 'ref', id: 'plugins/ui/mobile/examples', label: 'Examples' },
-            { type: 'html', value: generateLinkNewTab('/docs/sdk-librairies/plugins-js-sdk/plugins-apis#mobile', 'SDK References')},
+            {
+              type: 'category',
+              label: 'Shift Plugins',
+              link: { type: 'doc', id: 'plugins/ui/shift/index' },
+              items: [
+                { type: 'ref', id: 'plugins/ui/shift/index', label: 'Documentation' },
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Legacy Plugins',
+              link: { type: 'doc', id: 'plugins/ui/mobile/index' },
+              items: [
+                { type: 'ref', id: 'plugins/ui/mobile/index', label: 'Documentation' },
+                { type: 'ref', id: 'plugins/ui/mobile/examples', label: 'Examples' },
+                { type: 'html', value: generateLinkNewTab('/docs/sdk-librairies/plugins-js-sdk/plugins-apis#mobile', 'SDK References')},
+              ]
+            },
           ]
         },
 

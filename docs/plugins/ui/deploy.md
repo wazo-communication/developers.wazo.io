@@ -78,6 +78,10 @@ The procedure to install a Portal and Apps plugins is a little bit different. He
 
 ### Mobile Plugin
 
+:::warning
+Mobile plugins only work with the **Wazo Mobile Legacy** app. To have a plugin in **Wazo Shift**, it must go through our whitelabel offer: please reach out to your Wazo contact.
+:::
+
 - Connect to [E-UC Portal](https://portal.wazo.io)
 - Go to [Plugins](https://portal.wazo.io/#/plugins) > [Apps](https://portal.wazo.io/#/plugins-apps)
 - Select the location you want to install a plugin on

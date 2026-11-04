@@ -14,11 +14,11 @@ If you're new to Wazo, you might want to familiarize yourself with its architect
 
 Developers can install a plugin from a `localhost` environment. Example the manifest URL could be `https://localhost:3000/manifest.json`. Just keep in mind not to install it for a real client, as users will not be able to load a plugin from a `localhost` environment.
 
-[CORS](#cors) need to be configured to be able to install a local plugin. The process to install a local vs production plugin is the same, please refer to the [distributing section](#distributing).
+[CORS](/docs/plugins/ui/deploy#cors) need to be configured to be able to install a local plugin. The process to install a local vs production plugin is the same, please refer to the [distributing section](/docs/plugins/ui/deploy#distributing).
 
 ### Mobile Development
 
-When developing a plugin for the mobile application, developers needs to use secure tunnel to expose `localhost` environment to a public URL. At Wazo, we use [**ngrok**](https://ngrok.com/docs/getting-started/) during development phase. `ngrok` is a easy to use CLI and fits perfectly mobile developments needs. Here's a few steps
+When developing a plugin for the Wazo Mobile Legacy application, developers needs to use secure tunnel to expose `localhost` environment to a public URL. At Wazo, we use [**ngrok**](https://ngrok.com/docs/getting-started/) during development phase. `ngrok` is a easy to use CLI and fits perfectly mobile developments needs. Here's a few steps
 
 - [Create an account](https://ngrok.com/signup) on ngrok
 - [Install and configure](https://ngrok.com/docs/getting-started/) ngrok CLI
