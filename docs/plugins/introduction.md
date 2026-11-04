@@ -27,7 +27,7 @@ Modular plugins give the capacity to any developers to add new features or exten
   </Link>
 
   <Link className="pagination-nav__link" to="/docs/plugins/ui/mobile">
-    <div className="pagination-nav__sublabel">Mobile Plugin</div>
+    <div className="pagination-nav__sublabel">Mobile Plugin (Legacy)</div>
     <div className="pagination-nav__label">Documentation</div>
   </Link>
 
@@ -43,7 +43,7 @@ Wazo offers many ways to extend our wide ecosystem from various plugin types. We
 
 ### Apps
 
-Extend our Web, Desktop and Mobile application with plugins, add new pages, settings and more.
+Extend our Web, Desktop and Wazo Mobile Legacy applications with plugins, add new pages, settings and more.
 
 #### Example of ideas
 

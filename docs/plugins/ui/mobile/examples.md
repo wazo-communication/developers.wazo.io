@@ -8,6 +8,10 @@ import ButtonsTrySource from '@site/src/components/ButtonsTrySource';
 
 # Mobile Plugin - Examples
 
+:::warning
+Mobile plugins only work with the **Wazo Mobile Legacy** app. To have a plugin in **Wazo Shift**, it must go through our whitelabel offer: please reach out to your Wazo contact.
+:::
+
 ## Adding a New Tab
 
 ```mdx-code-block

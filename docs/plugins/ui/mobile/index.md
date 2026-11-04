@@ -9,6 +9,10 @@ import PageHeader from '@site/src/components/PageHeader';
 
 # Documentation
 
+:::warning Wazo Mobile Legacy only
+Mobile plugins only work with the **Wazo Mobile Legacy** app. To have a plugin in **Wazo Shift**, it must go through our whitelabel offer: please reach out to your Wazo contact.
+:::
+
 Mobile plugins allow many great ways to extend the interface. Here's a quick summary, scroll down for more information.
 
 - Add tabs on the main page of the application

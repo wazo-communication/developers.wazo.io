@@ -18,7 +18,7 @@ Developers can install a plugin from a `localhost` environment. Example the mani
 
 ### Mobile Development
 
-When developing a plugin for the mobile application, developers needs to use secure tunnel to expose `localhost` environment to a public URL. At Wazo, we use [**ngrok**](https://ngrok.com/docs/getting-started/) during development phase. `ngrok` is a easy to use CLI and fits perfectly mobile developments needs. Here's a few steps
+When developing a plugin for the Wazo Mobile Legacy application, developers needs to use secure tunnel to expose `localhost` environment to a public URL. At Wazo, we use [**ngrok**](https://ngrok.com/docs/getting-started/) during development phase. `ngrok` is a easy to use CLI and fits perfectly mobile developments needs. Here's a few steps
 
 - [Create an account](https://ngrok.com/signup) on ngrok
 - [Install and configure](https://ngrok.com/docs/getting-started/) ngrok CLI

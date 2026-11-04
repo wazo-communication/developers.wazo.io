@@ -15,7 +15,7 @@ Let's begin by setting up the basic parameters for your UI plugin.
 This file is the entrypoint of all UI plugins. It describes how your plugin is integrated into a Wazo Product.
 
 :::note
-If are building a plugin for all the Wazo E-UC Products (Web, Desktop, Portal and Mobile), you will have to create on manifest file for each of them with a different `productType` value.
+If are building a plugin for all the Wazo E-UC Products (Web, Desktop, Portal and Wazo Mobile Legacy), you will have to create on manifest file for each of them with a different `productType` value.
 :::
 
 ### Required Fields
@@ -143,4 +143,4 @@ Example of all fields that a manifest can contain. The manifest file must be in 
 
 For development or production environment, the process is the same. See our deployment section on how to deploy each type of application.
 
-After that you'll be ready to customize the [Web and Desktop application](../apps), the [Mobile Application](../mobile) or [Portal](../portal)
+After that you'll be ready to customize the [Web and Desktop application](../apps), the [Wazo Mobile Legacy application](../mobile) or [Portal](../portal)
