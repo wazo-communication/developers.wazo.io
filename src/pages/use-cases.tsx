@@ -1,6 +1,7 @@
 import PageHeader from '@site/src/components/PageHeader';
 import UseCasesItems from '@site/src/components/UseCases/horizontal';
 import Layout from '@theme/Layout';
+import type { JSX } from 'react';
 
 export type UseCase = {
   title: string;

@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 interface Props {
   source?: string;
@@ -16,7 +16,7 @@ export default function ButtonTrySource({
   source,
   manifest,
   product,
-}: Props): JSX.Element {
+}: Props): React.JSX.Element {
   const showSource: boolean = !!source;
   const showExample: boolean = !!manifest && !!product;
 
